@@ -8,11 +8,11 @@ import NavBar from './NavBar.jsx';
 import fetchUserData from '../utils/fetchUserData';
 
 function Todo() {
-    const entries = useSelector(state => state.todoReducer.entries);
+    const entries = useSelector(state => state.todoReducer.entries); // This is the todos
     const dispatch = useDispatch();
     const [animate, setAnimate] = useState(false);
     const username = useSelector(state => state.todoReducer.username);
-    const mainRef = useRef(null);
+    const mainRef = useRef(null); // this ref is used mainly for animating the main div conditionally
 
     const handleComplete = () => {
         setAnimate(true);
@@ -26,7 +26,7 @@ function Todo() {
         async function getData() {
             const response = await fetchUserData();
             console.log(response)
-            // return dispatch(actions.setUserDataActionCreator(response));
+            return dispatch(actions.setUserDataActionCreator(response));
         }
         getData();
     });
@@ -36,7 +36,7 @@ function Todo() {
             <NavBar reference={mainRef} innerText={'Text Editor'} path={'text'} />
             <div className='todoMain'>
                 <div className='creator'>
-                    <span className='todoSpan'>{`What are we doing today ${username}?`}</span>
+                    <span className='todoSpan'>{username ? `What are we doing today ${username}?` : '...'}</span>
                     <TodoCreator entries={entries}/>
                 </div>
                 <input

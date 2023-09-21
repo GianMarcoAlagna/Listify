@@ -3,7 +3,7 @@ import * as types from '../constants/actionTypes.js';
 
 const init = {
     entries: {},
-    username: 'Marco',
+    username: '',
     entriesLength: 0,
     textEditor: '',
 }
@@ -31,6 +31,7 @@ const todoReducer = createReducer(init, (builder) => {
     })
     .addCase(types.SET_USER_DATA, (state, action) => {
         console.log(action.payload);
+        state.username = action.payload.username
     })
 });
 

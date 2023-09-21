@@ -1,14 +1,9 @@
 import '../css/Todo.css';
-import ListItem from './ListItem.jsx';
-// import { useTransition, animated } from 'react-spring';
+import parseEntries from '../utils/parseEntries';
+
 
 function TodoDisplay({ entries, animate }) {
-    const displayList = Object.keys(entries).map(entryKey => 
-        <ListItem key={entries[entryKey].value} 
-        id={entries[entryKey].value} 
-        value={entries[entryKey].value}
-        animate={animate} />
-    );
+    const displayList = parseEntries(entries, animate);
     return (
         <div className='displayList'>
             <div className='innerDisplayList'>

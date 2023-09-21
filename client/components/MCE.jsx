@@ -9,6 +9,7 @@ function MCE() {
     const mainRef = useRef(null);
     const textEditorRef = useRef(null);
     const initialText = useSelector(state => state.todoReducer.textEditor);
+    const apiKey = process.env.REACT_APP_TINYMCE_API_KEY;
     const MCEContainer = styled.div`
         margin: 0;
         display: flex;
@@ -25,7 +26,7 @@ function MCE() {
             <div className='MCEMain'>
                 <MCEContainer>
                     <Editor 
-                        tinymceScriptSrc={process.env.PUBLIC_URL + '/tinymce/tinymce.min.js'}
+                        apiKey={apiKey}
                         onInit={(evt, editor) => textEditorRef.current = editor}
                         initialValue={initialText}
                         init={{

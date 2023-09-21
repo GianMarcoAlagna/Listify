@@ -1,5 +1,7 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     entry: './client/index.js',
@@ -22,6 +24,10 @@ module.exports = {
             },
         },
         {
+            test: /skin\.css$/i,
+            use: [ MiniCssExtractPlugin.loader, 'css-loader' ],
+        },
+        {
             test: /\.s?css$/i,
             use: [
                 'style-loader',
@@ -33,7 +39,7 @@ module.exports = {
             test: /\.(png|svg|jpg|jpeg|gif)$/i,
             type: 'asset/resource',
         },
-      ]
+      ],
     },
     devServer: {
         static: {
@@ -46,8 +52,10 @@ module.exports = {
         port: 8080,
     },
     plugins: [
+        new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
             template: 'index.html'
         }),
+        new Dotenv(),
     ],
 }
