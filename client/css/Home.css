@@ -110,14 +110,14 @@ form {
 }
 
 #usernameInput {
-    background-image: url(../../public/username.svg);
+    background-image: url(../../assets/username.svg);
     background-size: 2.9dvw;
     background-repeat: no-repeat;
     background-position: 26.6vw;
 }
 
 #passwordInput {
-    background-image: url(../../public/lock.svg);
+    background-image: url(../../assets/lock.svg);
     background-repeat: no-repeat;
     background-position: center right;
     animation: fly-in-right 1s;
