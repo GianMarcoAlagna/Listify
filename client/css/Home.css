@@ -1,0 +1,257 @@
+body {
+    /* background: linear-gradient(80deg, rgba(0, 68, 255, 0.498), rgba(0, 0, 0, 0.148)) */
+    background-image: url('https://cdnb.artstation.com/p/assets/images/images/042/415/777/original/oliver-goodenough-ezgif-com-gif-maker.gif?1634468806');
+    background-size: cover;
+}
+
+@keyframes fly-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-500px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes fly-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(500px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        font-size: 0px;
+        opacity: 0;
+    }
+    to {
+        font-size: 55px;
+        opacity: 1;
+    }
+}
+
+@keyframes move-up {
+    from {
+        transform: translatey(60vh);
+    }
+    to {
+        transform: translatey(0vh);
+    }
+}
+
+@keyframes move-down{
+    from {
+        transform: translatey(0vh);
+    }
+    to {
+        transform: translatey(100vh);
+    }
+}
+
+@keyframes expand-out {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 50vw;
+    }
+}
+
+form {
+    display: flex;
+    padding: 3px;
+    width: 50vw;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.homeMain {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: move-in 1s;
+}
+
+#toggleButton {
+    border: 2px solid white;
+    animation: move-up 2s;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+    transition: transform 1s;
+}
+
+#toggleButton:hover {
+    background-color: rgb(64, 89, 172);
+}
+
+#invalidCreds {
+    color: whitesmoke;
+    width: 50vw;
+    opacity: 0;
+}
+
+#invalidCreds#show {
+    color: whitesmoke;
+    width: 50vw;
+    opacity: 1;
+}
+
+#usernameInput {
+    background-image: url(../../public/username.svg);
+    background-size: 2.9dvw;
+    background-repeat: no-repeat;
+    background-position: 26.6vw;
+}
+
+#passwordInput {
+    background-image: url(../../public/lock.svg);
+    background-repeat: no-repeat;
+    background-position: center right;
+    animation: fly-in-right 1s;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+
+.loginContainer {
+    background-color: rgba(0, 0, 0, 0);
+    width: 50vw;
+    height: 70vh;
+    border-radius: 5px;
+    border: 2px solid white;
+    backdrop-filter: blur(7px);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    overflow-x: hidden;
+}
+
+.loginContainer.closeAnim {
+    animation: move-down 1s;
+    animation-fill-mode: both;
+}
+
+.innerLogin {
+    margin-top: 25px;
+    width: 100%;
+    height: 330px;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginContainer h1 {
+    font-size: 55px;
+    color: whitesmoke;
+    margin: 75px 0px 0px 0px;
+    height: 90px;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginContainer h1::after {
+    content: "";
+    height: 3px;
+    border-radius: 5px;
+    width: 50vw;
+    background-color: #59bdff;
+    animation: expand-out 1s;
+    animation-fill-mode: backwards;
+    animation-delay: 2s;
+    margin: 5px;
+}
+
+.loginContainer input {
+    color: whitesmoke;
+    margin: 8px;
+    border: 2px solid white;
+}
+
+.loginContainer input:focus {
+    color: whitesmoke;
+    border: 2px solid white;
+    outline: 1px solid white;
+}
+
+.loginContainer .textInput{
+    background-color: rgba(23, 23, 23, 0);
+    width: 30vw;
+    cursor: text;
+    height: 7vh;
+    border-radius: 8px;
+    font-size: 30px;
+    font-weight: 500;
+    transition: transform 1s;
+}
+
+.loginContainer .textInput:hover{
+    transform: translateY(-10px);
+}
+
+.loginContainer .buttonInput {
+    background-color: rgb(89, 189, 255);
+    width: 15vw;
+    height: 7vh;
+    border-radius: 8px;
+    font-size: 30px;
+    font-weight: 250;
+    margin: 10px;
+    animation: move-up 2s;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+    transition: transform 1s;
+}
+
+.loginContainer .buttonInput:hover{
+    transform: scale(1.1);
+    background-color: rgb(64, 89, 172);
+}
+
+.welcomeText {
+    animation-delay: 1.5s;
+    animation: fade-in 1s;
+}
+
+/* .delayNone {
+    animation: fly-in-left 1s;
+    animation-delay: 0.5s;
+} */
+
+.delayOne {
+    animation: fly-in-left 1s;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+
+/* .delayTwo {
+    animation: fly-in-left 1s;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+}
+
+.delayThree {
+    animation: fly-in-left 1s;
+    animation-delay: 1.5s;
+    animation-fill-mode: both;
+}
+
+.delayFour {
+    animation: fly-in-left 1s;
+    animation-delay: 2s;
+    animation-fill-mode: both;
+} */
