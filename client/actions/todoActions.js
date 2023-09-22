@@ -3,7 +3,7 @@ import * as types from '../constants/actionTypes.js';
 export const addEntryActionCreator = itemValue => (
     {
         type: types.ADD_ENTRY,
-        payload: {value: itemValue}
+        payload: {value: itemValue, checked: false, subItems: []}
     }
 );
 

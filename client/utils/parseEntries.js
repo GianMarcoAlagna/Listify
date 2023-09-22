@@ -1,12 +1,15 @@
 import ListItem from '../components/ListItem.jsx';
 
-function parseEntries(entries, animate) {
+function parseEntries(entries, animate, setSubItems, setShowSublist) {
     return (
-        Object.keys(entries).map(entryKey => 
-        <ListItem key={entries[entryKey].value} 
-        id={entries[entryKey].value} 
-        value={entries[entryKey].value}
-        animate={animate} />
+        entries.map(entry => 
+        <ListItem key={entry.value} 
+        id={entry.value} 
+        value={entry.value}
+        animate={animate} 
+        subItems={entry.subItems}
+        setSubItems={setSubItems}
+        setShowSublist={setShowSublist} />
     ));
 }
 

@@ -7,9 +7,7 @@ const todoRouter = require('./routes/todoRouter');
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
 
-const port = process.env.PORT || 3000;
 const app = express();
-
 mongoose.connect(process.env.URI)
   .then(() => {
     console.log('Connected To Database');

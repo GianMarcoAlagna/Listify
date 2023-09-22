@@ -3,7 +3,7 @@ import { updateCheckedItemActionCreator } from '../actions/todoActions';
 import { useSpringValue, animated } from 'react-spring';
 import { useEffect, useState } from 'react';
 
-const ListItem = ({ id, value, animate }) => {
+const ListItem = ({ id, value, animate, subItems, setSubItems, setShowSublist }) => {
     const dispatch = useDispatch();
     const opacity = useSpringValue(0);
     const [checked, setChecked] = useState(false);
@@ -17,6 +17,11 @@ const ListItem = ({ id, value, animate }) => {
             opacity.start(0);
         }
     }, [animate, checked, opacity]);
+
+    function handleSubMenuClick() {
+        setShowSublist((prev) => !prev);
+        setSubItems(subItems);
+    }
 
     return (
         <animated.div className='listItem' style={{ opacity }}>
@@ -34,7 +39,7 @@ const ListItem = ({ id, value, animate }) => {
                     { value }
                 </span>
             </label>
-            <button className='SubMenuButton'>&gt;</button>
+            <button onClick={ handleSubMenuClick } className='SubMenuButton'>&gt;</button>
         </animated.div>
     );
 }

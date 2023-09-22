@@ -2,29 +2,25 @@ import { createReducer } from "@reduxjs/toolkit";
 import * as types from '../constants/actionTypes.js';
 
 const init = {
-    entries: {},
+    entries: [],
     username: '',
-    entriesLength: 0,
     textEditor: '',
 }
 
 const todoReducer = createReducer(init, (builder) => {
     builder.addCase(types.ADD_ENTRY, (state, action) => {
-        state.entries[action.payload.value] = action.payload;
-        state.entries[action.payload.value].checked = false;
-        state.entriesLength++;
+        state.entries[state.entries.length] = action.payload;
     })
     .addCase(types.DELETE_ENTRIES, (state) => {
-        for(const entry in state.entries) {
-            if(state.entries[entry].checked) {
-                delete state.entries[entry];
-                state.entriesLength--;
-            }
-        }
+        state.entries = state.entries.filter(el => !el.checked);
     })
     .addCase(types.UPDATE_CHECK, (state, action) => {
         const entry = action.payload.value;
-        state.entries[entry].checked = state.entries[entry].checked ? false : true;
+        state.entries.forEach((el, indx) => {
+            if(el.value === entry) {
+                state.entries[indx].checked = state.entries[indx].checked ? false : true;
+            }
+        });
     })
     .addCase(types.UPDATE_TEXT, (state, action) => {
         state.textEditor = action.payload;

@@ -37,7 +37,7 @@ function Todo() {
             <div className='todoMain'>
                 <div className='creator'>
                     <span className='todoSpan'>{username ? `What are we doing today ${username}?` : '...'}</span>
-                    <TodoCreator entries={entries}/>
+                    <TodoCreator subList={false} />
                 </div>
                 <input
                     id='completeButton'

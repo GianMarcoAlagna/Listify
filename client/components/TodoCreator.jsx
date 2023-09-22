@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import * as actions from '../actions/todoActions.js';
 
-function TodoCreator() {
+function TodoCreator({ subList }) {
     const [itemName, setItemName] = useState('');
 
     const dispatch = useDispatch();
@@ -14,7 +14,7 @@ function TodoCreator() {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="creatorForm">
+        <form onSubmit={handleSubmit} className={subList ? 'subCreatorForm' : 'creatorForm' }>
             <input 
                 className="todoInput" 
                 type="text" 
