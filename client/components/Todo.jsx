@@ -21,11 +21,10 @@ function Todo() {
             setAnimate(false);
         }, 400);
     }
-
+    
     useEffect(() => {
         async function getData() {
             const response = await fetchUserData();
-            console.log(response)
             return dispatch(actions.setUserDataActionCreator(response));
         }
         getData();

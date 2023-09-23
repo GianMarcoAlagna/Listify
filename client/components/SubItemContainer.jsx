@@ -1,14 +1,24 @@
-import TodoCreator from "./TodoCreator.jsx"
+import { useSelector } from 'react-redux';
+import SubTodoCreator from "./SubTodoCreator.jsx"
+import ListItem from "./ListItem.jsx";
 
-function SubItemContainer({ subItems, showSublist }) {
+function SubItemContainer({ showSublist, setShowSublist }) {
+    const subItems = useSelector(state => state.todoReducer.currentSubItems);
+    const subItemsArray = subItems.map(el => {
+        return (
+            <ListItem id={el.value} value={el.value} />
+        );
+    });
+    console.log(subItems);
     return (
         <div className={showSublist ? 'SubItemContainerShow' : 'SubItemContainer'}>
-            <TodoCreator subList={true} />
+            <input type='button' id='SubButton' value='Close' onClick={() => setShowSublist(!showSublist)} />
+            <SubTodoCreator />
             <div>
-                { subItems }
+                { subItemsArray }
             </div>
         </div>
-    )
+    );
 }
 
 export default SubItemContainer;

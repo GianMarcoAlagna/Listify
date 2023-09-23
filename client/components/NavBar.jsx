@@ -31,7 +31,7 @@ const NavBar = ({ reference, innerText, path, textEditorRef }) => {
                 console.log(res)
                 return console.log('Signout Failed');
             }
-        })
+        });
     }
 
     return (

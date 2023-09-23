@@ -1,11 +1,12 @@
+const jwt = require('jsonwebtoken');
 const { User } = require('../models/userModel');
 const createError = require('../error');
 
 const todoController = {
     getUserList: async function(req, res, next) {
-        const { username } = req.body;
+        const { username } = jwt.decode(req.cookies.token, process.env.KEY);
         const user = await User.findOne({ username });
-        if (!user) return next(createError('Couldn\'t find user', 404, `couldn't find user ${username}`, 'todoController', 'getUserTodo'));
+        if (!user) return next(createError('Couldn\'t find user', 404, `couldn't find user ${username}`, 'todoController', 'getUserList'));
         try {
             return res.status(200).json(user.todo);
         } catch (err) {

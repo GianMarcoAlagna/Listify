@@ -4,16 +4,17 @@ import SubItemContainer from './SubItemContainer.jsx';
 import { useState } from 'react';
 
 function TodoDisplay({ entries, animate }) {
-    const [ subItems, setSubItems ] = useState([]);
     const [ showSublist, setShowSublist ] = useState(false);
-    const displayList = parseEntries(entries, animate, setSubItems, setShowSublist);
+    const displayList = parseEntries(entries, animate, setShowSublist);
 
     return (
         <div className='displayList'>
-            <div className='innerDisplayList'>
+            <div className={!showSublist ? `innerDisplayList` : `innerDisplayListHide`}>
                 { displayList }
             </div>
-            <SubItemContainer subItems={ subItems } showSublist={ showSublist } />
+            <SubItemContainer 
+            showSublist={ showSublist } 
+            setShowSublist={ setShowSublist } />
         </div>
     );
 }

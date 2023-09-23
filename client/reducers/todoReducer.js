@@ -5,6 +5,8 @@ const init = {
     entries: [],
     username: '',
     textEditor: '',
+    currentParentName: '',
+    currentSubItems: [],
 }
 
 const todoReducer = createReducer(init, (builder) => {
@@ -17,7 +19,7 @@ const todoReducer = createReducer(init, (builder) => {
     .addCase(types.UPDATE_CHECK, (state, action) => {
         const entry = action.payload.value;
         state.entries.forEach((el, indx) => {
-            if(el.value === entry) {
+            if (el.value === entry) {
                 state.entries[indx].checked = state.entries[indx].checked ? false : true;
             }
         });
@@ -26,9 +28,24 @@ const todoReducer = createReducer(init, (builder) => {
         state.textEditor = action.payload;
     })
     .addCase(types.SET_USER_DATA, (state, action) => {
-        console.log(action.payload);
         state.username = action.payload.username
     })
+    .addCase(types.ADD_SUB_ENTRY, (state, action) => {
+        state.entries.forEach((el, indx) => {
+            if (el.value === action.payload.parentItem) {
+                state.currentSubItems.push({value: action.payload.value, checked: false});
+                state.entries[indx].subItems.push({value: action.payload.value, checked: false});
+            }
+        });
+    })
+    .addCase(types.SET_CURRENT_ITEM, (state, action) => {
+        state.entries.forEach(el => {
+            if (el.value === action.payload) {
+                state.currentSubItems = el.subItems;
+                state.currentParentName = el.value;
+            }
+        });
+    });
 });
 
 export default todoReducer;

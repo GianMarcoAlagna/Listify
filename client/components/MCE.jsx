@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Editor } from '@tinymce/tinymce-react';
 import { useRef } from 'react';
-import {  useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import NavBar from './NavBar.jsx';
 
 function MCE() {
