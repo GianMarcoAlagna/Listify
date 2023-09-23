@@ -3,7 +3,7 @@ function formatState(userData) {
         return {
             value: el.value,
             completed: el.checked, 
-            sublist: el.sublist.length ? el.sublist.map(el => {
+            sublist: el.subItems.length ? el.subItems.map(el => {
                 return {value: el.value, completed: el.checked}
             }) : []
         };
@@ -15,7 +15,6 @@ function formatState(userData) {
             items: formattedItems
         }
     };
-
     return formattedData;
 }
 

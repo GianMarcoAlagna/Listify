@@ -28,7 +28,9 @@ const todoReducer = createReducer(init, (builder) => {
         state.textEditor = action.payload;
     })
     .addCase(types.SET_USER_DATA, (state, action) => {
-        state.username = action.payload.username
+        state.username = action.payload.username;
+        state.textEditor = action.payload.textEditor;
+        state.entries = [...action.payload.todo.items];
     })
     .addCase(types.ADD_SUB_ENTRY, (state, action) => {
         state.entries.forEach((el, indx) => {

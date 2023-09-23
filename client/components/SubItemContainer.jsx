@@ -9,7 +9,6 @@ function SubItemContainer({ showSublist, setShowSublist }) {
             <ListItem id={el.value} value={el.value} />
         );
     });
-    console.log(subItems);
     return (
         <div className={showSublist ? 'SubItemContainerShow' : 'SubItemContainer'}>
             <input type='button' id='SubButton' value='Close' onClick={() => setShowSublist(!showSublist)} />

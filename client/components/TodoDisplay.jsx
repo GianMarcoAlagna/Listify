@@ -6,7 +6,6 @@ import { useState } from 'react';
 function TodoDisplay({ entries, animate }) {
     const [ showSublist, setShowSublist ] = useState(false);
     const displayList = parseEntries(entries, animate, setShowSublist);
-
     return (
         <div className='displayList'>
             <div className={!showSublist ? `innerDisplayList` : `innerDisplayListHide`}>

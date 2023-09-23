@@ -7,6 +7,9 @@ router.get('/signout', userController.removeCookie, (req, res) => {
     return res.sendStatus(200);
 });
 
+router.patch('/', userController.verifyToken, userController.updateUserData, (req, res) => {
+    return res.sendStatus(200);
+})
 
 router.post('/login', userController.authenticateUser, userController.setCookie, (req, res) => {
     res.status(200).json({username: req.body.username});

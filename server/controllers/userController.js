@@ -28,6 +28,20 @@ const userController = {
             return next(createError(err, 500, 'Couldn\'t Create User', 'userController', 'createUser'));
         }
     },
+    updateUserData: async function(req, res, next) {
+        const { todo, textEditor } = req.body;
+        try {
+            const username = jwt.decode(req.cookies.token, process.env.KEY).username;
+            try {
+                await User.findOneAndUpdate({ username }, {todo: todo, textEditor: textEditor});
+            } catch (err) {
+                return next(createError((err, 404, 'Couldn\'t Find/Update User', 'userController', 'updateUserData')));
+            }
+        } catch (err) {
+            return next(createError((err, 404, 'User Is Invalid', 'userController', 'updateUserData')));
+        }
+        return next();
+    },
     getUser: async function(req, res, next) {
         const username = jwt.decode(req.cookies.token, process.env.KEY).username;
         try {

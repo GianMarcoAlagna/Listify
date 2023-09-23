@@ -28,7 +28,7 @@ function Todo() {
             return dispatch(actions.setUserDataActionCreator(response));
         }
         getData();
-    });
+    }, []);
 
     return (
         <div ref={mainRef}>
