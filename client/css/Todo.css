@@ -58,10 +58,14 @@ body {
 
 #SubButton {
     margin: 4px;
-    align-self: center;
-    justify-self: flex-start;
     height: 3vh;
     width: 4vw;
+    align-self: center;
+}
+
+#SubItemCreator {
+    display: flex;
+    flex-direction: row;
 }
 
 .moveInAnim {
@@ -82,12 +86,12 @@ body {
 .SubItemContainerShow {
     height: 200px;
     display: flex;
+    flex-direction: column;
     border: 2px solid white;
     border-radius: 5px;
-    justify-content: center;
-    align-items: center;
     animation: fly-in-right 1s;
     animation-fill-mode: both;
+    overflow-y: scroll;
 }
 
 #completeButton {

@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 
 const todoItemSchema = new Schema({
     value: {type: String, required: true},
-    completed: {type: Boolean, default: false},
+    checked: {type: Boolean, default: false},
     sublist: [{
         value: {type: String, required: true},
-        completed: {type: Boolean, default: false},
+        checked: {type: Boolean, default: false},
     }]
 });
 

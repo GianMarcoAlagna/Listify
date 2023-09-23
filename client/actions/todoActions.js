@@ -3,7 +3,7 @@ import * as types from '../constants/actionTypes.js';
 export const addEntryActionCreator = itemValue => (
     {
         type: types.ADD_ENTRY,
-        payload: {value: itemValue, checked: false, subItems: []}
+        payload: {value: itemValue, checked: false, sublist: []}
     }
 );
 
@@ -28,6 +28,13 @@ export const updateCheckedItemActionCreator = itemKey => (
     }
 );
 
+export const updateCheckedSubItemActionCreator = itemKey => (
+    {
+        type: types.UPDATE_SUB_CHECK,
+        payload: {value: itemKey}
+    }
+);
+
 export const updateTextEditorActionCreator = text => (
     {
         type: types.UPDATE_TEXT,
@@ -45,6 +52,13 @@ export const setUserDataActionCreator = user => (
 export const setCurrentItemActionCreator = item => (
     {
         type: types.SET_CURRENT_ITEM,
+        payload: item
+    }
+);
+
+export const completeSubItemsActionCreator = item => (
+    {
+        type: types.COMPLETE_SUB_ITEMS,
         payload: item
     }
 );

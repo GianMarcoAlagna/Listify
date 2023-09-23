@@ -19,6 +19,7 @@ const SubCreator = styled.form`
 const SubCreatorSubmit = styled.input`
     background-color: rgb(89, 189, 255);
     color: rgb(255, 255, 255);
+    margin: 3px;
     width: fit-content;
     height: 5vh;
     border-radius: 8px;

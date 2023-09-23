@@ -1,4 +1,4 @@
-import { createReducer } from "@reduxjs/toolkit";
+import { createReducer, current } from "@reduxjs/toolkit";
 import * as types from '../constants/actionTypes.js';
 
 const init = {
@@ -11,7 +11,7 @@ const init = {
 
 const todoReducer = createReducer(init, (builder) => {
     builder.addCase(types.ADD_ENTRY, (state, action) => {
-        state.entries[state.entries.length] = action.payload;
+        state.entries.push(action.payload);
     })
     .addCase(types.DELETE_ENTRIES, (state) => {
         state.entries = state.entries.filter(el => !el.checked);
@@ -21,6 +21,19 @@ const todoReducer = createReducer(init, (builder) => {
         state.entries.forEach((el, indx) => {
             if (el.value === entry) {
                 state.entries[indx].checked = state.entries[indx].checked ? false : true;
+            }
+        });
+    })
+    .addCase(types.UPDATE_SUB_CHECK, (state, action) => {
+        const entry = state.currentParentName;
+        state.entries.forEach((el, indx) => {
+            if (el.value === entry) {
+                state.entries[indx].sublist.forEach((innerEl, innerIndx) => {
+                    if (innerEl.value === action.payload.value) {
+                        state.entries[indx].sublist[innerIndx].checked = state.entries[indx].sublist[innerIndx].checked ? false : true;
+                        state.currentSubItems = state.entries[indx].sublist;
+                    }
+                });
             }
         });
     })
@@ -36,15 +49,23 @@ const todoReducer = createReducer(init, (builder) => {
         state.entries.forEach((el, indx) => {
             if (el.value === action.payload.parentItem) {
                 state.currentSubItems.push({value: action.payload.value, checked: false});
-                state.entries[indx].subItems.push({value: action.payload.value, checked: false});
+                state.entries[indx].sublist.push({value: action.payload.value, checked: false});
             }
         });
     })
     .addCase(types.SET_CURRENT_ITEM, (state, action) => {
         state.entries.forEach(el => {
             if (el.value === action.payload) {
-                state.currentSubItems = el.subItems;
+                state.currentSubItems = el.sublist;
                 state.currentParentName = el.value;
+            }
+        });
+    })
+    .addCase(types.COMPLETE_SUB_ITEMS, (state, action) => {
+        state.entries.forEach((el, indx) => {
+            if (el.value === state.currentParentName) {
+                state.entries[indx].sublist = state.entries[indx].sublist.filter(el => !el.checked);
+                state.currentSubItems = state.entries[indx].sublist;
             }
         });
     });

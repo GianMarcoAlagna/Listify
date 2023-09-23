@@ -46,6 +46,7 @@ module.exports = {
             publicPath: '/build',
             directory: path.resolve(__dirname, 'build'),
         },
+        historyApiFallback: true,
         proxy: {
             '/': 'http://localhost:3000',
         },

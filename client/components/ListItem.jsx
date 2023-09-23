@@ -1,10 +1,10 @@
 import { useDispatch } from 'react-redux';
-import { updateCheckedItemActionCreator } from '../actions/todoActions';
+import { updateCheckedItemActionCreator, updateCheckedSubItemActionCreator } from '../actions/todoActions';
 import { useSpringValue, animated } from 'react-spring';
 import { useEffect, useState } from 'react';
 import * as actions from "../actions/todoActions.js"
 
-const ListItem = ({ id, value, animate, setShowSublist }) => {
+const ListItem = ({ id, value, animate, setShowSublist, subItem }) => {
     const dispatch = useDispatch();
     const opacity = useSpringValue(0);
     const [checked, setChecked] = useState(false);
@@ -33,14 +33,14 @@ const ListItem = ({ id, value, animate, setShowSublist }) => {
                     value={"check"}
                     onChange={(e) => {
                         setChecked(e.target.checked);
-                        dispatch(updateCheckedItemActionCreator(id));
+                        dispatch(subItem ? updateCheckedSubItemActionCreator(id) : updateCheckedItemActionCreator(id));
                     }}
                 />
                 <span>
                     { value }
                 </span>
             </label>
-            <button onClick={ handleSubMenuClick } className='SubMenuButton'>&gt;</button>
+            {!subItem && <button onClick={ handleSubMenuClick } className='SubMenuButton'>&gt;</button>}
         </animated.div>
     );
 }
