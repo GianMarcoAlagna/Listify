@@ -1,12 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as actions from '../actions/todoActions.js';
-import { sendSignoutRequest } from '../utils/fetchUserData.js';
+import { sendSignoutRequest, sendUserData } from '../utils/fetchUserData.js';
+import formatState from '../utils/formatState.js';
 
 const NavBar = ({ reference, innerText, path, textEditorRef }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const userState = useSelector(state => state.todoReducer);
+
     const handleLink = () => {
         if (innerText === 'Todo List') {
             dispatch(actions.updateTextEditorActionCreator(textEditorRef.current.getContent()));
@@ -18,20 +21,22 @@ const NavBar = ({ reference, innerText, path, textEditorRef }) => {
         }, 950);
     }
     const handleSignout = () => {
-        // dispatch(actions.sendDataActionCreator());
-        sendSignoutRequest()
-        .then(res => {            
-            if(res=== 200) {
-                reference.current.classList.add('LinkClickTransition');
-                setTimeout(() => {
-                    reference.current.classList.remove('LinkClickTransition');
-                    return navigate('/');
-                }, 950);
-            } else {
-                console.log(res)
-                return console.log('Signout Failed');
-            }
-        })
+        sendUserData(formatState(userState))
+        .then(() => {
+            sendSignoutRequest()
+            .then(res => {            
+                if(res=== 200) {
+                    reference.current.classList.add('LinkClickTransition');
+                    setTimeout(() => {
+                        reference.current.classList.remove('LinkClickTransition');
+                        return navigate('/');
+                    }, 950);
+                } else {
+                    console.log(res)
+                    return console.log('Signout Failed');
+                }
+            });
+        });
     }
 
     return (

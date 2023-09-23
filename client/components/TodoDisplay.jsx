@@ -1,19 +1,19 @@
 import '../css/Todo.css';
-import ListItem from './ListItem.jsx';
-// import { useTransition, animated } from 'react-spring';
+import parseEntries from '../utils/parseEntries';
+import SubItemContainer from './SubItemContainer.jsx';
+import { useState } from 'react';
 
 function TodoDisplay({ entries, animate }) {
-    const displayList = Object.keys(entries).map(entryKey => 
-        <ListItem key={entries[entryKey].value} 
-        id={entries[entryKey].value} 
-        value={entries[entryKey].value}
-        animate={animate} />
-    );
+    const [ showSublist, setShowSublist ] = useState(false);
+    const displayList = parseEntries(entries, animate, setShowSublist);
     return (
         <div className='displayList'>
-            <div className='innerDisplayList'>
+            <div className={!showSublist ? `innerDisplayList` : `innerDisplayListHide`}>
                 { displayList }
             </div>
+            <SubItemContainer 
+            showSublist={ showSublist } 
+            setShowSublist={ setShowSublist } />
         </div>
     );
 }

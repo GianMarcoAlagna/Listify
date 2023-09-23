@@ -3,7 +3,14 @@ import * as types from '../constants/actionTypes.js';
 export const addEntryActionCreator = itemValue => (
     {
         type: types.ADD_ENTRY,
-        payload: {value: itemValue}
+        payload: {value: itemValue, checked: false, subItems: []}
+    }
+);
+
+export const addSubEntryActionCreator = (parentItem, itemValue) => (
+    {
+        type: types.ADD_SUB_ENTRY,
+        payload: {parentItem: parentItem, value: itemValue, checked: false}
     }
 );
 
@@ -32,5 +39,12 @@ export const setUserDataActionCreator = user => (
     {
         type: types.SET_USER_DATA,
         payload: user
+    }
+);
+
+export const setCurrentItemActionCreator = item => (
+    {
+        type: types.SET_CURRENT_ITEM,
+        payload: item
     }
 );

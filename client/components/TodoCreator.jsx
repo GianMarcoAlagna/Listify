@@ -14,7 +14,7 @@ function TodoCreator() {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="creatorForm">
+        <form onSubmit={handleSubmit} className='creatorForm'>
             <input 
                 className="todoInput" 
                 type="text" 
