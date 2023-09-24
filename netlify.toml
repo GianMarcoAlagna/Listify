@@ -1,0 +1,4 @@
+[build]
+  base = "todo"
+  command = "npm run build"
+  publish = "build"
