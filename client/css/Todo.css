@@ -56,6 +56,18 @@ body {
     }
 }
 
+#SubButton {
+    margin: 4px;
+    height: 3vh;
+    width: 4vw;
+    align-self: center;
+}
+
+#SubItemCreator {
+    display: flex;
+    flex-direction: row;
+}
+
 .moveInAnim {
     animation: move-in 1s;
 }
@@ -64,15 +76,28 @@ body {
     animation: move-down 1s;
 }
 
+.SubItemContainer {
+    border: 2px solid white;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    display: none;
+    transition: transform;
+}
+
+.SubItemContainerShow {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    border-radius: 5px;
+    animation: fly-in-right 1s;
+    animation-fill-mode: both;
+    overflow-y: scroll;
+}
+
 #completeButton {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
     width: 10vw;
     height: 6vh;
-}
-
-.SubMenu {
-    color: white;
-    margin: 0px 10px;
 }
 
 .MCEMain {
@@ -224,7 +249,7 @@ input[type='button'] {
     color: rgb(255, 255, 255);
     width: fit-content;
     border: 1.5px solid rgb(255, 255, 255);
-    height: 5vh;
+    height: 3vh;
     border-radius: 8px;
     animation: fade-in-todo 1s;
     animation-delay: 1s;
@@ -287,6 +312,10 @@ input:active {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.innerDisplayListHide {
+    display: none;
 }
 
 .creator {

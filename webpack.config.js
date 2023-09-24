@@ -1,8 +1,10 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-    entry: "./client/index.js",
+    entry: './client/index.js',
     mode: 'development',
     output: {
         path: path.resolve(__dirname, 'build'),
@@ -16,9 +18,14 @@ module.exports = {
             use: {
                 loader: 'babel-loader',
                 options: {
-                    presets: ['@babel/preset-env', '@babel/preset-react']
+                    presets: ['@babel/preset-env', 
+                    ['@babel/preset-react', {"runtime": "automatic"}]]
                 }
             },
+        },
+        {
+            test: /skin\.css$/i,
+            use: [ MiniCssExtractPlugin.loader, 'css-loader' ],
         },
         {
             test: /\.s?css$/i,
@@ -32,21 +39,24 @@ module.exports = {
             test: /\.(png|svg|jpg|jpeg|gif)$/i,
             type: 'asset/resource',
         },
-      ]
+      ],
     },
     devServer: {
         static: {
             publicPath: '/build',
             directory: path.resolve(__dirname, 'build'),
         },
+        historyApiFallback: true,
         proxy: {
             '/': 'http://localhost:3000',
         },
         port: 8080,
     },
     plugins: [
+        new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
             template: 'index.html'
         }),
+        new Dotenv(),
     ],
 }
