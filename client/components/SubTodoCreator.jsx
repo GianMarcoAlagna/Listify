@@ -7,27 +7,33 @@ const SubCreator = styled.form`
     align-self: flex-start;
     justify-self: flex-start;
     width: 20vw;
-    padding: 10px;
+    padding: 0px;
     margin: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    // align-items: center;
-    // border: 2px solid white;
 `
 
 const SubCreatorSubmit = styled.input`
     background-color: rgb(89, 189, 255);
     color: rgb(255, 255, 255);
-    margin: 3px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    margin: 4px;
     width: fit-content;
     height: 5vh;
     border-radius: 8px;
     border: 2px solid white;
+    transition: transform 1s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
 `
 
 const SubCreatorText = styled.input`
     backdrop-filter: blur(8px);
+    color: white;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
     background-color: rgb(0, 0, 0, 0);
     width: 14vw;
     height: 4vh;
@@ -36,6 +42,11 @@ const SubCreatorText = styled.input`
     font-weight: 500;
     cursor: text;
     border: 2px solid white;
+    transition: transform 1s;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
 `
 
 function SubTodoCreator() {

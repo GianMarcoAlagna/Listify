@@ -196,8 +196,8 @@ form {
     cursor: text;
     height: 7vh;
     border-radius: 8px;
-    font-size: 30px;
-    font-weight: 500;
+    font-size: 2.2vw;
+    font-weight: 550;
     transition: transform 1s;
 }
 

@@ -36,7 +36,7 @@ const ListItem = ({ id, value, animate, setShowSublist, subItem }) => {
                         dispatch(subItem ? updateCheckedSubItemActionCreator(id) : updateCheckedItemActionCreator(id));
                     }}
                 />
-                <span>
+                <span className='ListItemValue'>
                     { value }
                 </span>
             </label>
