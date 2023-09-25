@@ -28,6 +28,7 @@ const SubCreatorSubmit = styled.input`
 
     &:hover {
         transform: scale(1.1);
+        background-color: rgb(42, 135, 197);
     }
 `
 

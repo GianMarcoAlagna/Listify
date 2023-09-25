@@ -29,6 +29,30 @@ body {
     }
 }
 
+@keyframes fade-out-todo {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes move-out-todo {
+    /*
+    Using position absolute here fakes the effect of the element no longer taking up space,
+    basically a bandaid on the fact that the display prop isn't animatable, thanks CSS.
+    */
+    from {
+        position: absolute;
+        transform: translateX(0vw);
+    }
+    to {
+        position: absolute;
+        transform: translateX(-100vw);
+    }
+}
+
 @keyframes expand-header-after {
     from {
         width: 0vw;
@@ -53,6 +77,15 @@ body {
     }
     to {
         transform: translatey(0vh);
+    }
+}
+
+@keyframes leave {
+    from {
+        transform: translatex(0);
+    }
+    to {
+        transform: translatex(60vw);
     }
 }
 
@@ -96,6 +129,10 @@ body {
     animation: fly-in-right 1s;
     animation-fill-mode: both;
     overflow-y: scroll;
+}
+
+.SubItemContainerClosing {
+    animation: leave 1s;
 }
 
 #completeButton {
@@ -168,6 +205,7 @@ body {
 .RouterLink:hover {
     text-decoration: underline;
     transform: scale(1.1);
+    background-color: rgb(42, 135, 197);
 }
 
 .creatorForm {
@@ -225,6 +263,7 @@ body {
 
 .todoInput[type='submit']:hover {
     transform: scale(1.1);
+    background-color: rgb(42, 135, 197);
 }
 
 .todoInput[type='button'] {
@@ -241,6 +280,7 @@ body {
 
 .todoInput[type='button']:hover {
     transform: scale(1.1);
+    background-color: rgb(42, 135, 197);
 }
 
 input[type='button'] {
@@ -278,6 +318,7 @@ input[type='button'] {
 
 input[type='button']:hover {
     transform: scale(1.1);
+    background-color: rgb(42, 135, 197);
 }
 
 input:active {
@@ -285,10 +326,11 @@ input:active {
 }
 
 .todoSpan {
-    height: 60px;
-    width: 500px;
+    height: 3vw;
+    width: 32vw;
+    white-space: nowrap;
     margin: 0;
-    font-size: 32px;
+    font-size: 2vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -324,12 +366,18 @@ input:active {
 
 .innerDisplayList {
     display: flex;
+    animation: fade-in-todo 1s;
+    animation-fill-mode: both;
     flex-direction: column;
     align-items: flex-start;
 }
 
 .innerDisplayListHide {
-    display: none;
+    animation: move-out-todo 2s;
+    animation-fill-mode: both;
+    flex-direction: column;
+    align-items: flex-start;
+    display: flex;
 }
 
 .creator {

@@ -1,14 +1,15 @@
 import '../css/Todo.css';
 import parseEntries from '../utils/parseEntries';
 import SubItemContainer from './SubItemContainer.jsx';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 function TodoDisplay({ entries, animate }) {
     const [ showSublist, setShowSublist ] = useState(false);
+    const innerDisplayRef = useRef();
     const displayList = parseEntries(entries, animate, setShowSublist);
     return (
         <div className='displayList'>
-            <div className={!showSublist ? `innerDisplayList` : `innerDisplayListHide`}>
+            <div ref={innerDisplayRef} className={!showSublist ? `innerDisplayList` : `innerDisplayListHide`}>
                 { displayList }
             </div>
             <SubItemContainer 

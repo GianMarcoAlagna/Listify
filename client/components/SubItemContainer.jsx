@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { useRef } from 'react';
 import * as actions from '../actions/todoActions';
 import SubTodoCreator from "./SubTodoCreator.jsx"
 import ListItem from "./ListItem.jsx";
@@ -6,6 +7,7 @@ import ListItem from "./ListItem.jsx";
 function SubItemContainer({ showSublist, setShowSublist }) {
     const sublist = useSelector(state => state.todoReducer.currentSubItems);
     const dispatch = useDispatch();
+    const mainRef = useRef(null);
     const subListArray = sublist.map(el => {
         return (
             <ListItem 
@@ -22,9 +24,15 @@ function SubItemContainer({ showSublist, setShowSublist }) {
     }
 
     return (
-        <div className={showSublist ? 'SubItemContainerShow' : 'SubItemContainer'}>
+        <div ref={mainRef} className={showSublist ? 'SubItemContainerShow' : 'SubItemContainer'}>
             <div id='SubItemCreator'>
-                <input type='button' id='SubButton' value='Close' onClick={() => setShowSublist(!showSublist)} />
+                <input type='button' id='SubButton' value='Close' onClick={() => {
+                    mainRef.current.classList.add('SubItemContainerClosing');
+                    setTimeout(() => {
+                        mainRef.current.classList.remove('SubItemContainerClosing');
+                        setShowSublist(!showSublist)
+                    }, 500);
+                }} />
                 <SubTodoCreator />
             </div>
             <input

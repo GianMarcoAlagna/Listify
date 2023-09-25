@@ -118,6 +118,10 @@ form {
     background-position: 26.6vw;
 }
 
+#usernameInput:focus {
+    border: 3px solid rgb(0, 102, 255);
+}
+
 #passwordInput {
     background-image: url(../../assets/lock.svg);
     background-repeat: no-repeat;
@@ -125,6 +129,10 @@ form {
     animation: fly-in-right 1s;
     animation-delay: 1s;
     animation-fill-mode: backwards;
+}
+
+#passwordInput:focus {
+    border: 3px solid rgb(0, 102, 255);
 }
 
 .loginContainer {
