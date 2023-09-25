@@ -98,7 +98,23 @@ const userController = {
     removeCookie: function(req, res, next) {
         res.clearCookie('token');
         return next();
-    }
+    },
+    resetPassword: async function(req, res, next) {
+        const { username, password } = req.body;
+        // const hashPass = bcrypt.hashSync(password, 10);
+        try {
+            const user = await User.findOne({ username });
+            try {
+                user.password = password;
+                user.save();
+            } catch (err) {
+                return next(createError(err, 500, 'error saving new credentials', 'userController', 'resetPassword'));
+            }
+        } catch (err) {
+            return next(createError(err, 500,`error finding user ${username}`, 'userController', 'resetPassword'));
+        }
+        return next();
+    },
 }
 
 module.exports = userController;

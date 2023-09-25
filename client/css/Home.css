@@ -135,6 +135,26 @@ form {
     border: 3px solid rgb(0, 102, 255);
 }
 
+#forgotPassword {
+    width: fit-content;
+    height: fit-content;
+    background-color: #ffffff00;
+    border: none !important;
+    outline: none;
+    padding: 0px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0px;
+    animation: move-up 2s;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+
+#forgotPassword:hover {
+    text-decoration: underline;
+}
+
 .loginContainer {
     background-color: rgba(255, 255, 255, 0.043);
     width: 50vw;
@@ -216,7 +236,7 @@ form {
 
 .loginContainer .buttonInput {
     background-color: rgb(89, 189, 255);
-    width: 15vw;
+    width: 16vw;
     height: 6vh;
     border-radius: 8px;
     font-size: 30px;

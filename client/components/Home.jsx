@@ -10,6 +10,7 @@ function Home() {
     const [invalidCreds, setInvalidCreds] = useState(false);
     const [signup, setSignup] = useState(true)
     const [successLogin, setSuccessLogin] = useState(false);
+    const [forgotPassword, setForgotPassword] = useState(false);
     const dispatch = useDispatch();
     const invalidCredsRef = useRef(null);
     const navigate = useNavigate();
@@ -59,6 +60,10 @@ function Home() {
         return setSignup(!signup);
     }
 
+    function handleForgotPassword() {
+        return navigate('/forgot-password');
+    }
+
     return (
         <div className="homeMain">
             <div className={`loginContainer ${successLogin ? "closeAnim" : ""}`}>
@@ -84,6 +89,7 @@ function Home() {
                         />
                         <input className='buttonInput delayOne' type="submit" value={signup ? "Signup" : "Login"} />
                         {signup ? <input id="toggleButton" type="button" value="Login" onClick={setMode} /> : <input id="toggleButton" type="button" value="Sign Up" onClick={setMode}/>}
+                        <input type='button' id='forgotPassword' value='Forgot Password' onClick={handleForgotPassword}></input>
                     </form>
                 </div>
             </div>
