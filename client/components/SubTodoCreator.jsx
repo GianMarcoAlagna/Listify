@@ -19,7 +19,8 @@ const SubCreatorSubmit = styled.input`
     color: rgb(255, 255, 255);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
     margin: 4px;
-    width: fit-content;
+    width: 10vw;
+    height: 6vh;
     height: 5vh;
     border-radius: 8px;
     border: 2px solid white;
@@ -34,6 +35,7 @@ const SubCreatorText = styled.input`
     backdrop-filter: blur(8px);
     color: white;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    padding: 10px;
     background-color: rgb(0, 0, 0, 0);
     width: 14vw;
     height: 4vh;

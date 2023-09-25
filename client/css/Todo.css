@@ -59,8 +59,8 @@ body {
 #SubButton {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
     margin: 3px;
-    height: 3vh;
-    width: 3vw;
+    height: 4vh;
+    width: 4vw;
     padding: 0px;
     align-self: center;
 }
@@ -90,7 +90,7 @@ body {
     display: flex;
     flex-direction: column;
     border: 3px solid white;
-    margin: 4px;
+    margin: 10px;
     align-items: center;
     border-radius: 5px;
     animation: fly-in-right 1s;
@@ -106,8 +106,9 @@ body {
 
 #subCompleteButton {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-    width: 5vw;
-    height: 3vh;
+    margin: 0.1em;
+    width: 7vw;
+    height: 4vh;
 }
 
 .MCEMain {
@@ -259,7 +260,7 @@ input[type='button'] {
     background-color: rgb(89, 153, 255);
     text-align: center;
     color: rgb(255, 255, 255);
-    width: 1.2vw;
+    width: fit-content;
     border: 1.5px solid rgb(255, 255, 255);
     height: 6vh;
     border-radius: 8px;
