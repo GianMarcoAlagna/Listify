@@ -1,12 +1,16 @@
 import { useRef, useState } from 'react';
 import '../css/Home.css'
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import fetchUserData from '../utils/fetchUserData';
+import * as actions from '../actions/todoActions.js';
 
 function Home() {
     const [credentials, setCredentials] = useState({username: '', password: ''});
     const [invalidCreds, setInvalidCreds] = useState(false);
     const [signup, setSignup] = useState(true)
     const [successLogin, setSuccessLogin] = useState(false);
+    const dispatch = useDispatch();
     const invalidCredsRef = useRef(null);
     const navigate = useNavigate();
 
@@ -32,6 +36,12 @@ function Home() {
         }));
         if (res.status === 200) {
             setSuccessLogin(true);
+            /*
+            Get User's Data from server and navigate to todo page,
+            on successful authentication
+             */
+            const userData = await fetchUserData();
+            dispatch(actions.setUserDataActionCreator(userData));
             setTimeout(() => {
                 setInvalidCreds(false);
                 return navigate('/todo')

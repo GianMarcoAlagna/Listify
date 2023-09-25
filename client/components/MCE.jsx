@@ -5,20 +5,21 @@ import { useRef } from 'react';
 import { useSelector } from 'react-redux';
 import NavBar from './NavBar.jsx';
 
+const MCEContainer = styled.div`
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    box-shadow: 0px 10px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+`;
+
 function MCE() {
     const mainRef = useRef(null);
     const textEditorRef = useRef(null);
     const initialText = useSelector(state => state.todoReducer.textEditor);
     const apiKey = process.env.REACT_APP_TINYMCE_API_KEY;
-    const MCEContainer = styled.div`
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        width: fit-content;
-        height: fit-content;
-        box-shadow: 0px 10px 5px 10px rgba(0, 0, 0, 0.5);
-        border-radius: 5px;
-    `;
 
     return (
         <div ref={mainRef} className='moveInAnim'>

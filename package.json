@@ -38,6 +38,7 @@
     "@babel/preset-react": "^7.22.15",
     "babel": "^6.23.0",
     "babel-loader": "^9.1.3",
+    "babel-plugin-styled-components": "^2.1.4",
     "concurrently": "^8.2.1",
     "css-loader": "^6.8.1",
     "dotenv-webpack": "^8.0.1",

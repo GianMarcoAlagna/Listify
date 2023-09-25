@@ -26,15 +26,15 @@ function SubItemContainer({ showSublist, setShowSublist }) {
             <div id='SubItemCreator'>
                 <input type='button' id='SubButton' value='Close' onClick={() => setShowSublist(!showSublist)} />
                 <SubTodoCreator />
-                <input
-                    id='completeButton'
-                    type="button"
-                    value="Complete"
-                    onClick={() => {
-                        handleSubComplete();
-                    }}
-                />
             </div>
+            <input
+                id='subCompleteButton'
+                type="button"
+                value="Complete"
+                onClick={() => {
+                    handleSubComplete();
+                }}
+            />
             <div>
                 { subListArray }
             </div>

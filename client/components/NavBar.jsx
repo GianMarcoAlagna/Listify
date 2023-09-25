@@ -12,6 +12,7 @@ const NavBar = ({ reference, innerText, path, textEditorRef }) => {
 
     const handleLink = () => {
         if (innerText === 'Todo List') {
+            console.log(textEditorRef.current.getContent())
             dispatch(actions.updateTextEditorActionCreator(textEditorRef.current.getContent()));
         }
         reference.current.classList.add('LinkClickTransition');
