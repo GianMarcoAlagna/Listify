@@ -7254,34 +7254,40 @@ function ForgotPassword() {
   function handleLogin() {
     return navigate('/');
   }
-  function handleSubmit() {
+  function handleSubmit(_x) {
     return _handleSubmit.apply(this, arguments);
   }
   function _handleSubmit() {
-    _handleSubmit = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+    _handleSubmit = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
       var response;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            _context.next = 2;
+            e.preventDefault();
+            _context.next = 3;
             return fetch('/user/forgot', {
               method: 'POST',
+              credentials: 'include',
+              mode: 'cors',
               body: JSON.stringify({
                 username: credentials.username,
                 password: credentials.password
-              })
+              }),
+              headers: {
+                'Content-Type': 'application/json'
+              }
             });
-          case 2:
+          case 3:
             response = _context.sent;
             if (!(response.status === 200)) {
-              _context.next = 8;
+              _context.next = 9;
               break;
             }
             setInvalidCreds(false);
             return _context.abrupt("return", handleLogin());
-          case 8:
-            return _context.abrupt("return", setInvalidCreds(true));
           case 9:
+            return _context.abrupt("return", setInvalidCreds(true));
+          case 10:
           case "end":
             return _context.stop();
         }
@@ -7335,7 +7341,10 @@ function ForgotPassword() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
             className: "buttonInput delayOne",
             type: "submit",
-            value: "Reset Password"
+            value: "Reset Password",
+            onClick: function onClick(e) {
+              return handleSubmit(e);
+            }
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
             type: "button",
             id: "forgotPassword",
@@ -7413,10 +7422,6 @@ function Home() {
     _useState8 = _slicedToArray(_useState7, 2),
     successLogin = _useState8[0],
     setSuccessLogin = _useState8[1];
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-    _useState10 = _slicedToArray(_useState9, 2),
-    forgotPassword = _useState10[0],
-    setForgotPassword = _useState10[1];
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
   var invalidCredsRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useNavigate)();
@@ -9328,25 +9333,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/Quicksand/static/Quicksand-Regular.ttf */ "./assets/Quicksand/static/Quicksand-Regular.ttf"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `* {
+___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
+  font-family: Quicksand;
+  src: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+}
+* {
   box-sizing: border-box;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; */
+  font-family: Quicksand;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}`, "",{"version":3,"sources":["webpack://./client/css/index.css"],"names":[],"mappings":"AAAA;EACE,sBAAA;AACF;;AAEA;EACE,SAAA;EACA,8JAAA;EAGA,mCAAA;EACA,kCAAA;AADF;;AAIA;EACE,+EAAA;AADF","sourcesContent":["* {\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',\r\n    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',\r\n    sans-serif;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n\r\ncode {\r\n  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',\r\n    monospace;\r\n}\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./client/css/index.css"],"names":[],"mappings":"AAAA;EACE,sBAAA;EACA,4CAAA;AACF;AAEA;EACE,sBAAA;EACA;mFAAA;EAEA,sBAAA;AAAF;;AAGA;EACE,SAAA;EACA,mCAAA;EACA,kCAAA;AAAF;;AAGA;EACE,+EAAA;AAAF","sourcesContent":["@font-face {\r\n  font-family: Quicksand;\r\n  src: url(../../assets/Quicksand/static/Quicksand-Regular.ttf);\r\n}\r\n\r\n* {\r\n  box-sizing: border-box;\r\n  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',\r\n  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; */\r\n  font-family: Quicksand;\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n\r\ncode {\r\n  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',\r\n    monospace;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -52313,6 +52329,17 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ../cjs/use-sync-external-store-shim/with-selector.development.js */ "./node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.development.js");
 }
 
+
+/***/ }),
+
+/***/ "./assets/Quicksand/static/Quicksand-Regular.ttf":
+/*!*******************************************************!*\
+  !*** ./assets/Quicksand/static/Quicksand-Regular.ttf ***!
+  \*******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "67e7ce07307c681fb49d.ttf";
 
 /***/ }),
 

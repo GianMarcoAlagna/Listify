@@ -1,4 +1,4 @@
-import { createReducer, current } from "@reduxjs/toolkit";
+import { createReducer } from "@reduxjs/toolkit";
 import * as types from '../constants/actionTypes.js';
 
 const init = {
