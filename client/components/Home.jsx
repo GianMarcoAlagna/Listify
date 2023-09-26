@@ -10,7 +10,6 @@ function Home() {
     const [invalidCreds, setInvalidCreds] = useState(false);
     const [signup, setSignup] = useState(true)
     const [successLogin, setSuccessLogin] = useState(false);
-    const [forgotPassword, setForgotPassword] = useState(false);
     const dispatch = useDispatch();
     const invalidCredsRef = useRef(null);
     const navigate = useNavigate();
