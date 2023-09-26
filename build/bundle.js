@@ -7073,10 +7073,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Home_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Home.jsx */ "./client/components/Home.jsx");
 /* harmony import */ var _components_Todo_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Todo.jsx */ "./client/components/Todo.jsx");
 /* harmony import */ var _components_MCE_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/MCE.jsx */ "./client/components/MCE.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _css_App_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./css/App.css */ "./client/css/App.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_ForgotPassword_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/ForgotPassword.jsx */ "./client/components/ForgotPassword.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -7085,17 +7087,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
     className: "App",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.BrowserRouter, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Routes, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.BrowserRouter, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Routes, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
           path: "/",
           Component: _components_Home_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+          path: "/forgot-password",
+          Component: _components_ForgotPassword_jsx__WEBPACK_IMPORTED_MODULE_4__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
           path: "/todo",
           Component: _components_Todo_jsx__WEBPACK_IMPORTED_MODULE_1__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
           path: "/text",
           Component: _components_MCE_jsx__WEBPACK_IMPORTED_MODULE_2__["default"]
         })]
@@ -7199,6 +7204,153 @@ var completeSubItemsActionCreator = function completeSubItemsActionCreator(item)
 
 /***/ }),
 
+/***/ "./client/components/ForgotPassword.jsx":
+/*!**********************************************!*\
+  !*** ./client/components/ForgotPassword.jsx ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw new Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw new Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+function ForgotPassword() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      username: '',
+      password: ''
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    credentials = _useState2[0],
+    setCredentials = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState4 = _slicedToArray(_useState3, 2),
+    invalidCreds = _useState4[0],
+    setInvalidCreds = _useState4[1];
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useNavigate)();
+  function handleLogin() {
+    return navigate('/');
+  }
+  function handleSubmit() {
+    return _handleSubmit.apply(this, arguments);
+  }
+  function _handleSubmit() {
+    _handleSubmit = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var response;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return fetch('/user/forgot', {
+              method: 'POST',
+              body: JSON.stringify({
+                username: credentials.username,
+                password: credentials.password
+              })
+            });
+          case 2:
+            response = _context.sent;
+            if (!(response.status === 200)) {
+              _context.next = 8;
+              break;
+            }
+            setInvalidCreds(false);
+            return _context.abrupt("return", handleLogin());
+          case 8:
+            return _context.abrupt("return", setInvalidCreds(true));
+          case 9:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee);
+    }));
+    return _handleSubmit.apply(this, arguments);
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "homeMain",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "loginContainer",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+        className: "welcomeText",
+        children: "Forgot Password"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "innerLogin",
+        children: [invalidCreds ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          id: "invalidCreds show",
+          children: "Invalid Credentials"
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          id: "invalidCreds",
+          children: "Invalid Credentials"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
+          onSubmit: handleSubmit,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            className: "textInput delayOne",
+            id: "usernameInput",
+            autoComplete: "off",
+            type: "text",
+            placeholder: "Username",
+            onChange: function onChange(event) {
+              return setCredentials(function (prevValue) {
+                return _objectSpread(_objectSpread({}, prevValue), {}, {
+                  username: event.target.value
+                });
+              });
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            className: "textInput delayOne",
+            id: "passwordInput",
+            autoComplete: "off",
+            type: "password",
+            placeholder: "New Password",
+            onChange: function onChange(event) {
+              return setCredentials(function (prevValue) {
+                return _objectSpread(_objectSpread({}, prevValue), {}, {
+                  password: event.target.value
+                });
+              });
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            className: "buttonInput delayOne",
+            type: "submit",
+            value: "Reset Password"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            type: "button",
+            id: "forgotPassword",
+            value: "Login",
+            onClick: handleLogin
+          })]
+        })]
+      })]
+    })
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ForgotPassword);
+
+/***/ }),
+
 /***/ "./client/components/Home.jsx":
 /*!************************************!*\
   !*** ./client/components/Home.jsx ***!
@@ -7261,6 +7413,10 @@ function Home() {
     _useState8 = _slicedToArray(_useState7, 2),
     successLogin = _useState8[0],
     setSuccessLogin = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState10 = _slicedToArray(_useState9, 2),
+    forgotPassword = _useState10[0],
+    setForgotPassword = _useState10[1];
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
   var invalidCredsRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useNavigate)();
@@ -7354,6 +7510,9 @@ function Home() {
   function setMode() {
     return setSignup(!signup);
   }
+  function handleForgotPassword() {
+    return navigate('/forgot-password');
+  }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
     className: "homeMain",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -7413,6 +7572,11 @@ function Home() {
             type: "button",
             value: "Sign Up",
             onClick: setMode
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+            type: "button",
+            id: "forgotPassword",
+            value: "Forgot Password",
+            onClick: handleForgotPassword
           })]
         })
       })]
@@ -7680,10 +7844,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions_todoActions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/todoActions */ "./client/actions/todoActions.js");
-/* harmony import */ var _SubTodoCreator_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SubTodoCreator.jsx */ "./client/components/SubTodoCreator.jsx");
-/* harmony import */ var _ListItem_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ListItem.jsx */ "./client/components/ListItem.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _actions_todoActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/todoActions */ "./client/actions/todoActions.js");
+/* harmony import */ var _SubTodoCreator_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SubTodoCreator.jsx */ "./client/components/SubTodoCreator.jsx");
+/* harmony import */ var _ListItem_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ListItem.jsx */ "./client/components/ListItem.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -7697,8 +7864,9 @@ function SubItemContainer(_ref) {
     return state.todoReducer.currentSubItems;
   });
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_0__.useDispatch)();
+  var mainRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
   var subListArray = sublist.map(function (el) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ListItem_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ListItem_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
       id: el.value,
       value: el.value,
       animate: undefined,
@@ -7707,28 +7875,33 @@ function SubItemContainer(_ref) {
     });
   });
   function handleSubComplete() {
-    return dispatch(_actions_todoActions__WEBPACK_IMPORTED_MODULE_1__.completeSubItemsActionCreator());
+    return dispatch(_actions_todoActions__WEBPACK_IMPORTED_MODULE_2__.completeSubItemsActionCreator());
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    ref: mainRef,
     className: showSublist ? 'SubItemContainerShow' : 'SubItemContainer',
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       id: "SubItemCreator",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
         type: "button",
         id: "SubButton",
         value: "Close",
         onClick: function onClick() {
-          return setShowSublist(!showSublist);
+          mainRef.current.classList.add('SubItemContainerClosing');
+          setTimeout(function () {
+            mainRef.current.classList.remove('SubItemContainerClosing');
+            setShowSublist(!showSublist);
+          }, 500);
         }
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_SubTodoCreator_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_SubTodoCreator_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
       id: "subCompleteButton",
       type: "button",
       value: "Complete",
       onClick: function onClick() {
         handleSubComplete();
       }
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       children: subListArray
     })]
   });
@@ -7773,11 +7946,11 @@ var SubCreator = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].form.
 var SubCreatorSubmit = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].input.withConfig({
   displayName: "SubTodoCreator__SubCreatorSubmit",
   componentId: "sc-azd036-1"
-})(["background-color:rgb(89,189,255);color:rgb(255,255,255);box-shadow:0px 0px 10px 0px rgba(0,0,0,0.5);margin:4px;width:fit-content;height:5vh;border-radius:8px;border:2px solid white;transition:transform 1s;&:hover{transform:scale(1.1);}"]);
+})(["background-color:rgb(89,189,255);color:rgb(255,255,255);box-shadow:0px 0px 10px 0px rgba(0,0,0,0.5);margin:4px;width:10vw;height:6vh;height:5vh;border-radius:8px;border:2px solid white;transition:transform 1s;&:hover{transform:scale(1.1);background-color:rgb(42,135,197);}"]);
 var SubCreatorText = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].input.withConfig({
   displayName: "SubTodoCreator__SubCreatorText",
   componentId: "sc-azd036-2"
-})(["backdrop-filter:blur(8px);color:white;box-shadow:0px 0px 10px 0px rgba(0,0,0,0.5);background-color:rgb(0,0,0,0);width:14vw;height:4vh;border-radius:8px;font-size:large;font-weight:500;cursor:text;border:2px solid white;transition:transform 1s;&:hover{transform:translateY(-5px);}"]);
+})(["backdrop-filter:blur(8px);color:white;box-shadow:0px 0px 10px 0px rgba(0,0,0,0.5);padding:10px;background-color:rgb(0,0,0,0);width:14vw;height:4vh;border-radius:8px;font-size:large;font-weight:500;cursor:text;border:2px solid white;transition:transform 1s;&:hover{transform:translateY(-5px);}"]);
 function SubTodoCreator() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
     _useState2 = _slicedToArray(_useState, 2),
@@ -8004,10 +8177,12 @@ function TodoDisplay(_ref) {
     _useState2 = _slicedToArray(_useState, 2),
     showSublist = _useState2[0],
     setShowSublist = _useState2[1];
+  var innerDisplayRef = (0,react__WEBPACK_IMPORTED_MODULE_3__.useRef)();
   var displayList = (0,_utils_parseEntries__WEBPACK_IMPORTED_MODULE_1__["default"])(entries, animate, setShowSublist);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     className: "displayList",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      ref: innerDisplayRef,
       className: !showSublist ? "innerDisplayList" : "innerDisplayListHide",
       children: displayList
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_SubItemContainer_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -8519,6 +8694,10 @@ form {
   background-position: 26.6vw;
 }
 
+#usernameInput:focus {
+  border: 3px solid rgb(0, 102, 255);
+}
+
 #passwordInput {
   background-image: url(${___CSS_LOADER_URL_REPLACEMENT_1___});
   background-repeat: no-repeat;
@@ -8526,6 +8705,30 @@ form {
   animation: fly-in-right 1s;
   animation-delay: 1s;
   animation-fill-mode: backwards;
+}
+
+#passwordInput:focus {
+  border: 3px solid rgb(0, 102, 255);
+}
+
+#forgotPassword {
+  width: fit-content;
+  height: fit-content;
+  background-color: rgba(255, 255, 255, 0);
+  border: none !important;
+  outline: none;
+  padding: 0px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0px;
+  animation: move-up 2s;
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
+}
+
+#forgotPassword:hover {
+  text-decoration: underline;
 }
 
 .loginContainer {
@@ -8609,7 +8812,7 @@ form {
 
 .loginContainer .buttonInput {
   background-color: rgb(89, 189, 255);
-  width: 15vw;
+  width: 16vw;
   height: 6vh;
   border-radius: 8px;
   font-size: 30px;
@@ -8657,7 +8860,7 @@ form {
     animation: fly-in-left 1s;
     animation-delay: 2s;
     animation-fill-mode: both;
-} */`, "",{"version":3,"sources":["webpack://./client/css/Home.css"],"names":[],"mappings":"AAAA;EACI,sFAAA;EACA,qJAAA;EACA,sBAAA;AACJ;;AAEA;EACI;IACI,UAAA;IACA,6BAAA;EACN;EACE;IACI,UAAA;IACA,0BAAA;EACN;AACF;AAEA;EACI;IACI,UAAA;IACA,4BAAA;EAAN;EAEE;IACI,UAAA;IACA,0BAAA;EAAN;AACF;AAGA;EACI;IACI,cAAA;IACA,UAAA;EADN;EAGE;IACI,eAAA;IACA,UAAA;EADN;AACF;AAIA;EACI;IACI,2BAAA;EAFN;EAIE;IACI,0BAAA;EAFN;AACF;AAKA;EACI;IACI,0BAAA;EAHN;EAKE;IACI,4BAAA;EAHN;AACF;AAMA;EACI;IACI,UAAA;EAJN;EAME;IACI,WAAA;EAJN;AACF;AAOA;EACI,aAAA;EACA,YAAA;EACA,WAAA;EACA,YAAA;EACA,sBAAA;EACA,mBAAA;EACA,gBAAA;EACA,kBAAA;AALJ;;AAQA;EACI,WAAA;EACA,aAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,qBAAA;AALJ;;AAQA;EACI,uBAAA;EACA,UAAA;EACA,WAAA;EACA,qBAAA;EACA,mBAAA;EACA,8BAAA;EACA,wBAAA;AALJ;;AAQA;EACI,kCAAA;AALJ;;AAQA;EACI,iBAAA;EACA,WAAA;EACA,UAAA;AALJ;;AAQA;EACI,iBAAA;EACA,WAAA;EACA,UAAA;AALJ;;AAQA;EACI,yDAAA;EACA,uBAAA;EACA,4BAAA;EACA,2BAAA;AALJ;;AAQA;EACI,yDAAA;EACA,4BAAA;EACA,iCAAA;EACA,0BAAA;EACA,mBAAA;EACA,8BAAA;AALJ;;AAQA;EACI,4CAAA;EACA,WAAA;EACA,YAAA;EACA,kBAAA;EACA,uBAAA;EACA,0BAAA;EACA,+CAAA;EACA,kBAAA;AALJ;;AAQA;EACI,uBAAA;EACA,yBAAA;AALJ;;AAQA;EACI,gBAAA;EACA,WAAA;EACA,aAAA;EACA,aAAA;EACA,kBAAA;EACA,sBAAA;EACA,mBAAA;EACA,uBAAA;AALJ;;AAQA;EACI,eAAA;EACA,iBAAA;EACA,wBAAA;EACA,YAAA;EACA,WAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;AALJ;;AAQA;EACI,WAAA;EACA,WAAA;EACA,kBAAA;EACA,WAAA;EACA,yBAAA;EACA,wBAAA;EACA,8BAAA;EACA,mBAAA;EACA,WAAA;AALJ;;AAQA;EACI,0BAAA;EACA,iBAAA;EACA,WAAA;EACA,uBAAA;AALJ;;AAQA;EACI,iBAAA;EACA,uBAAA;EACA,wBAAA;AALJ;;AAQA;EACI,qCAAA;EACA,WAAA;EACA,YAAA;EACA,WAAA;EACA,kBAAA;EACA,gBAAA;EACA,gBAAA;EACA,wBAAA;AALJ;;AAQA;EACI,4BAAA;AALJ;;AAQA;EACI,mCAAA;EACA,WAAA;EACA,WAAA;EACA,kBAAA;EACA,eAAA;EACA,gBAAA;EACA,YAAA;EACA,qBAAA;EACA,mBAAA;EACA,8BAAA;EACA,wBAAA;AALJ;;AAQA;EACI,qBAAA;EACA,kCAAA;AALJ;;AAQA;EACI,qBAAA;EACA,qBAAA;AALJ;;AAQA;;;GAAA;AAKA;EACI,yBAAA;EACA,mBAAA;EACA,8BAAA;AANJ;;AASA;;;;;;;;;;;;;;;;GAAA","sourcesContent":["body {\r\n    /* background: linear-gradient(80deg, rgba(0, 68, 255, 0.498), rgba(0, 0, 0, 0.148)) */\r\n    background-image: url('https://cdnb.artstation.com/p/assets/images/images/042/415/777/original/oliver-goodenough-ezgif-com-gif-maker.gif?1634468806');\r\n    background-size: cover;\r\n}\r\n\r\n@keyframes fly-in-left {\r\n    from {\r\n        opacity: 0;\r\n        transform: translateX(-500px);\r\n    }\r\n    to {\r\n        opacity: 1;\r\n        transform: translateX(0px);\r\n    }\r\n}\r\n\r\n@keyframes fly-in-right {\r\n    from {\r\n        opacity: 0;\r\n        transform: translateX(500px);\r\n    }\r\n    to {\r\n        opacity: 1;\r\n        transform: translateX(0px);\r\n    }\r\n}\r\n\r\n@keyframes fade-in {\r\n    from {\r\n        font-size: 0px;\r\n        opacity: 0;\r\n    }\r\n    to {\r\n        font-size: 55px;\r\n        opacity: 1;\r\n    }\r\n}\r\n\r\n@keyframes move-up {\r\n    from {\r\n        transform: translatey(60vh);\r\n    }\r\n    to {\r\n        transform: translatey(0vh);\r\n    }\r\n}\r\n\r\n@keyframes move-down{\r\n    from {\r\n        transform: translatey(0vh);\r\n    }\r\n    to {\r\n        transform: translatey(100vh);\r\n    }\r\n}\r\n\r\n@keyframes expand-out {\r\n    from {\r\n        width: 0px;\r\n    }\r\n    to {\r\n        width: 50vw;\r\n    }\r\n}\r\n\r\nform {\r\n    display: flex;\r\n    padding: 3px;\r\n    width: 50vw;\r\n    height: 100%;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    overflow: hidden;\r\n    border-radius: 5px;\r\n}\r\n\r\n.homeMain {\r\n    width: 100%;\r\n    height: 100vh;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    animation: move-in 1s;\r\n}\r\n\r\n#toggleButton {\r\n    border: 2px solid white;\r\n    width: 6vw;\r\n    height: 4vh;\r\n    animation: move-up 2s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n    transition: transform 1s;\r\n}\r\n\r\n#toggleButton:hover {\r\n    background-color: rgb(64, 89, 172);\r\n}\r\n\r\n#invalidCreds {\r\n    color: whitesmoke;\r\n    width: 50vw;\r\n    opacity: 0;\r\n}\r\n\r\n#invalidCreds#show {\r\n    color: whitesmoke;\r\n    width: 50vw;\r\n    opacity: 1;\r\n}\r\n\r\n#usernameInput {\r\n    background-image: url(../../assets/username.svg);\r\n    background-size: 2.9dvw;\r\n    background-repeat: no-repeat;\r\n    background-position: 26.6vw;\r\n}\r\n\r\n#passwordInput {\r\n    background-image: url(../../assets/lock.svg);\r\n    background-repeat: no-repeat;\r\n    background-position: center right;\r\n    animation: fly-in-right 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n}\r\n\r\n.loginContainer {\r\n    background-color: rgba(255, 255, 255, 0.043);\r\n    width: 50vw;\r\n    height: 70vh;\r\n    border-radius: 5px;\r\n    border: 2px solid white;\r\n    backdrop-filter: blur(7px);\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    overflow-x: hidden;\r\n}\r\n\r\n.loginContainer.closeAnim {\r\n    animation: move-down 1s;\r\n    animation-fill-mode: both;\r\n}\r\n\r\n.innerLogin {\r\n    margin-top: 25px;\r\n    width: 100%;\r\n    height: 330px;\r\n    display: flex;\r\n    border-radius: 5px;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.loginContainer h1 {\r\n    font-size: 55px;\r\n    color: whitesmoke;\r\n    margin: 75px 0px 0px 0px;\r\n    height: 90px;\r\n    width: 50vw;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n.loginContainer h1::after {\r\n    content: \"\";\r\n    height: 3px;\r\n    border-radius: 5px;\r\n    width: 50vw;\r\n    background-color: #59bdff;\r\n    animation: expand-out 1s;\r\n    animation-fill-mode: backwards;\r\n    animation-delay: 2s;\r\n    margin: 5px;\r\n}\r\n\r\n.loginContainer input {\r\n    padding: 0px 10px 0px 10px;\r\n    color: whitesmoke;\r\n    margin: 8px;\r\n    border: 2px solid white;\r\n}\r\n\r\n.loginContainer input:focus {\r\n    color: whitesmoke;\r\n    border: 2px solid white;\r\n    outline: 1px solid white;\r\n}\r\n\r\n.loginContainer .textInput{\r\n    background-color: rgba(23, 23, 23, 0);\r\n    width: 30vw;\r\n    cursor: text;\r\n    height: 7vh;\r\n    border-radius: 8px;\r\n    font-size: 2.2vw;\r\n    font-weight: 550;\r\n    transition: transform 1s;\r\n}\r\n\r\n.loginContainer .textInput:hover{\r\n    transform: translateY(-10px);\r\n}\r\n\r\n.loginContainer .buttonInput {\r\n    background-color: rgb(89, 189, 255);\r\n    width: 15vw;\r\n    height: 6vh;\r\n    border-radius: 8px;\r\n    font-size: 30px;\r\n    font-weight: 250;\r\n    margin: 10px;\r\n    animation: move-up 2s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n    transition: transform 1s;\r\n}\r\n\r\n.loginContainer .buttonInput:hover{\r\n    transform: scale(1.1);\r\n    background-color: rgb(64, 89, 172);\r\n}\r\n\r\n.welcomeText {\r\n    animation-delay: 1.5s;\r\n    animation: fade-in 1s;\r\n}\r\n\r\n/* .delayNone {\r\n    animation: fly-in-left 1s;\r\n    animation-delay: 0.5s;\r\n} */\r\n\r\n.delayOne {\r\n    animation: fly-in-left 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n}\r\n\r\n/* .delayTwo {\r\n    animation: fly-in-left 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: both;\r\n}\r\n\r\n.delayThree {\r\n    animation: fly-in-left 1s;\r\n    animation-delay: 1.5s;\r\n    animation-fill-mode: both;\r\n}\r\n\r\n.delayFour {\r\n    animation: fly-in-left 1s;\r\n    animation-delay: 2s;\r\n    animation-fill-mode: both;\r\n} */"],"sourceRoot":""}]);
+} */`, "",{"version":3,"sources":["webpack://./client/css/Home.css"],"names":[],"mappings":"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","sourcesContent":["body {\r\n    /* background: linear-gradient(80deg, rgba(0, 68, 255, 0.498), rgba(0, 0, 0, 0.148)) */\r\n    background-image: url('https://cdnb.artstation.com/p/assets/images/images/042/415/777/original/oliver-goodenough-ezgif-com-gif-maker.gif?1634468806');\r\n    background-size: cover;\r\n}\r\n\r\n@keyframes fly-in-left {\r\n    from {\r\n        opacity: 0;\r\n        transform: translateX(-500px);\r\n    }\r\n    to {\r\n        opacity: 1;\r\n        transform: translateX(0px);\r\n    }\r\n}\r\n\r\n@keyframes fly-in-right {\r\n    from {\r\n        opacity: 0;\r\n        transform: translateX(500px);\r\n    }\r\n    to {\r\n        opacity: 1;\r\n        transform: translateX(0px);\r\n    }\r\n}\r\n\r\n@keyframes fade-in {\r\n    from {\r\n        font-size: 0px;\r\n        opacity: 0;\r\n    }\r\n    to {\r\n        font-size: 55px;\r\n        opacity: 1;\r\n    }\r\n}\r\n\r\n@keyframes move-up {\r\n    from {\r\n        transform: translatey(60vh);\r\n    }\r\n    to {\r\n        transform: translatey(0vh);\r\n    }\r\n}\r\n\r\n@keyframes move-down{\r\n    from {\r\n        transform: translatey(0vh);\r\n    }\r\n    to {\r\n        transform: translatey(100vh);\r\n    }\r\n}\r\n\r\n@keyframes expand-out {\r\n    from {\r\n        width: 0px;\r\n    }\r\n    to {\r\n        width: 50vw;\r\n    }\r\n}\r\n\r\nform {\r\n    display: flex;\r\n    padding: 3px;\r\n    width: 50vw;\r\n    height: 100%;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    overflow: hidden;\r\n    border-radius: 5px;\r\n}\r\n\r\n.homeMain {\r\n    width: 100%;\r\n    height: 100vh;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    animation: move-in 1s;\r\n}\r\n\r\n#toggleButton {\r\n    border: 2px solid white;\r\n    width: 6vw;\r\n    height: 4vh;\r\n    animation: move-up 2s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n    transition: transform 1s;\r\n}\r\n\r\n#toggleButton:hover {\r\n    background-color: rgb(64, 89, 172);\r\n}\r\n\r\n#invalidCreds {\r\n    color: whitesmoke;\r\n    width: 50vw;\r\n    opacity: 0;\r\n}\r\n\r\n#invalidCreds#show {\r\n    color: whitesmoke;\r\n    width: 50vw;\r\n    opacity: 1;\r\n}\r\n\r\n#usernameInput {\r\n    background-image: url(../../assets/username.svg);\r\n    background-size: 2.9dvw;\r\n    background-repeat: no-repeat;\r\n    background-position: 26.6vw;\r\n}\r\n\r\n#usernameInput:focus {\r\n    border: 3px solid rgb(0, 102, 255);\r\n}\r\n\r\n#passwordInput {\r\n    background-image: url(../../assets/lock.svg);\r\n    background-repeat: no-repeat;\r\n    background-position: center right;\r\n    animation: fly-in-right 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n}\r\n\r\n#passwordInput:focus {\r\n    border: 3px solid rgb(0, 102, 255);\r\n}\r\n\r\n#forgotPassword {\r\n    width: fit-content;\r\n    height: fit-content;\r\n    background-color: #ffffff00;\r\n    border: none !important;\r\n    outline: none;\r\n    padding: 0px;\r\n    border-radius: 8px;\r\n    font-size: 20px;\r\n    font-weight: 500;\r\n    margin: 0px;\r\n    animation: move-up 2s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n}\r\n\r\n#forgotPassword:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.loginContainer {\r\n    background-color: rgba(255, 255, 255, 0.043);\r\n    width: 50vw;\r\n    height: 70vh;\r\n    border-radius: 5px;\r\n    border: 2px solid white;\r\n    backdrop-filter: blur(7px);\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    overflow-x: hidden;\r\n}\r\n\r\n.loginContainer.closeAnim {\r\n    animation: move-down 1s;\r\n    animation-fill-mode: both;\r\n}\r\n\r\n.innerLogin {\r\n    margin-top: 25px;\r\n    width: 100%;\r\n    height: 330px;\r\n    display: flex;\r\n    border-radius: 5px;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.loginContainer h1 {\r\n    font-size: 55px;\r\n    color: whitesmoke;\r\n    margin: 75px 0px 0px 0px;\r\n    height: 90px;\r\n    width: 50vw;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n.loginContainer h1::after {\r\n    content: \"\";\r\n    height: 3px;\r\n    border-radius: 5px;\r\n    width: 50vw;\r\n    background-color: #59bdff;\r\n    animation: expand-out 1s;\r\n    animation-fill-mode: backwards;\r\n    animation-delay: 2s;\r\n    margin: 5px;\r\n}\r\n\r\n.loginContainer input {\r\n    padding: 0px 10px 0px 10px;\r\n    color: whitesmoke;\r\n    margin: 8px;\r\n    border: 2px solid white;\r\n}\r\n\r\n.loginContainer input:focus {\r\n    color: whitesmoke;\r\n    border: 2px solid white;\r\n    outline: 1px solid white;\r\n}\r\n\r\n.loginContainer .textInput{\r\n    background-color: rgba(23, 23, 23, 0);\r\n    width: 30vw;\r\n    cursor: text;\r\n    height: 7vh;\r\n    border-radius: 8px;\r\n    font-size: 2.2vw;\r\n    font-weight: 550;\r\n    transition: transform 1s;\r\n}\r\n\r\n.loginContainer .textInput:hover{\r\n    transform: translateY(-10px);\r\n}\r\n\r\n.loginContainer .buttonInput {\r\n    background-color: rgb(89, 189, 255);\r\n    width: 16vw;\r\n    height: 6vh;\r\n    border-radius: 8px;\r\n    font-size: 30px;\r\n    font-weight: 250;\r\n    margin: 10px;\r\n    animation: move-up 2s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n    transition: transform 1s;\r\n}\r\n\r\n.loginContainer .buttonInput:hover{\r\n    transform: scale(1.1);\r\n    background-color: rgb(64, 89, 172);\r\n}\r\n\r\n.welcomeText {\r\n    animation-delay: 1.5s;\r\n    animation: fade-in 1s;\r\n}\r\n\r\n/* .delayNone {\r\n    animation: fly-in-left 1s;\r\n    animation-delay: 0.5s;\r\n} */\r\n\r\n.delayOne {\r\n    animation: fly-in-left 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n}\r\n\r\n/* .delayTwo {\r\n    animation: fly-in-left 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: both;\r\n}\r\n\r\n.delayThree {\r\n    animation: fly-in-left 1s;\r\n    animation-delay: 1.5s;\r\n    animation-fill-mode: both;\r\n}\r\n\r\n.delayFour {\r\n    animation: fly-in-left 1s;\r\n    animation-delay: 2s;\r\n    animation-fill-mode: both;\r\n} */"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -8714,6 +8917,28 @@ body {
     opacity: 1;
   }
 }
+@keyframes fade-out-todo {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes move-out-todo {
+  /*
+  Using position absolute here fakes the effect of the element no longer taking up space,
+  basically a bandaid on the fact that the display prop isn't animatable, thanks CSS.
+  */
+  from {
+    position: absolute;
+    transform: translateX(0vw);
+  }
+  to {
+    position: absolute;
+    transform: translateX(-100vw);
+  }
+}
 @keyframes expand-header-after {
   from {
     width: 0vw;
@@ -8738,11 +8963,19 @@ body {
     transform: translatey(0vh);
   }
 }
+@keyframes leave {
+  from {
+    transform: translatex(0);
+  }
+  to {
+    transform: translatex(60vw);
+  }
+}
 #SubButton {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   margin: 3px;
-  height: 3vh;
-  width: 3vw;
+  height: 4vh;
+  width: 4vw;
   padding: 0px;
   align-self: center;
 }
@@ -8772,12 +9005,16 @@ body {
   display: flex;
   flex-direction: column;
   border: 3px solid white;
-  margin: 4px;
+  margin: 10px;
   align-items: center;
   border-radius: 5px;
   animation: fly-in-right 1s;
   animation-fill-mode: both;
   overflow-y: scroll;
+}
+
+.SubItemContainerClosing {
+  animation: leave 1s;
 }
 
 #completeButton {
@@ -8788,8 +9025,9 @@ body {
 
 #subCompleteButton {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-  width: 5vw;
-  height: 3vh;
+  margin: 0.1em;
+  width: 7vw;
+  height: 4vh;
 }
 
 .MCEMain {
@@ -8849,6 +9087,7 @@ body {
 .RouterLink:hover {
   text-decoration: underline;
   transform: scale(1.1);
+  background-color: rgb(42, 135, 197);
 }
 
 .creatorForm {
@@ -8906,6 +9145,7 @@ body {
 
 .todoInput[type=submit]:hover {
   transform: scale(1.1);
+  background-color: rgb(42, 135, 197);
 }
 
 .todoInput[type=button] {
@@ -8922,6 +9162,7 @@ body {
 
 .todoInput[type=button]:hover {
   transform: scale(1.1);
+  background-color: rgb(42, 135, 197);
 }
 
 input[type=button] {
@@ -8941,7 +9182,7 @@ input[type=button] {
   background-color: rgb(89, 153, 255);
   text-align: center;
   color: rgb(255, 255, 255);
-  width: 1.2vw;
+  width: fit-content;
   border: 1.5px solid rgb(255, 255, 255);
   height: 6vh;
   border-radius: 8px;
@@ -8958,6 +9199,7 @@ input[type=button] {
 
 input[type=button]:hover {
   transform: scale(1.1);
+  background-color: rgb(42, 135, 197);
 }
 
 input:active {
@@ -8965,10 +9207,11 @@ input:active {
 }
 
 .todoSpan {
-  height: 60px;
-  width: 500px;
+  height: 3vw;
+  width: 32vw;
+  white-space: nowrap;
   margin: 0;
-  font-size: 32px;
+  font-size: 2vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9003,12 +9246,18 @@ input:active {
 
 .innerDisplayList {
   display: flex;
+  animation: fade-in-todo 1s;
+  animation-fill-mode: both;
   flex-direction: column;
   align-items: flex-start;
 }
 
 .innerDisplayListHide {
-  display: none;
+  animation: move-out-todo 2s;
+  animation-fill-mode: both;
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
 }
 
 .creator {
@@ -9057,7 +9306,7 @@ input:active {
 .listItem input[type=checkbox] {
   width: 2vw;
   height: 2vw;
-}`, "",{"version":3,"sources":["webpack://./client/css/Todo.css"],"names":[],"mappings":"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","sourcesContent":["* {\r\n    box-sizing: border-box;\r\n}\r\n\r\nhtml, body {\r\n    height: 100%;\r\n    width: 100%;\r\n    color: white;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\nbody {\r\n    /* display: flex;\r\n    flex-direction: column;\r\n    justify-content: center; */\r\n    align-content: center;\r\n    background-image: url('https://cdnb.artstation.com/p/assets/images/images/042/415/777/original/oliver-goodenough-ezgif-com-gif-maker.gif?1634468806');\r\n    background-size: cover;\r\n    overflow-y: hidden;\r\n}\r\n\r\n@keyframes fade-in-todo {\r\n    from {\r\n        opacity: 0;\r\n    }\r\n    to {\r\n        opacity: 1;\r\n    }\r\n}\r\n\r\n@keyframes expand-header-after {\r\n    from {\r\n        width: 0vw;\r\n    }\r\n    to {\r\n        width: 32vw;\r\n    }\r\n}\r\n\r\n@keyframes enter {\r\n    from {\r\n        opacity: 0;\r\n    }\r\n    to {\r\n        opacity: 100;\r\n    }\r\n}\r\n\r\n@keyframes move-in {\r\n    from {\r\n        transform: translatey(-50vh);\r\n    }\r\n    to {\r\n        transform: translatey(0vh);\r\n    }\r\n}\r\n\r\n#SubButton {\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    margin: 3px;\r\n    height: 3vh;\r\n    width: 3vw;\r\n    padding: 0px;\r\n    align-self: center;\r\n}\r\n\r\n#SubItemCreator {\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.moveInAnim {\r\n    animation: move-in 1s;\r\n}\r\n\r\n.LinkClickTransition {\r\n    animation: move-down 1s;\r\n}\r\n\r\n.SubItemContainer {\r\n    border: 2px solid white;\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    display: none;\r\n    transition: transform;\r\n}\r\n\r\n.SubItemContainerShow {\r\n    height: 200px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    border: 3px solid white;\r\n    margin: 4px;\r\n    align-items: center;\r\n    border-radius: 5px;\r\n    animation: fly-in-right 1s;\r\n    animation-fill-mode: both;\r\n    overflow-y: scroll;\r\n}\r\n\r\n#completeButton {\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    width: 10vw;\r\n    height: 6vh;\r\n}\r\n\r\n#subCompleteButton {\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    width: 5vw;\r\n    height: 3vh;\r\n}\r\n\r\n.MCEMain {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 100vw;\r\n    height: 90vh;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n.navbar {\r\n    backdrop-filter: blur(8px);\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    width: 100%;\r\n    height: 7.5vh;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr;\r\n    align-items: center;\r\n    background-color: rgba(255, 255, 255, 0.03);\r\n    border: 1.5px solid rgba(255, 255, 255, 0.655);\r\n    animation: fade-in-todo 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: both;\r\n}\r\n\r\n.navbar ul {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    list-style-type: none;\r\n    height: 100%;\r\n    margin: 0px;\r\n    padding: 0px;\r\n    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);\r\n}\r\n\r\n.navbar button {\r\n    background-color: rgb(89, 189, 255);\r\n    color: rgb(255, 255, 255);\r\n    width: fit-content;\r\n    height: 5vh;\r\n    border-radius: 6px;\r\n    border: 2px solid rgb(255, 255, 255);\r\n    margin: 0px 5px;\r\n}\r\n\r\n.RouterLink {\r\n    color:rgb(89, 189, 255);\r\n    font-size: 1em;\r\n    transition: transform 1s;\r\n}\r\n\r\n.RouterLink:hover {\r\n    text-decoration: underline;\r\n    transform: scale(1.1);\r\n}\r\n\r\n.creatorForm {\r\n    width: 30vw;\r\n    padding: 10px;\r\n    margin: 0;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: right;\r\n    align-items: center;\r\n}\r\n\r\n.todoInput {\r\n    margin: 5px;\r\n    border: 1.5px solid rgb(255, 255, 255);\r\n    color: white;\r\n    background-color: rgba(128, 128, 128, 0);\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n}\r\n\r\n.todoInput[type='text'] {\r\n    backdrop-filter: blur(8px);\r\n    width: 20vw;\r\n    height: 6vh;\r\n    border-radius: 8px;\r\n    font-size: 2vw;\r\n    font-weight: 500;\r\n    animation: fade-in-todo 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: both;\r\n    transition: transform 1s;\r\n    padding: 10px;\r\n    cursor: text;\r\n}\r\n\r\n.todoInput[type='text']:hover {\r\n    transform: translateY(-10px);\r\n}\r\n\r\n.todoInput[type='text']:focus {\r\n    border: 2px solid rgb(0, 102, 255);\r\n}\r\n\r\n.todoInput[type='submit'] {\r\n    background-color: rgb(89, 189, 255);\r\n    color: rgb(255, 255, 255);\r\n    width: 10vw;\r\n    height: 6vh;\r\n    border-radius: 8px;\r\n    animation: fade-in-todo 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n    transition: transform 1s;\r\n}\r\n\r\n.todoInput[type='submit']:hover {\r\n    transform: scale(1.1);\r\n}\r\n\r\n.todoInput[type='button'] {\r\n    background-color: rgb(89, 189, 255);\r\n    color: rgb(55, 198, 255);\r\n    width: fit-content;\r\n    height: 5vh;\r\n    border-radius: 8px;\r\n    animation: fade-in-todo 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n    transition: transform 1s;\r\n}\r\n\r\n.todoInput[type='button']:hover {\r\n    transform: scale(1.1);\r\n}\r\n\r\ninput[type='button'] {\r\n    background-color: rgb(89, 189, 255);\r\n    color: rgb(255, 255, 255);\r\n    width: fit-content;\r\n    border: 1.5px solid rgb(255, 255, 255);\r\n    height: 5vh;\r\n    border-radius: 8px;\r\n    animation: fade-in-todo 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n    transition: transform 1s;\r\n}\r\n\r\n.SubMenuButton {\r\n    background-color: rgb(89, 153, 255);\r\n    text-align: center;\r\n    color: rgb(255, 255, 255);\r\n    width: 1.2vw;\r\n    border: 1.5px solid rgb(255, 255, 255);\r\n    height: 6vh;\r\n    border-radius: 8px;\r\n    animation: fade-in-todo 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n    transition: transform 1s;\r\n}\r\n\r\n.SubMenuButton:hover {\r\n    transform: scale(1.1);\r\n    background-color: rgb(42, 135, 197);\r\n}\r\n\r\n\r\ninput[type='button']:hover {\r\n    transform: scale(1.1);\r\n}\r\n\r\ninput:active {\r\n    border: 3px solid rgb(0, 102, 255);\r\n}\r\n\r\n.todoSpan {\r\n    height: 60px;\r\n    width: 500px;\r\n    margin: 0;\r\n    font-size: 32px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);\r\n}\r\n\r\n.todoSpan::after {\r\n    content: \"\";\r\n    height: 3px;\r\n    border-radius: 5px;\r\n    width: 32vw;\r\n    background-color: rgb(89, 189, 255);\r\n    animation: expand-header-after 1s;\r\n    animation-fill-mode: backwards;\r\n    animation-delay: 2s;\r\n}\r\n\r\n\r\n.todoMain {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    animation: move-in 1s;\r\n}\r\n\r\n.displayList {\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n.innerDisplayList {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n}\r\n\r\n.innerDisplayListHide {\r\n    display: none;\r\n}\r\n\r\n.creator {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 50vw;\r\n    margin: 10px;\r\n}\r\n\r\n.display {\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    width: 45vw;\r\n    height: 55vh;\r\n    margin-top: 10px;\r\n    background-color: rgba(255, 255, 255, 0.043);\r\n    backdrop-filter: blur(8px);\r\n    border-radius: 5px;\r\n    border: 1.5px solid rgb(255, 255, 255);\r\n    align-self: center;\r\n    overflow: scroll;\r\n}\r\n\r\n.ListItemValue {\r\n    backdrop-filter: blur(8px);\r\n    background-color: rgb(89, 189, 255);\r\n    border: 2px solid rgb(255, 255, 255);\r\n    font-size: 2vw;\r\n    width: fit-content;\r\n    margin: 2px;\r\n    border-radius: 8px;\r\n}\r\n\r\n.listItem {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);\r\n    border-radius: 5px;\r\n    margin: 5px;\r\n    color: rgb(245, 245, 245);\r\n    font-size: 30px;\r\n}\r\n\r\n.listItem input[type='checkbox'] {\r\n    width: 2vw;\r\n    height: 2vw;\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./client/css/Todo.css"],"names":[],"mappings":"AAAA;EACI,sBAAA;AACJ;;AAEA;EACI,YAAA;EACA,WAAA;EACA,YAAA;EACA,SAAA;EACA,UAAA;AACJ;;AAEA;EACI;;4BAAA;EAGA,qBAAA;EACA,qJAAA;EACA,sBAAA;EACA,kBAAA;AACJ;;AAEA;EACI;IACI,UAAA;EACN;EACE;IACI,UAAA;EACN;AACF;AAEA;EACI;IACI,UAAA;EAAN;EAEE;IACI,UAAA;EAAN;AACF;AAGA;EACI;;;GAAA;EAIA;IACI,kBAAA;IACA,0BAAA;EADN;EAGE;IACI,kBAAA;IACA,6BAAA;EADN;AACF;AAIA;EACI;IACI,UAAA;EAFN;EAIE;IACI,WAAA;EAFN;AACF;AAKA;EACI;IACI,UAAA;EAHN;EAKE;IACI,YAAA;EAHN;AACF;AAMA;EACI;IACI,4BAAA;EAJN;EAME;IACI,0BAAA;EAJN;AACF;AAOA;EACI;IACI,wBAAA;EALN;EAOE;IACI,2BAAA;EALN;AACF;AAQA;EACI,+CAAA;EACA,WAAA;EACA,WAAA;EACA,UAAA;EACA,YAAA;EACA,kBAAA;AANJ;;AASA;EACI,aAAA;EACA,mBAAA;AANJ;;AASA;EACI,qBAAA;AANJ;;AASA;EACI,uBAAA;AANJ;;AASA;EACI,uBAAA;EACA,+CAAA;EACA,aAAA;EACA,qBAAA;AANJ;;AASA;EACI,aAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,YAAA;EACA,mBAAA;EACA,kBAAA;EACA,0BAAA;EACA,yBAAA;EACA,kBAAA;AANJ;;AASA;EACI,mBAAA;AANJ;;AASA;EACI,+CAAA;EACA,WAAA;EACA,WAAA;AANJ;;AASA;EACI,+CAAA;EACA,aAAA;EACA,UAAA;EACA,WAAA;AANJ;;AASA;EACI,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,YAAA;EACA,YAAA;EACA,SAAA;EACA,UAAA;AANJ;;AASA;EACI,0BAAA;EACA,+CAAA;EACA,WAAA;EACA,aAAA;EACA,aAAA;EACA,kCAAA;EACA,mBAAA;EACA,2CAAA;EACA,8CAAA;EACA,0BAAA;EACA,mBAAA;EACA,yBAAA;AANJ;;AASA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,mBAAA;EACA,qBAAA;EACA,YAAA;EACA,WAAA;EACA,YAAA;EACA,4CAAA;AANJ;;AASA;EACI,mCAAA;EACA,yBAAA;EACA,kBAAA;EACA,WAAA;EACA,kBAAA;EACA,oCAAA;EACA,eAAA;AANJ;;AASA;EACI,wBAAA;EACA,cAAA;EACA,wBAAA;AANJ;;AASA;EACI,0BAAA;EACA,qBAAA;EACA,mCAAA;AANJ;;AASA;EACI,WAAA;EACA,aAAA;EACA,SAAA;EACA,aAAA;EACA,mBAAA;EACA,sBAAA;EACA,mBAAA;AANJ;;AASA;EACI,WAAA;EACA,sCAAA;EACA,YAAA;EACA,wCAAA;EACA,+CAAA;AANJ;;AASA;EACI,0BAAA;EACA,WAAA;EACA,WAAA;EACA,kBAAA;EACA,cAAA;EACA,gBAAA;EACA,0BAAA;EACA,mBAAA;EACA,yBAAA;EACA,wBAAA;EACA,aAAA;EACA,YAAA;AANJ;;AASA;EACI,4BAAA;AANJ;;AASA;EACI,kCAAA;AANJ;;AASA;EACI,mCAAA;EACA,yBAAA;EACA,WAAA;EACA,WAAA;EACA,kBAAA;EACA,0BAAA;EACA,mBAAA;EACA,8BAAA;EACA,wBAAA;AANJ;;AASA;EACI,qBAAA;EACA,mCAAA;AANJ;;AASA;EACI,mCAAA;EACA,wBAAA;EACA,kBAAA;EACA,WAAA;EACA,kBAAA;EACA,0BAAA;EACA,mBAAA;EACA,8BAAA;EACA,wBAAA;AANJ;;AASA;EACI,qBAAA;EACA,mCAAA;AANJ;;AASA;EACI,mCAAA;EACA,yBAAA;EACA,kBAAA;EACA,sCAAA;EACA,WAAA;EACA,kBAAA;EACA,0BAAA;EACA,mBAAA;EACA,8BAAA;EACA,wBAAA;AANJ;;AASA;EACI,mCAAA;EACA,kBAAA;EACA,yBAAA;EACA,kBAAA;EACA,sCAAA;EACA,WAAA;EACA,kBAAA;EACA,0BAAA;EACA,mBAAA;EACA,8BAAA;EACA,wBAAA;AANJ;;AASA;EACI,qBAAA;EACA,mCAAA;AANJ;;AAUA;EACI,qBAAA;EACA,mCAAA;AAPJ;;AAUA;EACI,kCAAA;AAPJ;;AAUA;EACI,WAAA;EACA,WAAA;EACA,mBAAA;EACA,SAAA;EACA,cAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,4CAAA;AAPJ;;AAUA;EACI,WAAA;EACA,WAAA;EACA,kBAAA;EACA,WAAA;EACA,mCAAA;EACA,iCAAA;EACA,8BAAA;EACA,mBAAA;AAPJ;;AAWA;EACI,WAAA;EACA,YAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,qBAAA;AARJ;;AAWA;EACI,aAAA;EACA,uBAAA;AARJ;;AAWA;EACI,aAAA;EACA,0BAAA;EACA,yBAAA;EACA,sBAAA;EACA,uBAAA;AARJ;;AAWA;EACI,2BAAA;EACA,yBAAA;EACA,sBAAA;EACA,uBAAA;EACA,aAAA;AARJ;;AAWA;EACI,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,WAAA;EACA,YAAA;AARJ;;AAWA;EACI,+CAAA;EACA,WAAA;EACA,YAAA;EACA,gBAAA;EACA,4CAAA;EACA,0BAAA;EACA,kBAAA;EACA,sCAAA;EACA,kBAAA;EACA,gBAAA;AARJ;;AAWA;EACI,0BAAA;EACA,mCAAA;EACA,oCAAA;EACA,cAAA;EACA,kBAAA;EACA,WAAA;EACA,kBAAA;AARJ;;AAWA;EACI,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,+CAAA;EACA,kBAAA;EACA,WAAA;EACA,yBAAA;EACA,eAAA;AARJ;;AAWA;EACI,UAAA;EACA,WAAA;AARJ","sourcesContent":["* {\r\n    box-sizing: border-box;\r\n}\r\n\r\nhtml, body {\r\n    height: 100%;\r\n    width: 100%;\r\n    color: white;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\nbody {\r\n    /* display: flex;\r\n    flex-direction: column;\r\n    justify-content: center; */\r\n    align-content: center;\r\n    background-image: url('https://cdnb.artstation.com/p/assets/images/images/042/415/777/original/oliver-goodenough-ezgif-com-gif-maker.gif?1634468806');\r\n    background-size: cover;\r\n    overflow-y: hidden;\r\n}\r\n\r\n@keyframes fade-in-todo {\r\n    from {\r\n        opacity: 0;\r\n    }\r\n    to {\r\n        opacity: 1;\r\n    }\r\n}\r\n\r\n@keyframes fade-out-todo {\r\n    from {\r\n        opacity: 1;\r\n    }\r\n    to {\r\n        opacity: 0;\r\n    }\r\n}\r\n\r\n@keyframes move-out-todo {\r\n    /*\r\n    Using position absolute here fakes the effect of the element no longer taking up space,\r\n    basically a bandaid on the fact that the display prop isn't animatable, thanks CSS.\r\n    */\r\n    from {\r\n        position: absolute;\r\n        transform: translateX(0vw);\r\n    }\r\n    to {\r\n        position: absolute;\r\n        transform: translateX(-100vw);\r\n    }\r\n}\r\n\r\n@keyframes expand-header-after {\r\n    from {\r\n        width: 0vw;\r\n    }\r\n    to {\r\n        width: 32vw;\r\n    }\r\n}\r\n\r\n@keyframes enter {\r\n    from {\r\n        opacity: 0;\r\n    }\r\n    to {\r\n        opacity: 100;\r\n    }\r\n}\r\n\r\n@keyframes move-in {\r\n    from {\r\n        transform: translatey(-50vh);\r\n    }\r\n    to {\r\n        transform: translatey(0vh);\r\n    }\r\n}\r\n\r\n@keyframes leave {\r\n    from {\r\n        transform: translatex(0);\r\n    }\r\n    to {\r\n        transform: translatex(60vw);\r\n    }\r\n}\r\n\r\n#SubButton {\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    margin: 3px;\r\n    height: 4vh;\r\n    width: 4vw;\r\n    padding: 0px;\r\n    align-self: center;\r\n}\r\n\r\n#SubItemCreator {\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.moveInAnim {\r\n    animation: move-in 1s;\r\n}\r\n\r\n.LinkClickTransition {\r\n    animation: move-down 1s;\r\n}\r\n\r\n.SubItemContainer {\r\n    border: 2px solid white;\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    display: none;\r\n    transition: transform;\r\n}\r\n\r\n.SubItemContainerShow {\r\n    height: 200px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    border: 3px solid white;\r\n    margin: 10px;\r\n    align-items: center;\r\n    border-radius: 5px;\r\n    animation: fly-in-right 1s;\r\n    animation-fill-mode: both;\r\n    overflow-y: scroll;\r\n}\r\n\r\n.SubItemContainerClosing {\r\n    animation: leave 1s;\r\n}\r\n\r\n#completeButton {\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    width: 10vw;\r\n    height: 6vh;\r\n}\r\n\r\n#subCompleteButton {\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    margin: 0.1em;\r\n    width: 7vw;\r\n    height: 4vh;\r\n}\r\n\r\n.MCEMain {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 100vw;\r\n    height: 90vh;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n.navbar {\r\n    backdrop-filter: blur(8px);\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    width: 100%;\r\n    height: 7.5vh;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr;\r\n    align-items: center;\r\n    background-color: rgba(255, 255, 255, 0.03);\r\n    border: 1.5px solid rgba(255, 255, 255, 0.655);\r\n    animation: fade-in-todo 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: both;\r\n}\r\n\r\n.navbar ul {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    list-style-type: none;\r\n    height: 100%;\r\n    margin: 0px;\r\n    padding: 0px;\r\n    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);\r\n}\r\n\r\n.navbar button {\r\n    background-color: rgb(89, 189, 255);\r\n    color: rgb(255, 255, 255);\r\n    width: fit-content;\r\n    height: 5vh;\r\n    border-radius: 6px;\r\n    border: 2px solid rgb(255, 255, 255);\r\n    margin: 0px 5px;\r\n}\r\n\r\n.RouterLink {\r\n    color:rgb(89, 189, 255);\r\n    font-size: 1em;\r\n    transition: transform 1s;\r\n}\r\n\r\n.RouterLink:hover {\r\n    text-decoration: underline;\r\n    transform: scale(1.1);\r\n    background-color: rgb(42, 135, 197);\r\n}\r\n\r\n.creatorForm {\r\n    width: 30vw;\r\n    padding: 10px;\r\n    margin: 0;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: right;\r\n    align-items: center;\r\n}\r\n\r\n.todoInput {\r\n    margin: 5px;\r\n    border: 1.5px solid rgb(255, 255, 255);\r\n    color: white;\r\n    background-color: rgba(128, 128, 128, 0);\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n}\r\n\r\n.todoInput[type='text'] {\r\n    backdrop-filter: blur(8px);\r\n    width: 20vw;\r\n    height: 6vh;\r\n    border-radius: 8px;\r\n    font-size: 2vw;\r\n    font-weight: 500;\r\n    animation: fade-in-todo 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: both;\r\n    transition: transform 1s;\r\n    padding: 10px;\r\n    cursor: text;\r\n}\r\n\r\n.todoInput[type='text']:hover {\r\n    transform: translateY(-10px);\r\n}\r\n\r\n.todoInput[type='text']:focus {\r\n    border: 2px solid rgb(0, 102, 255);\r\n}\r\n\r\n.todoInput[type='submit'] {\r\n    background-color: rgb(89, 189, 255);\r\n    color: rgb(255, 255, 255);\r\n    width: 10vw;\r\n    height: 6vh;\r\n    border-radius: 8px;\r\n    animation: fade-in-todo 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n    transition: transform 1s;\r\n}\r\n\r\n.todoInput[type='submit']:hover {\r\n    transform: scale(1.1);\r\n    background-color: rgb(42, 135, 197);\r\n}\r\n\r\n.todoInput[type='button'] {\r\n    background-color: rgb(89, 189, 255);\r\n    color: rgb(55, 198, 255);\r\n    width: fit-content;\r\n    height: 5vh;\r\n    border-radius: 8px;\r\n    animation: fade-in-todo 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n    transition: transform 1s;\r\n}\r\n\r\n.todoInput[type='button']:hover {\r\n    transform: scale(1.1);\r\n    background-color: rgb(42, 135, 197);\r\n}\r\n\r\ninput[type='button'] {\r\n    background-color: rgb(89, 189, 255);\r\n    color: rgb(255, 255, 255);\r\n    width: fit-content;\r\n    border: 1.5px solid rgb(255, 255, 255);\r\n    height: 5vh;\r\n    border-radius: 8px;\r\n    animation: fade-in-todo 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n    transition: transform 1s;\r\n}\r\n\r\n.SubMenuButton {\r\n    background-color: rgb(89, 153, 255);\r\n    text-align: center;\r\n    color: rgb(255, 255, 255);\r\n    width: fit-content;\r\n    border: 1.5px solid rgb(255, 255, 255);\r\n    height: 6vh;\r\n    border-radius: 8px;\r\n    animation: fade-in-todo 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n    transition: transform 1s;\r\n}\r\n\r\n.SubMenuButton:hover {\r\n    transform: scale(1.1);\r\n    background-color: rgb(42, 135, 197);\r\n}\r\n\r\n\r\ninput[type='button']:hover {\r\n    transform: scale(1.1);\r\n    background-color: rgb(42, 135, 197);\r\n}\r\n\r\ninput:active {\r\n    border: 3px solid rgb(0, 102, 255);\r\n}\r\n\r\n.todoSpan {\r\n    height: 3vw;\r\n    width: 32vw;\r\n    white-space: nowrap;\r\n    margin: 0;\r\n    font-size: 2vw;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);\r\n}\r\n\r\n.todoSpan::after {\r\n    content: \"\";\r\n    height: 3px;\r\n    border-radius: 5px;\r\n    width: 32vw;\r\n    background-color: rgb(89, 189, 255);\r\n    animation: expand-header-after 1s;\r\n    animation-fill-mode: backwards;\r\n    animation-delay: 2s;\r\n}\r\n\r\n\r\n.todoMain {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    animation: move-in 1s;\r\n}\r\n\r\n.displayList {\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n.innerDisplayList {\r\n    display: flex;\r\n    animation: fade-in-todo 1s;\r\n    animation-fill-mode: both;\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n}\r\n\r\n.innerDisplayListHide {\r\n    animation: move-out-todo 2s;\r\n    animation-fill-mode: both;\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n    display: flex;\r\n}\r\n\r\n.creator {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 50vw;\r\n    margin: 10px;\r\n}\r\n\r\n.display {\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    width: 45vw;\r\n    height: 55vh;\r\n    margin-top: 10px;\r\n    background-color: rgba(255, 255, 255, 0.043);\r\n    backdrop-filter: blur(8px);\r\n    border-radius: 5px;\r\n    border: 1.5px solid rgb(255, 255, 255);\r\n    align-self: center;\r\n    overflow: scroll;\r\n}\r\n\r\n.ListItemValue {\r\n    backdrop-filter: blur(8px);\r\n    background-color: rgb(89, 189, 255);\r\n    border: 2px solid rgb(255, 255, 255);\r\n    font-size: 2vw;\r\n    width: fit-content;\r\n    margin: 2px;\r\n    border-radius: 8px;\r\n}\r\n\r\n.listItem {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);\r\n    border-radius: 5px;\r\n    margin: 5px;\r\n    color: rgb(245, 245, 245);\r\n    font-size: 30px;\r\n}\r\n\r\n.listItem input[type='checkbox'] {\r\n    width: 2vw;\r\n    height: 2vw;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

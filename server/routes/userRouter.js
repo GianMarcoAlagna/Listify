@@ -11,8 +11,11 @@ router.patch('/', userController.verifyToken, userController.updateUserData, (re
     return res.sendStatus(200);
 })
 
+router.post('/forgot', userController.resetPassword, (req, res) => {
+    return res.sendStatus(200);
+});
 router.post('/login', userController.authenticateUser, userController.setCookie, (req, res) => {
-    res.status(200).json({username: req.body.username});
+    return res.status(200).json({username: req.body.username});
 });
 router.post('/signup', userController.setCookie, userController.createUser);
 
