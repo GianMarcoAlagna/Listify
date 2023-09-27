@@ -7374,11 +7374,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _css_Home_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/Home.css */ "./client/css/Home.css");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _utils_fetchUserData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/fetchUserData */ "./client/utils/fetchUserData.js");
 /* harmony import */ var _actions_todoActions_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../actions/todoActions.js */ "./client/actions/todoActions.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _splash_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./splash.jsx */ "./client/components/splash.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw new Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw new Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
@@ -7394,6 +7395,7 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -7424,7 +7426,11 @@ function Home() {
     setSuccessLogin = _useState8[1];
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
   var invalidCredsRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useNavigate)();
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useNavigate)();
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState10 = _slicedToArray(_useState9, 2),
+    splash = _useState10[0],
+    setSplash = _useState10[1];
   function handleSubmit(_x) {
     return _handleSubmit.apply(this, arguments);
   }
@@ -7518,26 +7524,28 @@ function Home() {
   function handleForgotPassword() {
     return navigate('/forgot-password');
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+  return splash ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_splash_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    setSplash: setSplash
+  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
     className: "homeMain",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       className: "loginContainer ".concat(successLogin ? "closeAnim" : ""),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h1", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
         className: "welcomeText",
         children: signup ? "Signup" : "Login"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "innerLogin",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
           onSubmit: handleSubmit,
-          children: [invalidCreds ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          children: [invalidCreds ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
             ref: invalidCredsRef,
             id: "invalidCreds show",
             children: "Invalid Credentials"
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
             ref: invalidCredsRef,
             id: "invalidCreds",
             children: "Invalid Credentials"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
             className: "textInput delayOne",
             id: "usernameInput",
             autoComplete: "off",
@@ -7550,7 +7558,7 @@ function Home() {
                 });
               });
             }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
             className: "textInput delayOne",
             id: "passwordInput",
             autoComplete: "off",
@@ -7563,21 +7571,21 @@ function Home() {
                 });
               });
             }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
             className: "buttonInput delayOne",
             type: "submit",
             value: signup ? "Signup" : "Login"
-          }), signup ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+          }), signup ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
             id: "toggleButton",
             type: "button",
             value: "Login",
             onClick: setMode
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
             id: "toggleButton",
             type: "button",
             value: "Sign Up",
             onClick: setMode
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
             type: "button",
             id: "forgotPassword",
             value: "Forgot Password",
@@ -7703,6 +7711,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var MCEContainer = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div.withConfig({
   displayName: "MCE__MCEContainer",
   componentId: "sc-ezx9u8-0"
@@ -7714,16 +7723,15 @@ function MCE() {
     return state.todoReducer.textEditor;
   });
   var apiKey = "6y8nycsfr72vskzmgg0xmzb4ru1qwjjj2s7hf975iif84kce";
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    ref: mainRef,
-    className: "moveInAnim",
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_NavBar_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
       reference: mainRef,
       innerText: 'Todo List',
       path: 'todo',
       textEditorRef: textEditorRef
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "MCEMain",
+      ref: mainRef,
+      className: "MCEMain moveInAnim",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(MCEContainer, {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_tinymce_tinymce_react__WEBPACK_IMPORTED_MODULE_1__.Editor, {
           apiKey: apiKey,
@@ -7778,6 +7786,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var NavBar = function NavBar(_ref) {
   var reference = _ref.reference,
     innerText = _ref.innerText,
@@ -7788,14 +7797,17 @@ var NavBar = function NavBar(_ref) {
   var userState = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
     return state.todoReducer;
   });
+  var mainRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   var handleLink = function handleLink() {
     if (innerText === 'Todo List') {
       console.log(textEditorRef.current.getContent());
       dispatch(_actions_todoActions_js__WEBPACK_IMPORTED_MODULE_2__.updateTextEditorActionCreator(textEditorRef.current.getContent()));
     }
     reference.current.classList.add('LinkClickTransition');
+    mainRef.current.classList.add('NavBarClickTransition');
     setTimeout(function () {
       reference.current.classList.remove('LinkClickTransition');
+      mainRef.current.classList.remove('NavBarClickTransition');
       return navigate('/' + path);
     }, 950);
   };
@@ -7816,6 +7828,7 @@ var NavBar = function NavBar(_ref) {
     });
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    ref: mainRef,
     className: "navbar",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
       onClick: handleSignout,
@@ -8025,6 +8038,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function Todo() {
   var entries = (0,react_redux__WEBPACK_IMPORTED_MODULE_3__.useSelector)(function (state) {
     return state.todoReducer.entries;
@@ -8046,13 +8060,13 @@ function Todo() {
       setAnimate(false);
     }, 400);
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-    ref: mainRef,
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_NavBar_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
       reference: mainRef,
       innerText: 'Text Editor',
       path: 'text'
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      ref: mainRef,
       className: "todoMain",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
         className: "creator",
@@ -8197,6 +8211,58 @@ function TodoDisplay(_ref) {
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TodoDisplay);
+
+/***/ }),
+
+/***/ "./client/components/splash.jsx":
+/*!**************************************!*\
+  !*** ./client/components/splash.jsx ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_Splash_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/Splash.css */ "./client/css/Splash.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function Splash(_ref) {
+  var setSplash = _ref.setSplash;
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    setTimeout(function () {
+      setSplash(false);
+    }, 4000);
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "splash",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "container",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        children: "L"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        children: "i"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        children: "s"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        children: "t"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        children: "i"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        children: "f"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        children: "y"
+      })]
+    })
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Splash);
 
 /***/ }),
 
@@ -8551,7 +8617,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.App {
 
 input, button {
   cursor: pointer;
-}`, "",{"version":3,"sources":["webpack://./client/css/App.css"],"names":[],"mappings":"AAAA;EACE,kBAAA;AACF;;AAEA;EACE,eAAA;AACF","sourcesContent":[".App {\r\n  text-align: center;\r\n}\r\n\r\ninput, button {\r\n  cursor: pointer;\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./client/css/App.css"],"names":[],"mappings":"AAAA;EACE,kBAAA;AACF;;AAEA;EACE,eAAA;AACF","sourcesContent":[".App {\n  text-align: center;\n}\n\ninput, button {\n  cursor: pointer;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -8664,6 +8730,7 @@ form {
   justify-content: center;
   align-items: center;
   animation: move-in 1s;
+  animation-fill-mode: both;
 }
 
 #toggleButton {
@@ -8739,7 +8806,7 @@ form {
 .loginContainer {
   background-color: rgba(255, 255, 255, 0.043);
   width: 50vw;
-  height: 70vh;
+  height: 90vh;
   border-radius: 5px;
   border: 2px solid white;
   backdrop-filter: blur(7px);
@@ -8865,7 +8932,118 @@ form {
     animation: fly-in-left 1s;
     animation-delay: 2s;
     animation-fill-mode: both;
-} */`, "",{"version":3,"sources":["webpack://./client/css/Home.css"],"names":[],"mappings":"AAAA;EACI,sFAAA;EACA,qJAAA;EACA,sBAAA;AACJ;;AAEA;EACI;IACI,UAAA;IACA,6BAAA;EACN;EACE;IACI,UAAA;IACA,0BAAA;EACN;AACF;AAEA;EACI;IACI,UAAA;IACA,4BAAA;EAAN;EAEE;IACI,UAAA;IACA,0BAAA;EAAN;AACF;AAGA;EACI;IACI,cAAA;IACA,UAAA;EADN;EAGE;IACI,eAAA;IACA,UAAA;EADN;AACF;AAIA;EACI;IACI,2BAAA;EAFN;EAIE;IACI,0BAAA;EAFN;AACF;AAKA;EACI;IACI,0BAAA;EAHN;EAKE;IACI,4BAAA;EAHN;AACF;AAMA;EACI;IACI,UAAA;EAJN;EAME;IACI,WAAA;EAJN;AACF;AAOA;EACI,aAAA;EACA,YAAA;EACA,WAAA;EACA,YAAA;EACA,sBAAA;EACA,mBAAA;EACA,gBAAA;EACA,kBAAA;AALJ;;AAQA;EACI,WAAA;EACA,aAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,qBAAA;AALJ;;AAQA;EACI,uBAAA;EACA,UAAA;EACA,WAAA;EACA,qBAAA;EACA,mBAAA;EACA,8BAAA;EACA,wBAAA;AALJ;;AAQA;EACI,kCAAA;AALJ;;AAQA;EACI,iBAAA;EACA,WAAA;EACA,UAAA;AALJ;;AAQA;EACI,iBAAA;EACA,WAAA;EACA,UAAA;AALJ;;AAQA;EACI,yDAAA;EACA,uBAAA;EACA,4BAAA;EACA,2BAAA;AALJ;;AAQA;EACI,kCAAA;AALJ;;AAQA;EACI,yDAAA;EACA,4BAAA;EACA,iCAAA;EACA,0BAAA;EACA,mBAAA;EACA,8BAAA;AALJ;;AAQA;EACI,kCAAA;AALJ;;AAQA;EACI,kBAAA;EACA,mBAAA;EACA,wCAAA;EACA,uBAAA;EACA,aAAA;EACA,YAAA;EACA,kBAAA;EACA,eAAA;EACA,gBAAA;EACA,WAAA;EACA,qBAAA;EACA,mBAAA;EACA,8BAAA;AALJ;;AAQA;EACI,0BAAA;AALJ;;AAQA;EACI,4CAAA;EACA,WAAA;EACA,YAAA;EACA,kBAAA;EACA,uBAAA;EACA,0BAAA;EACA,+CAAA;EACA,kBAAA;AALJ;;AAQA;EACI,uBAAA;EACA,yBAAA;AALJ;;AAQA;EACI,gBAAA;EACA,WAAA;EACA,aAAA;EACA,aAAA;EACA,kBAAA;EACA,sBAAA;EACA,mBAAA;EACA,uBAAA;AALJ;;AAQA;EACI,eAAA;EACA,iBAAA;EACA,wBAAA;EACA,YAAA;EACA,WAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;AALJ;;AAQA;EACI,WAAA;EACA,WAAA;EACA,kBAAA;EACA,WAAA;EACA,yBAAA;EACA,wBAAA;EACA,8BAAA;EACA,mBAAA;EACA,WAAA;AALJ;;AAQA;EACI,0BAAA;EACA,iBAAA;EACA,WAAA;EACA,uBAAA;AALJ;;AAQA;EACI,iBAAA;EACA,uBAAA;EACA,wBAAA;AALJ;;AAQA;EACI,qCAAA;EACA,WAAA;EACA,YAAA;EACA,WAAA;EACA,kBAAA;EACA,gBAAA;EACA,gBAAA;EACA,wBAAA;AALJ;;AAQA;EACI,4BAAA;AALJ;;AAQA;EACI,mCAAA;EACA,WAAA;EACA,WAAA;EACA,kBAAA;EACA,eAAA;EACA,gBAAA;EACA,YAAA;EACA,qBAAA;EACA,mBAAA;EACA,8BAAA;EACA,wBAAA;AALJ;;AAQA;EACI,qBAAA;EACA,kCAAA;AALJ;;AAQA;EACI,qBAAA;EACA,qBAAA;AALJ;;AAQA;;;GAAA;AAKA;EACI,yBAAA;EACA,mBAAA;EACA,8BAAA;AANJ;;AASA;;;;;;;;;;;;;;;;GAAA","sourcesContent":["body {\r\n    /* background: linear-gradient(80deg, rgba(0, 68, 255, 0.498), rgba(0, 0, 0, 0.148)) */\r\n    background-image: url('https://cdnb.artstation.com/p/assets/images/images/042/415/777/original/oliver-goodenough-ezgif-com-gif-maker.gif?1634468806');\r\n    background-size: cover;\r\n}\r\n\r\n@keyframes fly-in-left {\r\n    from {\r\n        opacity: 0;\r\n        transform: translateX(-500px);\r\n    }\r\n    to {\r\n        opacity: 1;\r\n        transform: translateX(0px);\r\n    }\r\n}\r\n\r\n@keyframes fly-in-right {\r\n    from {\r\n        opacity: 0;\r\n        transform: translateX(500px);\r\n    }\r\n    to {\r\n        opacity: 1;\r\n        transform: translateX(0px);\r\n    }\r\n}\r\n\r\n@keyframes fade-in {\r\n    from {\r\n        font-size: 0px;\r\n        opacity: 0;\r\n    }\r\n    to {\r\n        font-size: 55px;\r\n        opacity: 1;\r\n    }\r\n}\r\n\r\n@keyframes move-up {\r\n    from {\r\n        transform: translatey(60vh);\r\n    }\r\n    to {\r\n        transform: translatey(0vh);\r\n    }\r\n}\r\n\r\n@keyframes move-down{\r\n    from {\r\n        transform: translatey(0vh);\r\n    }\r\n    to {\r\n        transform: translatey(100vh);\r\n    }\r\n}\r\n\r\n@keyframes expand-out {\r\n    from {\r\n        width: 0px;\r\n    }\r\n    to {\r\n        width: 50vw;\r\n    }\r\n}\r\n\r\nform {\r\n    display: flex;\r\n    padding: 3px;\r\n    width: 50vw;\r\n    height: 100%;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    overflow: hidden;\r\n    border-radius: 5px;\r\n}\r\n\r\n.homeMain {\r\n    width: 100%;\r\n    height: 100vh;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    animation: move-in 1s;\r\n}\r\n\r\n#toggleButton {\r\n    border: 2px solid white;\r\n    width: 6vw;\r\n    height: 4vh;\r\n    animation: move-up 2s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n    transition: transform 1s;\r\n}\r\n\r\n#toggleButton:hover {\r\n    background-color: rgb(64, 89, 172);\r\n}\r\n\r\n#invalidCreds {\r\n    color: whitesmoke;\r\n    width: 50vw;\r\n    opacity: 0;\r\n}\r\n\r\n#invalidCreds#show {\r\n    color: whitesmoke;\r\n    width: 50vw;\r\n    opacity: 1;\r\n}\r\n\r\n#usernameInput {\r\n    background-image: url(../../assets/username.svg);\r\n    background-size: 2.9dvw;\r\n    background-repeat: no-repeat;\r\n    background-position: 26.6vw;\r\n}\r\n\r\n#usernameInput:focus {\r\n    border: 3px solid rgb(0, 102, 255);\r\n}\r\n\r\n#passwordInput {\r\n    background-image: url(../../assets/lock.svg);\r\n    background-repeat: no-repeat;\r\n    background-position: center right;\r\n    animation: fly-in-right 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n}\r\n\r\n#passwordInput:focus {\r\n    border: 3px solid rgb(0, 102, 255);\r\n}\r\n\r\n#forgotPassword {\r\n    width: fit-content;\r\n    height: fit-content;\r\n    background-color: #ffffff00;\r\n    border: none !important;\r\n    outline: none;\r\n    padding: 0px;\r\n    border-radius: 8px;\r\n    font-size: 20px;\r\n    font-weight: 500;\r\n    margin: 0px;\r\n    animation: move-up 2s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n}\r\n\r\n#forgotPassword:hover {\r\n    text-decoration: underline;\r\n}\r\n\r\n.loginContainer {\r\n    background-color: rgba(255, 255, 255, 0.043);\r\n    width: 50vw;\r\n    height: 70vh;\r\n    border-radius: 5px;\r\n    border: 2px solid white;\r\n    backdrop-filter: blur(7px);\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    overflow-x: hidden;\r\n}\r\n\r\n.loginContainer.closeAnim {\r\n    animation: move-down 1s;\r\n    animation-fill-mode: both;\r\n}\r\n\r\n.innerLogin {\r\n    margin-top: 25px;\r\n    width: 100%;\r\n    height: 330px;\r\n    display: flex;\r\n    border-radius: 5px;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\n.loginContainer h1 {\r\n    font-size: 55px;\r\n    color: whitesmoke;\r\n    margin: 75px 0px 0px 0px;\r\n    height: 90px;\r\n    width: 50vw;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n.loginContainer h1::after {\r\n    content: \"\";\r\n    height: 3px;\r\n    border-radius: 5px;\r\n    width: 50vw;\r\n    background-color: #59bdff;\r\n    animation: expand-out 1s;\r\n    animation-fill-mode: backwards;\r\n    animation-delay: 2s;\r\n    margin: 5px;\r\n}\r\n\r\n.loginContainer input {\r\n    padding: 0px 10px 0px 10px;\r\n    color: whitesmoke;\r\n    margin: 8px;\r\n    border: 2px solid white;\r\n}\r\n\r\n.loginContainer input:focus {\r\n    color: whitesmoke;\r\n    border: 2px solid white;\r\n    outline: 1px solid white;\r\n}\r\n\r\n.loginContainer .textInput{\r\n    background-color: rgba(23, 23, 23, 0);\r\n    width: 30vw;\r\n    cursor: text;\r\n    height: 7vh;\r\n    border-radius: 8px;\r\n    font-size: 2.2vw;\r\n    font-weight: 550;\r\n    transition: transform 1s;\r\n}\r\n\r\n.loginContainer .textInput:hover{\r\n    transform: translateY(-10px);\r\n}\r\n\r\n.loginContainer .buttonInput {\r\n    background-color: rgb(89, 189, 255);\r\n    width: 16vw;\r\n    height: 6vh;\r\n    border-radius: 8px;\r\n    font-size: 30px;\r\n    font-weight: 250;\r\n    margin: 10px;\r\n    animation: move-up 2s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n    transition: transform 1s;\r\n}\r\n\r\n.loginContainer .buttonInput:hover{\r\n    transform: scale(1.1);\r\n    background-color: rgb(64, 89, 172);\r\n}\r\n\r\n.welcomeText {\r\n    animation-delay: 1.5s;\r\n    animation: fade-in 1s;\r\n}\r\n\r\n/* .delayNone {\r\n    animation: fly-in-left 1s;\r\n    animation-delay: 0.5s;\r\n} */\r\n\r\n.delayOne {\r\n    animation: fly-in-left 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n}\r\n\r\n/* .delayTwo {\r\n    animation: fly-in-left 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: both;\r\n}\r\n\r\n.delayThree {\r\n    animation: fly-in-left 1s;\r\n    animation-delay: 1.5s;\r\n    animation-fill-mode: both;\r\n}\r\n\r\n.delayFour {\r\n    animation: fly-in-left 1s;\r\n    animation-delay: 2s;\r\n    animation-fill-mode: both;\r\n} */"],"sourceRoot":""}]);
+} */`, "",{"version":3,"sources":["webpack://./client/css/Home.css"],"names":[],"mappings":"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","sourcesContent":["body {\n    /* background: linear-gradient(80deg, rgba(0, 68, 255, 0.498), rgba(0, 0, 0, 0.148)) */\n    background-image: url('https://cdnb.artstation.com/p/assets/images/images/042/415/777/original/oliver-goodenough-ezgif-com-gif-maker.gif?1634468806');\n    background-size: cover;\n}\n\n@keyframes fly-in-left {\n    from {\n        opacity: 0;\n        transform: translateX(-500px);\n    }\n    to {\n        opacity: 1;\n        transform: translateX(0px);\n    }\n}\n\n@keyframes fly-in-right {\n    from {\n        opacity: 0;\n        transform: translateX(500px);\n    }\n    to {\n        opacity: 1;\n        transform: translateX(0px);\n    }\n}\n\n@keyframes fade-in {\n    from {\n        font-size: 0px;\n        opacity: 0;\n    }\n    to {\n        font-size: 55px;\n        opacity: 1;\n    }\n}\n\n@keyframes move-up {\n    from {\n        transform: translatey(60vh);\n    }\n    to {\n        transform: translatey(0vh);\n    }\n}\n\n@keyframes move-down{\n    from {\n        transform: translatey(0vh);\n    }\n    to {\n        transform: translatey(100vh);\n    }\n}\n\n@keyframes expand-out {\n    from {\n        width: 0px;\n    }\n    to {\n        width: 50vw;\n    }\n}\n\nform {\n    display: flex;\n    padding: 3px;\n    width: 50vw;\n    height: 100%;\n    flex-direction: column;\n    align-items: center;\n    overflow: hidden;\n    border-radius: 5px;\n}\n\n.homeMain {\n    width: 100%;\n    height: 100vh;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    animation: move-in 1s;\n    animation-fill-mode: both;\n}\n\n#toggleButton {\n    border: 2px solid white;\n    width: 6vw;\n    height: 4vh;\n    animation: move-up 2s;\n    animation-delay: 1s;\n    animation-fill-mode: backwards;\n    transition: transform 1s;\n}\n\n#toggleButton:hover {\n    background-color: rgb(64, 89, 172);\n}\n\n#invalidCreds {\n    color: whitesmoke;\n    width: 50vw;\n    opacity: 0;\n}\n\n#invalidCreds#show {\n    color: whitesmoke;\n    width: 50vw;\n    opacity: 1;\n}\n\n#usernameInput {\n    background-image: url(../../assets/username.svg);\n    background-size: 2.9dvw;\n    background-repeat: no-repeat;\n    background-position: 26.6vw;\n}\n\n#usernameInput:focus {\n    border: 3px solid rgb(0, 102, 255);\n}\n\n#passwordInput {\n    background-image: url(../../assets/lock.svg);\n    background-repeat: no-repeat;\n    background-position: center right;\n    animation: fly-in-right 1s;\n    animation-delay: 1s;\n    animation-fill-mode: backwards;\n}\n\n#passwordInput:focus {\n    border: 3px solid rgb(0, 102, 255);\n}\n\n#forgotPassword {\n    width: fit-content;\n    height: fit-content;\n    background-color: #ffffff00;\n    border: none !important;\n    outline: none;\n    padding: 0px;\n    border-radius: 8px;\n    font-size: 20px;\n    font-weight: 500;\n    margin: 0px;\n    animation: move-up 2s;\n    animation-delay: 1s;\n    animation-fill-mode: backwards;\n}\n\n#forgotPassword:hover {\n    text-decoration: underline;\n}\n\n.loginContainer {\n    background-color: rgba(255, 255, 255, 0.043);\n    width: 50vw;\n    height: 90vh;\n    border-radius: 5px;\n    border: 2px solid white;\n    backdrop-filter: blur(7px);\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\n    overflow-x: hidden;\n}\n\n.loginContainer.closeAnim {\n    animation: move-down 1s;\n    animation-fill-mode: both;\n}\n\n.innerLogin {\n    margin-top: 25px;\n    width: 100%;\n    height: 330px;\n    display: flex;\n    border-radius: 5px;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n}\n\n.loginContainer h1 {\n    font-size: 55px;\n    color: whitesmoke;\n    margin: 75px 0px 0px 0px;\n    height: 90px;\n    width: 50vw;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n}\n\n.loginContainer h1::after {\n    content: \"\";\n    height: 3px;\n    border-radius: 5px;\n    width: 50vw;\n    background-color: #59bdff;\n    animation: expand-out 1s;\n    animation-fill-mode: backwards;\n    animation-delay: 2s;\n    margin: 5px;\n}\n\n.loginContainer input {\n    padding: 0px 10px 0px 10px;\n    color: whitesmoke;\n    margin: 8px;\n    border: 2px solid white;\n}\n\n.loginContainer input:focus {\n    color: whitesmoke;\n    border: 2px solid white;\n    outline: 1px solid white;\n}\n\n.loginContainer .textInput{\n    background-color: rgba(23, 23, 23, 0);\n    width: 30vw;\n    cursor: text;\n    height: 7vh;\n    border-radius: 8px;\n    font-size: 2.2vw;\n    font-weight: 550;\n    transition: transform 1s;\n}\n\n.loginContainer .textInput:hover{\n    transform: translateY(-10px);\n}\n\n.loginContainer .buttonInput {\n    background-color: rgb(89, 189, 255);\n    width: 16vw;\n    height: 6vh;\n    border-radius: 8px;\n    font-size: 30px;\n    font-weight: 250;\n    margin: 10px;\n    animation: move-up 2s;\n    animation-delay: 1s;\n    animation-fill-mode: backwards;\n    transition: transform 1s;\n}\n\n.loginContainer .buttonInput:hover{\n    transform: scale(1.1);\n    background-color: rgb(64, 89, 172);\n}\n\n.welcomeText {\n    animation-delay: 1.5s;\n    animation: fade-in 1s;\n}\n\n/* .delayNone {\n    animation: fly-in-left 1s;\n    animation-delay: 0.5s;\n} */\n\n.delayOne {\n    animation: fly-in-left 1s;\n    animation-delay: 1s;\n    animation-fill-mode: backwards;\n}\n\n/* .delayTwo {\n    animation: fly-in-left 1s;\n    animation-delay: 1s;\n    animation-fill-mode: both;\n}\n\n.delayThree {\n    animation: fly-in-left 1s;\n    animation-delay: 1.5s;\n    animation-fill-mode: both;\n}\n\n.delayFour {\n    animation: fly-in-left 1s;\n    animation-delay: 2s;\n    animation-fill-mode: both;\n} */"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./client/css/Splash.css":
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./client/css/Splash.css ***!
+  \************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `@keyframes type-out {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes leave-splash {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(65vw);
+  }
+}
+.splash {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+  background-color: transparent;
+  animation: leave-splash 1s;
+  animation-fill-mode: both;
+  animation-delay: 3s;
+}
+
+.splash div span {
+  font-size: 115px;
+  font-weight: 600;
+  color: white;
+}
+
+.splash div {
+  background-color: rgba(255, 255, 255, 0.042);
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  animation: fade-in-todo 1s;
+}
+
+.splash div span:nth-child(1) {
+  animation: type-out 1s;
+  animation-fill-mode: both;
+  animation-delay: 0.75s;
+}
+
+.splash div span:nth-child(2) {
+  animation: type-out 1s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+
+.splash div span:nth-child(3) {
+  animation: type-out 1s;
+  animation-delay: 1.25s;
+  animation-fill-mode: both;
+}
+
+.splash div span:nth-child(4) {
+  animation: type-out 1s;
+  animation-delay: 1.5s;
+  animation-fill-mode: both;
+}
+
+.splash div span:nth-child(5) {
+  animation: type-out 1s;
+  animation-delay: 1.75s;
+  animation-fill-mode: both;
+}
+
+.splash div span:nth-child(6) {
+  animation: type-out 1s;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+}
+
+.splash div span:nth-child(7) {
+  animation: type-out 1s;
+  animation-delay: 2.25s;
+  animation-fill-mode: both;
+}`, "",{"version":3,"sources":["webpack://./client/css/Splash.css"],"names":[],"mappings":"AAAA;EACI;IACE,UAAA;EACJ;EACE;IACE,UAAA;EACJ;AACF;AAEA;EACI;IACE,wBAAA;EAAJ;EAEE;IACE,2BAAA;EAAJ;AACF;AAGA;EACE,YAAA;EACA,aAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,2CAAA;EACA,6BAAA;EACA,0BAAA;EACA,yBAAA;EACA,mBAAA;AADF;;AAIA;EACI,gBAAA;EACA,gBAAA;EACA,YAAA;AADJ;;AAIA;EACE,4CAAA;EACA,aAAA;EACA,kBAAA;EACA,0CAAA;EACA,2BAAA;EACA,0BAAA;AADF;;AAIE;EACE,sBAAA;EACA,yBAAA;EACA,sBAAA;AADJ;;AAIE;EACE,sBAAA;EACA,mBAAA;EACA,yBAAA;AADJ;;AAIE;EACE,sBAAA;EACA,sBAAA;EACA,yBAAA;AADJ;;AAIE;EACE,sBAAA;EACA,qBAAA;EACA,yBAAA;AADJ;;AAIE;EACE,sBAAA;EACA,sBAAA;EACA,yBAAA;AADJ;;AAIE;EACE,sBAAA;EACA,mBAAA;EACA,yBAAA;AADJ;;AAIE;EACE,sBAAA;EACA,sBAAA;EACA,yBAAA;AADJ","sourcesContent":["@keyframes type-out {\n    from {\n      opacity: 0;\n    }\n    to {\n      opacity: 1;\n    }\n  }\n\n@keyframes leave-splash {\n    from {\n      transform: translateX(0);\n    }\n    to {\n      transform: translateX(65vw);\n    }\n}\n\n.splash {\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);\n  background-color: transparent;\n  animation: leave-splash 1s;\n  animation-fill-mode: both;\n  animation-delay: 3s;\n}\n\n.splash div span {\n    font-size: 115px;\n    font-weight: 600;\n    color: white\n}\n\n.splash div {\n  background-color: rgba(255, 255, 255, 0.042);\n  padding: 10px;\n  border-radius: 5px;\n  border: 2px solid rgba(255, 255, 255, 0.1);\n  backdrop-filter: blur(10px);\n  animation: fade-in-todo 1s;\n}\n  \n  .splash div span:nth-child(1) {\n    animation: type-out 1s;\n    animation-fill-mode: both;\n    animation-delay: .75s;\n  }\n  \n  .splash div span:nth-child(2) {\n    animation: type-out 1s;\n    animation-delay: 1s;\n    animation-fill-mode: both;\n  }\n  \n  .splash div span:nth-child(3) {\n    animation: type-out 1s;\n    animation-delay: 1.25s;\n    animation-fill-mode: both;\n  }\n  \n  .splash div span:nth-child(4) {\n    animation: type-out 1s;\n    animation-delay: 1.5s;\n    animation-fill-mode: both;\n  }\n  \n  .splash div span:nth-child(5) {\n    animation: type-out 1s;\n    animation-delay: 1.75s;\n    animation-fill-mode: both;\n  }\n  \n  .splash div span:nth-child(6) {\n    animation: type-out 1s;\n    animation-delay: 2s;\n    animation-fill-mode: both;\n  }\n  \n  .splash div span:nth-child(7) {\n    animation: type-out 1s;\n    animation-delay: 2.25s;\n    animation-fill-mode: both;\n  }\n  "],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -8905,9 +9083,6 @@ html, body {
 }
 
 body {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
   align-content: center;
   background-image: url("https://cdnb.artstation.com/p/assets/images/images/042/415/777/original/oliver-goodenough-ezgif-com-gif-maker.gif?1634468806");
   background-size: cover;
@@ -8976,6 +9151,14 @@ body {
     transform: translatex(60vw);
   }
 }
+@keyframes move-up-nav {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-25vw);
+  }
+}
 #SubButton {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   margin: 3px;
@@ -8994,8 +9177,16 @@ body {
   animation: move-in 1s;
 }
 
-.LinkClickTransition {
+.todoMain.LinkClickTransition {
   animation: move-down 1s;
+}
+
+.moveInAnim.LinkClickTransition {
+  animation: move-down 1s;
+}
+
+.navbar.NavBarClickTransition {
+  animation: move-up-nav 1s;
 }
 
 .SubItemContainer {
@@ -9311,7 +9502,7 @@ input:active {
 .listItem input[type=checkbox] {
   width: 2vw;
   height: 2vw;
-}`, "",{"version":3,"sources":["webpack://./client/css/Todo.css"],"names":[],"mappings":"AAAA;EACI,sBAAA;AACJ;;AAEA;EACI,YAAA;EACA,WAAA;EACA,YAAA;EACA,SAAA;EACA,UAAA;AACJ;;AAEA;EACI;;4BAAA;EAGA,qBAAA;EACA,qJAAA;EACA,sBAAA;EACA,kBAAA;AACJ;;AAEA;EACI;IACI,UAAA;EACN;EACE;IACI,UAAA;EACN;AACF;AAEA;EACI;IACI,UAAA;EAAN;EAEE;IACI,UAAA;EAAN;AACF;AAGA;EACI;;;GAAA;EAIA;IACI,kBAAA;IACA,0BAAA;EADN;EAGE;IACI,kBAAA;IACA,6BAAA;EADN;AACF;AAIA;EACI;IACI,UAAA;EAFN;EAIE;IACI,WAAA;EAFN;AACF;AAKA;EACI;IACI,UAAA;EAHN;EAKE;IACI,YAAA;EAHN;AACF;AAMA;EACI;IACI,4BAAA;EAJN;EAME;IACI,0BAAA;EAJN;AACF;AAOA;EACI;IACI,wBAAA;EALN;EAOE;IACI,2BAAA;EALN;AACF;AAQA;EACI,+CAAA;EACA,WAAA;EACA,WAAA;EACA,UAAA;EACA,YAAA;EACA,kBAAA;AANJ;;AASA;EACI,aAAA;EACA,mBAAA;AANJ;;AASA;EACI,qBAAA;AANJ;;AASA;EACI,uBAAA;AANJ;;AASA;EACI,uBAAA;EACA,+CAAA;EACA,aAAA;EACA,qBAAA;AANJ;;AASA;EACI,aAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,YAAA;EACA,mBAAA;EACA,kBAAA;EACA,0BAAA;EACA,yBAAA;EACA,kBAAA;AANJ;;AASA;EACI,mBAAA;AANJ;;AASA;EACI,+CAAA;EACA,WAAA;EACA,WAAA;AANJ;;AASA;EACI,+CAAA;EACA,aAAA;EACA,UAAA;EACA,WAAA;AANJ;;AASA;EACI,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,YAAA;EACA,YAAA;EACA,SAAA;EACA,UAAA;AANJ;;AASA;EACI,0BAAA;EACA,+CAAA;EACA,WAAA;EACA,aAAA;EACA,aAAA;EACA,kCAAA;EACA,mBAAA;EACA,2CAAA;EACA,8CAAA;EACA,0BAAA;EACA,mBAAA;EACA,yBAAA;AANJ;;AASA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,mBAAA;EACA,qBAAA;EACA,YAAA;EACA,WAAA;EACA,YAAA;EACA,4CAAA;AANJ;;AASA;EACI,mCAAA;EACA,yBAAA;EACA,kBAAA;EACA,WAAA;EACA,kBAAA;EACA,oCAAA;EACA,eAAA;AANJ;;AASA;EACI,wBAAA;EACA,cAAA;EACA,wBAAA;AANJ;;AASA;EACI,0BAAA;EACA,qBAAA;EACA,mCAAA;AANJ;;AASA;EACI,WAAA;EACA,aAAA;EACA,SAAA;EACA,aAAA;EACA,mBAAA;EACA,sBAAA;EACA,mBAAA;AANJ;;AASA;EACI,WAAA;EACA,sCAAA;EACA,YAAA;EACA,wCAAA;EACA,+CAAA;AANJ;;AASA;EACI,0BAAA;EACA,WAAA;EACA,WAAA;EACA,kBAAA;EACA,cAAA;EACA,gBAAA;EACA,0BAAA;EACA,mBAAA;EACA,yBAAA;EACA,wBAAA;EACA,aAAA;EACA,YAAA;AANJ;;AASA;EACI,4BAAA;AANJ;;AASA;EACI,kCAAA;AANJ;;AASA;EACI,mCAAA;EACA,yBAAA;EACA,WAAA;EACA,WAAA;EACA,kBAAA;EACA,0BAAA;EACA,mBAAA;EACA,8BAAA;EACA,wBAAA;AANJ;;AASA;EACI,qBAAA;EACA,mCAAA;AANJ;;AASA;EACI,mCAAA;EACA,wBAAA;EACA,kBAAA;EACA,WAAA;EACA,kBAAA;EACA,0BAAA;EACA,mBAAA;EACA,8BAAA;EACA,wBAAA;AANJ;;AASA;EACI,qBAAA;EACA,mCAAA;AANJ;;AASA;EACI,mCAAA;EACA,yBAAA;EACA,kBAAA;EACA,sCAAA;EACA,WAAA;EACA,kBAAA;EACA,0BAAA;EACA,mBAAA;EACA,8BAAA;EACA,wBAAA;AANJ;;AASA;EACI,mCAAA;EACA,kBAAA;EACA,yBAAA;EACA,kBAAA;EACA,sCAAA;EACA,WAAA;EACA,kBAAA;EACA,0BAAA;EACA,mBAAA;EACA,8BAAA;EACA,wBAAA;AANJ;;AASA;EACI,qBAAA;EACA,mCAAA;AANJ;;AAUA;EACI,qBAAA;EACA,mCAAA;AAPJ;;AAUA;EACI,kCAAA;AAPJ;;AAUA;EACI,WAAA;EACA,WAAA;EACA,mBAAA;EACA,SAAA;EACA,cAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,4CAAA;AAPJ;;AAUA;EACI,WAAA;EACA,WAAA;EACA,kBAAA;EACA,WAAA;EACA,mCAAA;EACA,iCAAA;EACA,8BAAA;EACA,mBAAA;AAPJ;;AAWA;EACI,WAAA;EACA,YAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,qBAAA;AARJ;;AAWA;EACI,aAAA;EACA,uBAAA;AARJ;;AAWA;EACI,aAAA;EACA,0BAAA;EACA,yBAAA;EACA,sBAAA;EACA,uBAAA;AARJ;;AAWA;EACI,2BAAA;EACA,yBAAA;EACA,sBAAA;EACA,uBAAA;EACA,aAAA;AARJ;;AAWA;EACI,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,WAAA;EACA,YAAA;AARJ;;AAWA;EACI,+CAAA;EACA,WAAA;EACA,YAAA;EACA,gBAAA;EACA,4CAAA;EACA,0BAAA;EACA,kBAAA;EACA,sCAAA;EACA,kBAAA;EACA,gBAAA;AARJ;;AAWA;EACI,0BAAA;EACA,mCAAA;EACA,oCAAA;EACA,cAAA;EACA,kBAAA;EACA,WAAA;EACA,kBAAA;AARJ;;AAWA;EACI,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,+CAAA;EACA,kBAAA;EACA,WAAA;EACA,yBAAA;EACA,eAAA;AARJ;;AAWA;EACI,UAAA;EACA,WAAA;AARJ","sourcesContent":["* {\r\n    box-sizing: border-box;\r\n}\r\n\r\nhtml, body {\r\n    height: 100%;\r\n    width: 100%;\r\n    color: white;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\nbody {\r\n    /* display: flex;\r\n    flex-direction: column;\r\n    justify-content: center; */\r\n    align-content: center;\r\n    background-image: url('https://cdnb.artstation.com/p/assets/images/images/042/415/777/original/oliver-goodenough-ezgif-com-gif-maker.gif?1634468806');\r\n    background-size: cover;\r\n    overflow-y: hidden;\r\n}\r\n\r\n@keyframes fade-in-todo {\r\n    from {\r\n        opacity: 0;\r\n    }\r\n    to {\r\n        opacity: 1;\r\n    }\r\n}\r\n\r\n@keyframes fade-out-todo {\r\n    from {\r\n        opacity: 1;\r\n    }\r\n    to {\r\n        opacity: 0;\r\n    }\r\n}\r\n\r\n@keyframes move-out-todo {\r\n    /*\r\n    Using position absolute here fakes the effect of the element no longer taking up space,\r\n    basically a bandaid on the fact that the display prop isn't animatable, thanks CSS.\r\n    */\r\n    from {\r\n        position: absolute;\r\n        transform: translateX(0vw);\r\n    }\r\n    to {\r\n        position: absolute;\r\n        transform: translateX(-100vw);\r\n    }\r\n}\r\n\r\n@keyframes expand-header-after {\r\n    from {\r\n        width: 0vw;\r\n    }\r\n    to {\r\n        width: 32vw;\r\n    }\r\n}\r\n\r\n@keyframes enter {\r\n    from {\r\n        opacity: 0;\r\n    }\r\n    to {\r\n        opacity: 100;\r\n    }\r\n}\r\n\r\n@keyframes move-in {\r\n    from {\r\n        transform: translatey(-50vh);\r\n    }\r\n    to {\r\n        transform: translatey(0vh);\r\n    }\r\n}\r\n\r\n@keyframes leave {\r\n    from {\r\n        transform: translatex(0);\r\n    }\r\n    to {\r\n        transform: translatex(60vw);\r\n    }\r\n}\r\n\r\n#SubButton {\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    margin: 3px;\r\n    height: 4vh;\r\n    width: 4vw;\r\n    padding: 0px;\r\n    align-self: center;\r\n}\r\n\r\n#SubItemCreator {\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.moveInAnim {\r\n    animation: move-in 1s;\r\n}\r\n\r\n.LinkClickTransition {\r\n    animation: move-down 1s;\r\n}\r\n\r\n.SubItemContainer {\r\n    border: 2px solid white;\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    display: none;\r\n    transition: transform;\r\n}\r\n\r\n.SubItemContainerShow {\r\n    height: 200px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    border: 3px solid white;\r\n    margin: 10px;\r\n    align-items: center;\r\n    border-radius: 5px;\r\n    animation: fly-in-right 1s;\r\n    animation-fill-mode: both;\r\n    overflow-y: scroll;\r\n}\r\n\r\n.SubItemContainerClosing {\r\n    animation: leave 1s;\r\n}\r\n\r\n#completeButton {\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    width: 10vw;\r\n    height: 6vh;\r\n}\r\n\r\n#subCompleteButton {\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    margin: 0.1em;\r\n    width: 7vw;\r\n    height: 4vh;\r\n}\r\n\r\n.MCEMain {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 100vw;\r\n    height: 90vh;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n.navbar {\r\n    backdrop-filter: blur(8px);\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    width: 100%;\r\n    height: 7.5vh;\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr;\r\n    align-items: center;\r\n    background-color: rgba(255, 255, 255, 0.03);\r\n    border: 1.5px solid rgba(255, 255, 255, 0.655);\r\n    animation: fade-in-todo 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: both;\r\n}\r\n\r\n.navbar ul {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    list-style-type: none;\r\n    height: 100%;\r\n    margin: 0px;\r\n    padding: 0px;\r\n    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);\r\n}\r\n\r\n.navbar button {\r\n    background-color: rgb(89, 189, 255);\r\n    color: rgb(255, 255, 255);\r\n    width: fit-content;\r\n    height: 5vh;\r\n    border-radius: 6px;\r\n    border: 2px solid rgb(255, 255, 255);\r\n    margin: 0px 5px;\r\n}\r\n\r\n.RouterLink {\r\n    color:rgb(89, 189, 255);\r\n    font-size: 1em;\r\n    transition: transform 1s;\r\n}\r\n\r\n.RouterLink:hover {\r\n    text-decoration: underline;\r\n    transform: scale(1.1);\r\n    background-color: rgb(42, 135, 197);\r\n}\r\n\r\n.creatorForm {\r\n    width: 30vw;\r\n    padding: 10px;\r\n    margin: 0;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: right;\r\n    align-items: center;\r\n}\r\n\r\n.todoInput {\r\n    margin: 5px;\r\n    border: 1.5px solid rgb(255, 255, 255);\r\n    color: white;\r\n    background-color: rgba(128, 128, 128, 0);\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n}\r\n\r\n.todoInput[type='text'] {\r\n    backdrop-filter: blur(8px);\r\n    width: 20vw;\r\n    height: 6vh;\r\n    border-radius: 8px;\r\n    font-size: 2vw;\r\n    font-weight: 500;\r\n    animation: fade-in-todo 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: both;\r\n    transition: transform 1s;\r\n    padding: 10px;\r\n    cursor: text;\r\n}\r\n\r\n.todoInput[type='text']:hover {\r\n    transform: translateY(-10px);\r\n}\r\n\r\n.todoInput[type='text']:focus {\r\n    border: 2px solid rgb(0, 102, 255);\r\n}\r\n\r\n.todoInput[type='submit'] {\r\n    background-color: rgb(89, 189, 255);\r\n    color: rgb(255, 255, 255);\r\n    width: 10vw;\r\n    height: 6vh;\r\n    border-radius: 8px;\r\n    animation: fade-in-todo 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n    transition: transform 1s;\r\n}\r\n\r\n.todoInput[type='submit']:hover {\r\n    transform: scale(1.1);\r\n    background-color: rgb(42, 135, 197);\r\n}\r\n\r\n.todoInput[type='button'] {\r\n    background-color: rgb(89, 189, 255);\r\n    color: rgb(55, 198, 255);\r\n    width: fit-content;\r\n    height: 5vh;\r\n    border-radius: 8px;\r\n    animation: fade-in-todo 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n    transition: transform 1s;\r\n}\r\n\r\n.todoInput[type='button']:hover {\r\n    transform: scale(1.1);\r\n    background-color: rgb(42, 135, 197);\r\n}\r\n\r\ninput[type='button'] {\r\n    background-color: rgb(89, 189, 255);\r\n    color: rgb(255, 255, 255);\r\n    width: fit-content;\r\n    border: 1.5px solid rgb(255, 255, 255);\r\n    height: 5vh;\r\n    border-radius: 8px;\r\n    animation: fade-in-todo 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n    transition: transform 1s;\r\n}\r\n\r\n.SubMenuButton {\r\n    background-color: rgb(89, 153, 255);\r\n    text-align: center;\r\n    color: rgb(255, 255, 255);\r\n    width: fit-content;\r\n    border: 1.5px solid rgb(255, 255, 255);\r\n    height: 6vh;\r\n    border-radius: 8px;\r\n    animation: fade-in-todo 1s;\r\n    animation-delay: 1s;\r\n    animation-fill-mode: backwards;\r\n    transition: transform 1s;\r\n}\r\n\r\n.SubMenuButton:hover {\r\n    transform: scale(1.1);\r\n    background-color: rgb(42, 135, 197);\r\n}\r\n\r\n\r\ninput[type='button']:hover {\r\n    transform: scale(1.1);\r\n    background-color: rgb(42, 135, 197);\r\n}\r\n\r\ninput:active {\r\n    border: 3px solid rgb(0, 102, 255);\r\n}\r\n\r\n.todoSpan {\r\n    height: 3vw;\r\n    width: 32vw;\r\n    white-space: nowrap;\r\n    margin: 0;\r\n    font-size: 2vw;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);\r\n}\r\n\r\n.todoSpan::after {\r\n    content: \"\";\r\n    height: 3px;\r\n    border-radius: 5px;\r\n    width: 32vw;\r\n    background-color: rgb(89, 189, 255);\r\n    animation: expand-header-after 1s;\r\n    animation-fill-mode: backwards;\r\n    animation-delay: 2s;\r\n}\r\n\r\n\r\n.todoMain {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    animation: move-in 1s;\r\n}\r\n\r\n.displayList {\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n.innerDisplayList {\r\n    display: flex;\r\n    animation: fade-in-todo 1s;\r\n    animation-fill-mode: both;\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n}\r\n\r\n.innerDisplayListHide {\r\n    animation: move-out-todo 2s;\r\n    animation-fill-mode: both;\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n    display: flex;\r\n}\r\n\r\n.creator {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 50vw;\r\n    margin: 10px;\r\n}\r\n\r\n.display {\r\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\r\n    width: 45vw;\r\n    height: 55vh;\r\n    margin-top: 10px;\r\n    background-color: rgba(255, 255, 255, 0.043);\r\n    backdrop-filter: blur(8px);\r\n    border-radius: 5px;\r\n    border: 1.5px solid rgb(255, 255, 255);\r\n    align-self: center;\r\n    overflow: scroll;\r\n}\r\n\r\n.ListItemValue {\r\n    backdrop-filter: blur(8px);\r\n    background-color: rgb(89, 189, 255);\r\n    border: 2px solid rgb(255, 255, 255);\r\n    font-size: 2vw;\r\n    width: fit-content;\r\n    margin: 2px;\r\n    border-radius: 8px;\r\n}\r\n\r\n.listItem {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);\r\n    border-radius: 5px;\r\n    margin: 5px;\r\n    color: rgb(245, 245, 245);\r\n    font-size: 30px;\r\n}\r\n\r\n.listItem input[type='checkbox'] {\r\n    width: 2vw;\r\n    height: 2vw;\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./client/css/Todo.css"],"names":[],"mappings":"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","sourcesContent":["* {\n    box-sizing: border-box;\n}\n\nhtml, body {\n    height: 100%;\n    width: 100%;\n    color: white;\n    margin: 0;\n    padding: 0;\n}\n\nbody {\n    align-content: center;\n    background-image: url('https://cdnb.artstation.com/p/assets/images/images/042/415/777/original/oliver-goodenough-ezgif-com-gif-maker.gif?1634468806');\n    background-size: cover;\n    overflow-y: hidden;\n}\n\n@keyframes fade-in-todo {\n    from {\n        opacity: 0;\n    }\n    to {\n        opacity: 1;\n    }\n}\n\n@keyframes fade-out-todo {\n    from {\n        opacity: 1;\n    }\n    to {\n        opacity: 0;\n    }\n}\n\n@keyframes move-out-todo {\n    /*\n    Using position absolute here fakes the effect of the element no longer taking up space,\n    basically a bandaid on the fact that the display prop isn't animatable, thanks CSS.\n    */\n    from {\n        position: absolute;\n        transform: translateX(0vw);\n    }\n    to {\n        position: absolute;\n        transform: translateX(-100vw);\n    }\n}\n\n@keyframes expand-header-after {\n    from {\n        width: 0vw;\n    }\n    to {\n        width: 32vw;\n    }\n}\n\n@keyframes enter {\n    from {\n        opacity: 0;\n    }\n    to {\n        opacity: 100;\n    }\n}\n\n@keyframes move-in {\n    from {\n        transform: translatey(-50vh);\n    }\n    to {\n        transform: translatey(0vh);\n    }\n}\n\n@keyframes leave {\n    from {\n        transform: translatex(0);\n    }\n    to {\n        transform: translatex(60vw);\n    }\n}\n\n@keyframes move-up-nav {\n    from {\n        transform: translateY(0);\n    }\n    to {\n        transform: translateY(-25vw);\n    }\n}\n\n#SubButton {\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\n    margin: 3px;\n    height: 4vh;\n    width: 4vw;\n    padding: 0px;\n    align-self: center;\n}\n\n#SubItemCreator {\n    display: flex;\n    flex-direction: row;\n}\n\n.moveInAnim {\n    animation: move-in 1s;\n}\n\n.todoMain.LinkClickTransition {\n    animation: move-down 1s;\n}\n\n.moveInAnim.LinkClickTransition {\n    animation: move-down 1s;\n}\n\n.navbar.NavBarClickTransition {\n    animation: move-up-nav 1s;\n}\n\n.SubItemContainer {\n    border: 2px solid white;\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\n    display: none;\n    transition: transform;\n}\n\n.SubItemContainerShow {\n    height: 200px;\n    display: flex;\n    flex-direction: column;\n    border: 3px solid white;\n    margin: 10px;\n    align-items: center;\n    border-radius: 5px;\n    animation: fly-in-right 1s;\n    animation-fill-mode: both;\n    overflow-y: scroll;\n}\n\n.SubItemContainerClosing {\n    animation: leave 1s;\n}\n\n#completeButton {\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\n    width: 10vw;\n    height: 6vh;\n}\n\n#subCompleteButton {\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\n    margin: 0.1em;\n    width: 7vw;\n    height: 4vh;\n}\n\n.MCEMain {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    width: 100vw;\n    height: 90vh;\n    margin: 0;\n    padding: 0;\n}\n\n.navbar {\n    backdrop-filter: blur(8px);\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\n    width: 100%;\n    height: 7.5vh;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    align-items: center;\n    background-color: rgba(255, 255, 255, 0.03);\n    border: 1.5px solid rgba(255, 255, 255, 0.655);\n    animation: fade-in-todo 1s;\n    animation-delay: 1s;\n    animation-fill-mode: both;\n}\n\n.navbar ul {\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items: center;\n    list-style-type: none;\n    height: 100%;\n    margin: 0px;\n    padding: 0px;\n    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);\n}\n\n.navbar button {\n    background-color: rgb(89, 189, 255);\n    color: rgb(255, 255, 255);\n    width: fit-content;\n    height: 5vh;\n    border-radius: 6px;\n    border: 2px solid rgb(255, 255, 255);\n    margin: 0px 5px;\n}\n\n.RouterLink {\n    color:rgb(89, 189, 255);\n    font-size: 1em;\n    transition: transform 1s;\n}\n\n.RouterLink:hover {\n    text-decoration: underline;\n    transform: scale(1.1);\n    background-color: rgb(42, 135, 197);\n}\n\n.creatorForm {\n    width: 30vw;\n    padding: 10px;\n    margin: 0;\n    display: flex;\n    flex-direction: row;\n    justify-content: right;\n    align-items: center;\n}\n\n.todoInput {\n    margin: 5px;\n    border: 1.5px solid rgb(255, 255, 255);\n    color: white;\n    background-color: rgba(128, 128, 128, 0);\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\n}\n\n.todoInput[type='text'] {\n    backdrop-filter: blur(8px);\n    width: 20vw;\n    height: 6vh;\n    border-radius: 8px;\n    font-size: 2vw;\n    font-weight: 500;\n    animation: fade-in-todo 1s;\n    animation-delay: 1s;\n    animation-fill-mode: both;\n    transition: transform 1s;\n    padding: 10px;\n    cursor: text;\n}\n\n.todoInput[type='text']:hover {\n    transform: translateY(-10px);\n}\n\n.todoInput[type='text']:focus {\n    border: 2px solid rgb(0, 102, 255);\n}\n\n.todoInput[type='submit'] {\n    background-color: rgb(89, 189, 255);\n    color: rgb(255, 255, 255);\n    width: 10vw;\n    height: 6vh;\n    border-radius: 8px;\n    animation: fade-in-todo 1s;\n    animation-delay: 1s;\n    animation-fill-mode: backwards;\n    transition: transform 1s;\n}\n\n.todoInput[type='submit']:hover {\n    transform: scale(1.1);\n    background-color: rgb(42, 135, 197);\n}\n\n.todoInput[type='button'] {\n    background-color: rgb(89, 189, 255);\n    color: rgb(55, 198, 255);\n    width: fit-content;\n    height: 5vh;\n    border-radius: 8px;\n    animation: fade-in-todo 1s;\n    animation-delay: 1s;\n    animation-fill-mode: backwards;\n    transition: transform 1s;\n}\n\n.todoInput[type='button']:hover {\n    transform: scale(1.1);\n    background-color: rgb(42, 135, 197);\n}\n\ninput[type='button'] {\n    background-color: rgb(89, 189, 255);\n    color: rgb(255, 255, 255);\n    width: fit-content;\n    border: 1.5px solid rgb(255, 255, 255);\n    height: 5vh;\n    border-radius: 8px;\n    animation: fade-in-todo 1s;\n    animation-delay: 1s;\n    animation-fill-mode: backwards;\n    transition: transform 1s;\n}\n\n.SubMenuButton {\n    background-color: rgb(89, 153, 255);\n    text-align: center;\n    color: rgb(255, 255, 255);\n    width: fit-content;\n    border: 1.5px solid rgb(255, 255, 255);\n    height: 6vh;\n    border-radius: 8px;\n    animation: fade-in-todo 1s;\n    animation-delay: 1s;\n    animation-fill-mode: backwards;\n    transition: transform 1s;\n}\n\n.SubMenuButton:hover {\n    transform: scale(1.1);\n    background-color: rgb(42, 135, 197);\n}\n\n\ninput[type='button']:hover {\n    transform: scale(1.1);\n    background-color: rgb(42, 135, 197);\n}\n\ninput:active {\n    border: 3px solid rgb(0, 102, 255);\n}\n\n.todoSpan {\n    height: 3vw;\n    width: 32vw;\n    white-space: nowrap;\n    margin: 0;\n    font-size: 2vw;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);\n}\n\n.todoSpan::after {\n    content: \"\";\n    height: 3px;\n    border-radius: 5px;\n    width: 32vw;\n    background-color: rgb(89, 189, 255);\n    animation: expand-header-after 1s;\n    animation-fill-mode: backwards;\n    animation-delay: 2s;\n}\n\n\n.todoMain {\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    animation: move-in 1s;\n}\n\n.displayList {\n    display: flex;\n    justify-content: center;\n}\n\n.innerDisplayList {\n    display: flex;\n    animation: fade-in-todo 1s;\n    animation-fill-mode: both;\n    flex-direction: column;\n    align-items: flex-start;\n}\n\n.innerDisplayListHide {\n    animation: move-out-todo 2s;\n    animation-fill-mode: both;\n    flex-direction: column;\n    align-items: flex-start;\n    display: flex;\n}\n\n.creator {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    width: 50vw;\n    margin: 10px;\n}\n\n.display {\n    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);\n    width: 45vw;\n    height: 55vh;\n    margin-top: 10px;\n    background-color: rgba(255, 255, 255, 0.043);\n    backdrop-filter: blur(8px);\n    border-radius: 5px;\n    border: 1.5px solid rgb(255, 255, 255);\n    align-self: center;\n    overflow: scroll;\n}\n\n.ListItemValue {\n    backdrop-filter: blur(8px);\n    background-color: rgb(89, 189, 255);\n    border: 2px solid rgb(255, 255, 255);\n    font-size: 2vw;\n    width: fit-content;\n    margin: 2px;\n    border-radius: 8px;\n}\n\n.listItem {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);\n    border-radius: 5px;\n    margin: 5px;\n    color: rgb(245, 245, 245);\n    font-size: 30px;\n}\n\n.listItem input[type='checkbox'] {\n    width: 2vw;\n    height: 2vw;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -9362,7 +9553,7 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}`, "",{"version":3,"sources":["webpack://./client/css/index.css"],"names":[],"mappings":"AAAA;EACE,sBAAA;EACA,4CAAA;AACF;AAEA;EACE,sBAAA;EACA;mFAAA;EAEA,sBAAA;AAAF;;AAGA;EACE,SAAA;EACA,mCAAA;EACA,kCAAA;AAAF;;AAGA;EACE,+EAAA;AAAF","sourcesContent":["@font-face {\r\n  font-family: Quicksand;\r\n  src: url(../../assets/Quicksand/static/Quicksand-Regular.ttf);\r\n}\r\n\r\n* {\r\n  box-sizing: border-box;\r\n  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',\r\n  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; */\r\n  font-family: Quicksand;\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n\r\ncode {\r\n  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',\r\n    monospace;\r\n}\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./client/css/index.css"],"names":[],"mappings":"AAAA;EACE,sBAAA;EACA,4CAAA;AACF;AAEA;EACE,sBAAA;EACA;mFAAA;EAEA,sBAAA;AAAF;;AAGA;EACE,SAAA;EACA,mCAAA;EACA,kCAAA;AAAF;;AAGA;EACE,+EAAA;AAAF","sourcesContent":["@font-face {\n  font-family: Quicksand;\n  src: url(../../assets/Quicksand/static/Quicksand-Regular.ttf);\n}\n\n* {\n  box-sizing: border-box;\n  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',\n  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; */\n  font-family: Quicksand;\n}\n\nbody {\n  margin: 0;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',\n    monospace;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -51443,6 +51634,61 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_Home_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_Home_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_Home_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
+/***/ "./client/css/Splash.css":
+/*!*******************************!*\
+  !*** ./client/css/Splash.css ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_Splash_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./Splash.css */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./client/css/Splash.css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_Splash_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_Splash_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_Splash_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_Splash_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
 /***/ }),

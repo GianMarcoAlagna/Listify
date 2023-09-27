@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import fetchUserData from '../utils/fetchUserData';
 import * as actions from '../actions/todoActions.js';
+import Splash from './splash.jsx';
 
 function Home() {
     const [credentials, setCredentials] = useState({username: '', password: ''});
@@ -13,6 +14,7 @@ function Home() {
     const dispatch = useDispatch();
     const invalidCredsRef = useRef(null);
     const navigate = useNavigate();
+    const [splash, setSplash] = useState(true);
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -64,7 +66,10 @@ function Home() {
     }
 
     return (
-        <div className="homeMain">
+        splash ? 
+        <Splash setSplash={setSplash} />
+        :
+        (<div className="homeMain">
             <div className={`loginContainer ${successLogin ? "closeAnim" : ""}`}>
                 <h1 className="welcomeText">{ signup ? "Signup" : "Login" }</h1>
                 <div className="innerLogin">
@@ -92,7 +97,7 @@ function Home() {
                     </form>
                 </div>
             </div>
-        </div>
+        </div>)
     );
 }
 

@@ -1,0 +1,88 @@
+@keyframes type-out {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+@keyframes leave-splash {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(65vw);
+    }
+}
+
+.splash {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+  background-color: transparent;
+  animation: leave-splash 1s;
+  animation-fill-mode: both;
+  animation-delay: 3s;
+}
+
+.splash div span {
+    font-size: 115px;
+    font-weight: 600;
+    color: white
+}
+
+.splash div {
+  background-color: rgba(255, 255, 255, 0.042);
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  animation: fade-in-todo 1s;
+}
+  
+  .splash div span:nth-child(1) {
+    animation: type-out 1s;
+    animation-fill-mode: both;
+    animation-delay: .75s;
+  }
+  
+  .splash div span:nth-child(2) {
+    animation: type-out 1s;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+  }
+  
+  .splash div span:nth-child(3) {
+    animation: type-out 1s;
+    animation-delay: 1.25s;
+    animation-fill-mode: both;
+  }
+  
+  .splash div span:nth-child(4) {
+    animation: type-out 1s;
+    animation-delay: 1.5s;
+    animation-fill-mode: both;
+  }
+  
+  .splash div span:nth-child(5) {
+    animation: type-out 1s;
+    animation-delay: 1.75s;
+    animation-fill-mode: both;
+  }
+  
+  .splash div span:nth-child(6) {
+    animation: type-out 1s;
+    animation-delay: 2s;
+    animation-fill-mode: both;
+  }
+  
+  .splash div span:nth-child(7) {
+    animation: type-out 1s;
+    animation-delay: 2.25s;
+    animation-fill-mode: both;
+  }
+  
