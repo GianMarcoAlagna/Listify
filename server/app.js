@@ -32,10 +32,6 @@ app.use('/', (req, res) => {
     res.status(200).sendFile(path.resolve(__dirname, '../index.html'));
 });
 
-// app.post('/login', (req, res) => {
-//   res.sendStatus(200);
-// });
-
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) => res.sendStatus(404));
 
