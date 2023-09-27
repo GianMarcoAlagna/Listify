@@ -22,9 +22,9 @@ function MCE() {
     const apiKey = process.env.REACT_APP_TINYMCE_API_KEY;
 
     return (
-        <div ref={mainRef} className='moveInAnim'>
+        <>
             <NavBar reference={mainRef} innerText={'Todo List'} path={'todo'} textEditorRef={textEditorRef} />
-            <div className='MCEMain'>
+            <div ref={mainRef} className='MCEMain moveInAnim'>
                 <MCEContainer>
                     <Editor 
                         apiKey={apiKey}
@@ -51,7 +51,7 @@ function MCE() {
                         />
                 </MCEContainer>
             </div>
-        </div>
+        </>
     );
 
 }

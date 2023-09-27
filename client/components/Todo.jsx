@@ -22,9 +22,9 @@ function Todo() {
     }
 
     return (
-        <div ref={mainRef}>
+        <>
             <NavBar reference={mainRef} innerText={'Text Editor'} path={'text'} />
-            <div className='todoMain'>
+            <div ref={mainRef} className='todoMain'>
                 <div className='creator'>
                     <span className='todoSpan'>{username ? `What are we doing today ${username}?` : '...'}</span>
                     <TodoCreator subList={false} />
@@ -41,7 +41,7 @@ function Todo() {
                     <TodoDisplay entries={entries} animate={animate} />
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 

@@ -11,9 +11,6 @@ html, body {
 }
 
 body {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
     align-content: center;
     background-image: url('https://cdnb.artstation.com/p/assets/images/images/042/415/777/original/oliver-goodenough-ezgif-com-gif-maker.gif?1634468806');
     background-size: cover;
@@ -89,6 +86,15 @@ body {
     }
 }
 
+@keyframes move-up-nav {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-25vw);
+    }
+}
+
 #SubButton {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
     margin: 3px;
@@ -107,8 +113,16 @@ body {
     animation: move-in 1s;
 }
 
-.LinkClickTransition {
+.todoMain.LinkClickTransition {
     animation: move-down 1s;
+}
+
+.moveInAnim.LinkClickTransition {
+    animation: move-down 1s;
+}
+
+.navbar.NavBarClickTransition {
+    animation: move-up-nav 1s;
 }
 
 .SubItemContainer {
