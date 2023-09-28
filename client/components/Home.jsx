@@ -1,7 +1,7 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import '../css/Home.css'
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import fetchUserData from '../utils/fetchUserData';
 import * as actions from '../actions/todoActions.js';
 import Splash from './splash.jsx';
@@ -11,10 +11,20 @@ function Home() {
     const [invalidCreds, setInvalidCreds] = useState(false);
     const [signup, setSignup] = useState(true)
     const [successLogin, setSuccessLogin] = useState(false);
+    const [splash, setSplash] = useState(true);
     const dispatch = useDispatch();
     const invalidCredsRef = useRef(null);
     const navigate = useNavigate();
-    const [splash, setSplash] = useState(true);
+    console.log(Date.now())
+    useEffect(() => {
+        (async function getData() {
+            if (localStorage.getItem('isLoggedIn') && Date.now() < Number(localStorage.getItem('isLoggedIn')) ) {
+                const userData = await fetchUserData();
+                dispatch(actions.setUserDataActionCreator(userData));
+                navigate('/todo');
+            }
+        })();
+    }, []);
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -44,6 +54,7 @@ function Home() {
              */
             const userData = await fetchUserData();
             dispatch(actions.setUserDataActionCreator(userData));
+            localStorage.setItem('isLoggedIn', Date.now() + 24 * 60 * 60 * 1000);
             setTimeout(() => {
                 setInvalidCreds(false);
                 return navigate('/todo')
@@ -96,6 +107,12 @@ function Home() {
                         <input type='button' id='forgotPassword' value='Forgot Password' onClick={handleForgotPassword}></input>
                     </form>
                 </div>
+                <footer id='credits'>
+                    <div id='anchorsContainer'>
+                        <a id='creditsAnchor' href="https://github.com/GianMarcoAlagna/Listify">Source</a>
+                        <a id='creditsAnchor' href="https://github.com/GianMarcoAlagna">Made with ❤️ by Gian-Marco Alagna</a>
+                    </div>
+                </footer>
             </div>
         </div>)
     );

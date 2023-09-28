@@ -75,10 +75,9 @@ const userController = {
         const { username } = req.body;
         if (req.cookies.token) return next();
         try {
-            // const token = jwt.sign({ username }, process.env.KEY, { expiresIn: 3000000 }); commented out for now, will add back in later
             const token = jwt.sign({ username }, process.env.KEY);
-            // res.cookie("token", token, { expires: new Date(Date.now() + 3000000), httpOnly: true, sameSite: 'None', secure: true }); commented out for now, will add back in later
-            res.cookie("token", token, { httpOnly: true, sameSite: 'None', secure: true });
+            const expiration = new Date(Date.now() + (24 * 60 * 60 * 1000));
+            res.cookie("token", token, { expires: expiration, httpOnly: true, sameSite: 'None', secure: true });
             return next();
         } catch (err) {
             return next(createError(err, 500, 'error creating jwt cookie', 'userController', 'setCookie'));

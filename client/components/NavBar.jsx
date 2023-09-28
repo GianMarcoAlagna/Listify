@@ -30,7 +30,8 @@ const NavBar = ({ reference, innerText, path, textEditorRef }) => {
         .then(() => {
             sendSignoutRequest()
             .then(res => {            
-                if(res=== 200) {
+                if(res === 200) {
+                    localStorage.removeItem('isLoggedIn');
                     reference.current.classList.add('LinkClickTransition');
                     setTimeout(() => {
                         reference.current.classList.remove('LinkClickTransition');
