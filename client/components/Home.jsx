@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import '../css/Home.css'
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import fetchUserData from '../utils/fetchUserData';
 import * as actions from '../actions/todoActions.js';
 import Splash from './splash.jsx';
@@ -15,7 +15,6 @@ function Home() {
     const dispatch = useDispatch();
     const invalidCredsRef = useRef(null);
     const navigate = useNavigate();
-    console.log(Date.now())
     useEffect(() => {
         (async function getData() {
             if (localStorage.getItem('isLoggedIn') && Date.now() < Number(localStorage.getItem('isLoggedIn')) ) {
