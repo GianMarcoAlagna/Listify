@@ -1,6 +1,6 @@
 # Listify
 
-Listify is primaryily a task management app,
+Listify is primarily a task management app,
   if you need to:
   - write something down
   - write yourself reminders
