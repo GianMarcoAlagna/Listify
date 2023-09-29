@@ -16,17 +16,17 @@ const todoController = {
     createTodo: async function(req, res, next) {
         const { username, item } = req.body;
         // item should be an Object that cooperates with the todoItemSchema
-        const user = await User.findOne({ username });
-        console.log(user)
-        if (!user) return next(createError('Couldn\'t find user', 404, `couldn't find user ${username}`, 'todoController', 'createTodo'));
         try {
             const newItem = {
                 value: item.value,
                 completed: false,
                 sublist: [item.sublist || null]
             }
-            user.todo.items.push(newItem);
-            await user.save();
+            try {
+                User.findOneAndUpdate({ username }, { $push: { 'todo.items': newItem } })
+            } catch (err) {
+                return next(createError('Couldn\'t find user', 404, `couldn't find user ${username}`, 'todoController', 'createTodo'));
+            }
             return res.sendStatus(200);
         } catch (err) {
             return next(createError(null, 404, `couldn't add item`, 'todoController', 'createTodo'));
