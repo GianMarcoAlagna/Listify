@@ -1,5 +1,4 @@
 body {
-    /* background: linear-gradient(80deg, rgba(0, 68, 255, 0.498), rgba(0, 0, 0, 0.148)) */
     background-image: url('https://cdnb.artstation.com/p/assets/images/images/042/415/777/original/oliver-goodenough-ezgif-com-gif-maker.gif?1634468806');
     background-size: cover;
 }
@@ -81,11 +80,12 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 2vh;
+    align-items: center;
+    height: fit-content;
     color: whitesmoke;
     font-size: 20px;
     font-weight: 600;
-    margin: 10px;
+    margin: 0px;
     padding: 0px;
     margin-top: 10px;
     flex-grow: 1;
@@ -96,6 +96,8 @@ form {
 
 #creditsAnchor {
     width: fit-content;
+    padding: 0px;
+    margin: 0px;
     color: whitesmoke;
     text-decoration: none;
     transition: transform 1s;
@@ -107,7 +109,7 @@ form {
     align-items: center;
     margin: 0px;
     padding: 0px;
-    margin-top: 10px;
+    height: fit-content;
     animation: move-up 2s;
     animation-delay: 1s;
     animation-fill-mode: backwards;
@@ -132,8 +134,11 @@ form {
 
 #toggleButton {
     border: 2px solid white;
-    width: 6vw;
+    width: 10vw;
+    min-width: fit-content;
+    min-height: fit-content;
     height: 4vh;
+    font-size: 25px;
     animation: move-up 2s;
     animation-delay: 1s;
     animation-fill-mode: backwards;
@@ -158,9 +163,8 @@ form {
 
 #usernameInput {
     background-image: url(../../assets/username.svg);
-    background-size: 2.9dvw;
     background-repeat: no-repeat;
-    background-position: 26.6vw;
+    background-position: center right;
 }
 
 #usernameInput:focus {
@@ -171,9 +175,6 @@ form {
     background-image: url(../../assets/lock.svg);
     background-repeat: no-repeat;
     background-position: center right;
-    animation: fly-in-right 1s;
-    animation-delay: 1s;
-    animation-fill-mode: backwards;
 }
 
 #passwordInput:focus {
@@ -286,6 +287,8 @@ form {
 .loginContainer .buttonInput {
     background-color: rgb(89, 189, 255);
     width: 16vw;
+    min-width: fit-content;
+    min-height: fit-content;
     height: 6vh;
     border-radius: 8px;
     font-size: 30px;

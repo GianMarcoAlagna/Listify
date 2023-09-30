@@ -20,7 +20,7 @@ const todoController = {
             const newItem = {
                 value: item.value,
                 completed: false,
-                sublist: [item.sublist || null]
+                sublist: [item.sublist || []]
             }
             try {
                 User.findOneAndUpdate({ username }, { $push: { 'todo.items': newItem } })
