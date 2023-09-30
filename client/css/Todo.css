@@ -95,6 +95,14 @@ body {
     }
 }
 
+#navSource {
+    text-align: center;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+}
+
 #SubButton {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
     margin: 3px;
@@ -113,11 +121,7 @@ body {
     animation: move-in 1s;
 }
 
-.todoMain.LinkClickTransition {
-    animation: move-down 1s;
-}
-
-.moveInAnim.LinkClickTransition {
+.todoMain.LinkClickTransition,  .moveInAnim.LinkClickTransition{
     animation: move-down 1s;
 }
 
@@ -177,8 +181,9 @@ body {
     backdrop-filter: blur(8px);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
     width: 100%;
+    justify-content: space-between;
     height: 7.5vh;
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.03);
@@ -200,8 +205,9 @@ body {
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-.navbar button {
+.navbar button, .navbar a {
     background-color: rgb(89, 189, 255);
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     color: rgb(255, 255, 255);
     width: fit-content;
     height: 5vh;
@@ -212,12 +218,14 @@ body {
 
 .RouterLink {
     color:rgb(89, 189, 255);
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     font-size: 1em;
     transition: transform 1s;
 }
 
 .RouterLink:hover {
     text-decoration: underline;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     transform: scale(1.1);
     background-color: rgb(42, 135, 197);
 }
@@ -245,6 +253,7 @@ body {
     width: 20vw;
     height: 6vh;
     border-radius: 8px;
+    min-width: 10vw;
     font-size: 2vw;
     font-weight: 500;
     animation: fade-in-todo 1s;
@@ -304,14 +313,12 @@ input[type='button'] {
     border: 1.5px solid rgb(255, 255, 255);
     height: 5vh;
     border-radius: 8px;
-    animation: fade-in-todo 1s;
-    animation-delay: 1s;
-    animation-fill-mode: backwards;
     transition: transform 1s;
 }
 
 .SubMenuButton {
-    background-color: rgb(89, 153, 255);
+    background-color: rgb(89, 189, 255);
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
     color: rgb(255, 255, 255);
     width: fit-content;
@@ -326,6 +333,7 @@ input[type='button'] {
 
 .SubMenuButton:hover {
     transform: scale(1.1);
+    text-decoration: underline;
     background-color: rgb(42, 135, 197);
 }
 

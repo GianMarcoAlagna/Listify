@@ -55,6 +55,7 @@ const NavBar = ({ reference, innerText, path, textEditorRef }) => {
                     </button>
                 </li>
             </ul>
+            <a className='SubMenuButton' id='navSource' href='https://github.com/GianMarcoAlagna/Listify' target='_blank' rel='noreferrer'>Source</a>
         </div>
     );
 }
