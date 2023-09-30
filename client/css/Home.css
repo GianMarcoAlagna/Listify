@@ -175,6 +175,9 @@ form {
     background-image: url(../../assets/lock.svg);
     background-repeat: no-repeat;
     background-position: center right;
+    animation: fly-in-right 1s;
+    animation-fill-mode: both;
+    animation-delay: 1s;
 }
 
 #passwordInput:focus {
