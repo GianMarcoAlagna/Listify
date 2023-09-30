@@ -445,6 +445,11 @@ input:active {
     font-size: 30px;
 }
 
+.listItem label {
+    display: flex;
+    align-items: center;
+}
+
 .listItem input[type='checkbox'] {
     width: 2vw;
     height: 2vw;

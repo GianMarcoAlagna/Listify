@@ -14,7 +14,6 @@ const NavBar = ({ reference, innerText, path, textEditorRef }) => {
 
     const handleLink = () => {
         if (innerText === 'Todo List') {
-            console.log(textEditorRef.current.getContent())
             dispatch(actions.updateTextEditorActionCreator(textEditorRef.current.getContent()));
         }
         reference.current.classList.add('LinkClickTransition');
@@ -38,7 +37,6 @@ const NavBar = ({ reference, innerText, path, textEditorRef }) => {
                         return navigate('/');
                     }, 950);
                 } else {
-                    console.log(res)
                     return console.log('Signout Failed');
                 }
             });

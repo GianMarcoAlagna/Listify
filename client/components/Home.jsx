@@ -17,7 +17,7 @@ function Home() {
     const navigate = useNavigate();
     useEffect(() => {
         (async function getData() {
-            if (localStorage.getItem('isLoggedIn') && Date.now() < Number(localStorage.getItem('isLoggedIn')) ) {
+            if (localStorage.getItem('isLoggedIn') && Date.now() < Number(localStorage.getItem('isLoggedIn'))) {
                 const userData = await fetchUserData();
                 dispatch(actions.setUserDataActionCreator(userData));
                 navigate('/todo');
