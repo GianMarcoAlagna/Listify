@@ -9,10 +9,10 @@
 
 @keyframes leave-splash {
     from {
-      transform: translateX(0);
+      opacity: 1;
     }
     to {
-      transform: translateX(65vw);
+      opacity: 0;
     }
 }
 
@@ -34,7 +34,7 @@ body, html {
   background-color: transparent;
   animation: leave-splash 1s;
   animation-fill-mode: both;
-  animation-delay: 3s;
+  animation-delay: 1s;
 }
 
 .splash div span {
@@ -55,42 +55,42 @@ body, html {
   .splash div span:nth-child(1) {
     animation: type-out 1s;
     animation-fill-mode: both;
-    animation-delay: .75s;
+    animation-delay: .1s;
   }
   
   .splash div span:nth-child(2) {
     animation: type-out 1s;
-    animation-delay: 1s;
+    animation-delay: .25s;
     animation-fill-mode: both;
   }
   
   .splash div span:nth-child(3) {
     animation: type-out 1s;
-    animation-delay: 1.25s;
+    animation-delay: .35s;
     animation-fill-mode: both;
   }
   
   .splash div span:nth-child(4) {
     animation: type-out 1s;
-    animation-delay: 1.5s;
+    animation-delay: .45s;
     animation-fill-mode: both;
   }
   
   .splash div span:nth-child(5) {
     animation: type-out 1s;
-    animation-delay: 1.75s;
+    animation-delay: .55s;
     animation-fill-mode: both;
   }
   
   .splash div span:nth-child(6) {
     animation: type-out 1s;
-    animation-delay: 2s;
+    animation-delay: .65s;
     animation-fill-mode: both;
   }
   
   .splash div span:nth-child(7) {
     animation: type-out 1s;
-    animation-delay: 2.25s;
+    animation-delay: .75s;
     animation-fill-mode: both;
   }
   

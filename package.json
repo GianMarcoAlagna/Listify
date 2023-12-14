@@ -7,7 +7,7 @@
     "start": "nodemon ./server/server.js",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently --kill-others \"node server/server.js\" \"webpack serve --mode development --open --hot\"",
+    "dev": "concurrently --kill-others \"nodemon server/server.js\" \"webpack serve --mode development --open --hot\"",
     "postinstall": "node ./client/utils/postinstall.js"
   },
   "author": "",
@@ -21,6 +21,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "fs-extra": "^11.1.1",
+    "googleapis": "^129.0.0",
     "jsonwebtoken": "^9.0.2",
     "mini-css-extract-plugin": "^2.7.6",
     "mongoose": "^7.5.2",

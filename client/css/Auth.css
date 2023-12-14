@@ -204,6 +204,51 @@ form {
     text-decoration: underline;
 }
 
+#oAuthButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    background-color: #ffffff00;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 2ch;
+    animation: move-up 2s;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+    text-decoration: none;
+    transition: all 1s;
+    font-size: 24px;
+    color: white;
+}
+
+#oAuthButton > span:nth-child(2) {
+    margin-left: 0.1ch;
+    color: #4285F4;
+}
+#oAuthButton > span:nth-child(3) {
+    color: #EA4335;
+}
+#oAuthButton > span:nth-child(4) {
+    color: #FBBC05;
+}
+#oAuthButton > span:nth-child(5) {
+    color: #34A853;
+}
+#oAuthButton > span:nth-child(6) {
+    color: #EA4335;
+}
+#oAuthButton > span:nth-child(7) {
+    color: #4285F4;
+}
+
+#oAuthButton:hover {
+    scale: 1.1;
+    text-decoration: underline;
+}
+
 .loginContainer {
     background-color: rgba(255, 255, 255, 0.043);
     display: flex;

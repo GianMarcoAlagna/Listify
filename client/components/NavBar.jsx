@@ -26,21 +26,21 @@ const NavBar = ({ reference, innerText, path, textEditorRef }) => {
     }
     const handleSignout = () => {
         sendUserData(formatState(userState))
-        .then(() => {
-            sendSignoutRequest()
-            .then(res => {            
-                if(res === 200) {
-                    localStorage.removeItem('isLoggedIn');
-                    reference.current.classList.add('LinkClickTransition');
-                    setTimeout(() => {
-                        reference.current.classList.remove('LinkClickTransition');
-                        return navigate('/');
-                    }, 950);
-                } else {
-                    return console.log('Signout Failed');
-                }
+            .then(() => {
+                sendSignoutRequest()
+                    .then(res => {
+                        if (res === 200) {
+                            localStorage.removeItem('isLoggedIn');
+                            reference.current.classList.add('LinkClickTransition');
+                            setTimeout(() => {
+                                reference.current.classList.remove('LinkClickTransition');
+                                return navigate('/auth');
+                            }, 950);
+                        } else {
+                            return console.log('Signout Failed');
+                        }
+                    });
             });
-        });
     }
 
     return (
@@ -49,7 +49,7 @@ const NavBar = ({ reference, innerText, path, textEditorRef }) => {
             <ul>
                 <li>
                     <button onClick={handleLink} className='RouterLink'>
-                        { innerText }
+                        {innerText}
                     </button>
                 </li>
             </ul>

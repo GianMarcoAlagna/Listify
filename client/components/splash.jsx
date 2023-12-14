@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import '../css/Splash.css';
 
-function Splash({setSplash}) {
+function Splash({ setSplash }) {
     useEffect(() => {
         setTimeout(() => {
             setSplash(false);
-        }, 4000);
+        }, 2000);
     }, []);
 
     return (
