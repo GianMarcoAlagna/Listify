@@ -17,15 +17,16 @@ function Auth() {
     const invalidCredsRef = useRef(null);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        (async function getData() {
-            if (localStorage.getItem('isLoggedIn') && Date.now() < Number(localStorage.getItem('isLoggedIn'))) {
-                const userData = await fetchUserData();
-                dispatch(actions.setUserDataActionCreator(userData));
-                navigate('/todo');
-            }
-        })();
-    }, []);
+    // useEffect(() => {
+    //     fetchUserData((data, err) => {
+    //         if (!err) {
+    //             dispatch(actions.setUserDataActionCreator(data));
+    //             localStorage.setItem('isLoggedIn', Date.now() + 24 * 60 * 60 * 1000);
+    //         } else {
+    //             localStorage.removeItem('isLoggedIn');
+    //         }
+    //     });
+    // }, []);
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -50,24 +51,16 @@ function Auth() {
 
         if (res.status === 200) {
             setSuccessLogin(true);
-            /*
-            Get User's Data from server and navigate to todo page,
-            on successful authentication
-             */
-            const userData = await fetchUserData();
-            dispatch(actions.setUserDataActionCreator(userData));
             localStorage.setItem('isLoggedIn', Date.now() + 24 * 60 * 60 * 1000);
             setTimeout(() => {
                 setInvalidCreds(false);
-                return navigate('/todo')
+                return navigate('/dashboard');
             }, 1000);
         } else if (res.status === 400) {
             invalidCredsRef.current.innerText = 'User Already Exists';
-
             return setInvalidCreds(true);
         } else {
             invalidCredsRef.current.innerText = 'Invalid Credentials';
-
             return setInvalidCreds(true);
         }
     }
@@ -81,26 +74,12 @@ function Auth() {
     }
 
     //! don't need this anymore because we use <a> tag to redirect to google's oauth
-    // async function oAuth() {
     //     //* using client side redirect, we do this because fetch doesn't allow play nice with google's oauth, cors, and react-router
     //     window.location.href = '/auth/google';
 
     //     //* to use fetch we'd have to set mode to no-cors, but then we can't access the response, which is actually fine because we don't need it
     //     //! doing this with mode set to cors will cause a cors error, this is because google doesn't seem to allow cors requests
     //     //! this is because when cors is enabled the request will send a preflight request which will be expecting the header Access-Control-Allow-Origin: * which google doesn't send
-    //     // fetch('/auth/google', {
-    //     //     method: 'GET',
-    //     //     //? mode: 'no-cors',
-    //     //     headers: {
-    //     //         'Content-Type': 'application/json'
-    //     //     }
-    //     // }).then(res => {
-    //     //     console.log(res);
-    //     // }).catch(err => {
-    //     //     console.log(err);
-    //     // });
-    // }
-
     return (
         splash
             ? <Splash setSplash={setSplash} />

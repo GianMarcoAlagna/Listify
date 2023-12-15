@@ -15,3 +15,5 @@ export const SET_USER_DATA = 'SET_USER_DATA';
 export const SET_CURRENT_ITEM = 'SET_CURRENT_ITEM';
 
 export const COMPLETE_SUB_ITEMS = 'COMPLETE_SUB_ITEMS';
+
+export const SET_LOADING = 'SET_LOADING';

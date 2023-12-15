@@ -23,7 +23,7 @@ function MCE() {
 
     return (
         <>
-            <NavBar reference={mainRef} innerText={'Todo List'} path={'todo'} textEditorRef={textEditorRef} />
+            <NavBar reference={mainRef} innerText={'Todo List'} path={'dashboard'} textEditorRef={textEditorRef} />
             <div ref={mainRef} className='MCEMain moveInAnim'>
                 <MCEContainer>
                     <Editor 

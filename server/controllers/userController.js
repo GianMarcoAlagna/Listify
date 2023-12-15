@@ -43,9 +43,13 @@ const userController = {
         return next();
     },
     getUser: async function(req, res, next) {
+        const { oAuthUser } = req.cookies;
+        if (oAuthUser === 'true') return next();
+        
         const username = jwt.decode(req.cookies.token, process.env.KEY).username;
         try {
             const userData = await User.findOne({ username });
+            res.locals.user = userData;
             return res.status(200).json({username: userData.username, id: userData._id, textEditor: userData.textEditor, todo: userData.todo});
         } catch (err) {
             return next(createError(err, 404, 'Couldn\'t Find User', 'userController', 'getUser'));
@@ -78,6 +82,7 @@ const userController = {
             const token = jwt.sign({ username }, process.env.KEY);
             const expiration = new Date(Date.now() + (24 * 60 * 60 * 1000));
             res.cookie("token", token, { expires: expiration, httpOnly: true, sameSite: 'None', secure: true });
+            res.cookie("oAuthUser", false, { expires: expiration, httpOnly: true, sameSite: 'None', secure: true });
             return next();
         } catch (err) {
             return next(createError(err, 500, 'error creating jwt cookie', 'userController', 'setCookie'));
@@ -85,8 +90,8 @@ const userController = {
     },
     verifyToken: async function(req, res, next) {
         const { token } = req.cookies;
-        if (!token) return res.sendStatus(400);
         try {
+            if (!token) throw new Error('no token');
             jwt.verify(token, process.env.KEY);
             return next();
         } catch (err) {

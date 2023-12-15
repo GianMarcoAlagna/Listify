@@ -1,8 +1,9 @@
 const express = require('express');
 const userController = require('../controllers/userController');
+const authController = require('../controllers/authController');
 const router = express.Router();
 
-router.get('/', userController.verifyToken, userController.getUser);
+router.get('/', userController.verifyToken, userController.getUser, authController.getoAuthUser);
 router.get('/signout', userController.removeCookie, (req, res) => {
     return res.sendStatus(200);
 });

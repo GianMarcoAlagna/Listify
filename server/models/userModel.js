@@ -28,7 +28,8 @@ const oAuthUserSchema = new Schema({
     username: {type: String, required: true},
     googleId: {type: String, required: true},
     textEditor: {type: String, default: ''},
-    todo: todoSchema
+    todo: todoSchema,
+    tokens: {type: Object, required: true}
 });
 
 userSchema.pre('save', function(next) {

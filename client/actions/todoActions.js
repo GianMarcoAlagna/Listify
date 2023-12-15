@@ -62,3 +62,9 @@ export const completeSubItemsActionCreator = item => (
         payload: item
     }
 );
+
+export const setLoadingActionCreator = () => (
+    {
+        type: types.SET_LOADING
+    }
+);

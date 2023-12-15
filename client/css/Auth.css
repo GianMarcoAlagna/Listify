@@ -137,7 +137,7 @@ form {
     width: 10vw;
     min-width: fit-content;
     min-height: fit-content;
-    height: 4vh;
+    /* height: 4vh; */
     font-size: 25px;
     animation: move-up 2s;
     animation-delay: 1s;
@@ -176,7 +176,7 @@ form {
     background-repeat: no-repeat;
     background-position: center right;
     animation: fly-in-right 1s;
-    animation-fill-mode: both;
+    animation-fill-mode: backwards;
     animation-delay: 1s;
 }
 
@@ -326,6 +326,10 @@ form {
     font-size: 2.2vw;
     font-weight: 550;
     transition: transform 1s;
+}
+
+.loginContainer .textInput:focus, .loginContainer .textInput:active{
+    outline: none;
 }
 
 .loginContainer .textInput:hover{

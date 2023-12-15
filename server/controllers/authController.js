@@ -1,10 +1,9 @@
 const { OAuthUser } = require("../models/userModel");
 const { google } = require("googleapis");
-const express = require("express");
+const jwt = require("jsonwebtoken");
 
 const authController = {
-  google: (req, res, next) => {
-    console.log("google auth controller");
+  google: (_req, res, next) => {
     oauth2Client = new google.auth.OAuth2(
       process.env.GOOGLE_CLIENT_ID,
       process.env.GOOGLE_CLIENT_SECRET,
@@ -25,6 +24,68 @@ const authController = {
     res.locals.url = url;
     return next();
   },
+  // createoAuthUser: async (_req, res, next) => {
+  //   try {
+  //     const { username, googleId, token } = res.locals;
+  //     const oAuthUser = await OAuthUser.create({
+  //       username: username,
+  //       googleId: googleId,
+  //       token: token,
+  //     });
+  //     res.locals.oAuthUser = oAuthUser;
+  //     return next();
+  //   } catch (err) {
+  //     return next({
+  //       log: `An error occurred in authController.createoAuthUser: ${err}`,
+  //       message: {
+  //         err: "An error occurred in authController.createoAuthUser. Check server logs for more details.",
+  //       },
+  //     });
+  //   }
+  // },
+  getoAuthUser: async (req, res, next) => {
+    try {
+      const { oAuthUserID } = jwt.decode(req.cookies.token, process.env.KEY);
+      const oAuthUser = await OAuthUser.findOne({ googleId: oAuthUserID });
+      // console.log("oAuthUser, from authController", oAuthUser);
+      return res.status(200).json({
+        username: oAuthUser.username,
+        id: oAuthUser._id,
+        textEditor: oAuthUser.textEditor,
+        todo: oAuthUser.todo || [],
+      });
+    } catch (err) {
+      return next({
+        log: `An error occurred in authController.getoAuthUser: ${err}`,
+        message: {
+          err: "An error occurred in authController.getoAuthUser. Check server logs for more details.",
+        },
+      });
+    }
+  },
+  setoAuthCookie: (_req, res, next) => {
+    try {
+      const { userProfile } = res.locals;
+
+      const token = jwt.sign(
+        { oAuthUserID: userProfile.names[0].metadata.source.id },
+        process.env.KEY
+      );
+      const expiration = new Date(Date.now() + 24 * 60 * 60 * 1000);
+
+      res.cookie("token", token, { httpOnly: true, expiration, secure: true });
+      res.cookie("oAuthUser", true, { httpOnly: true, secure: true });
+
+      return next();
+    } catch (err) {
+      return next({
+        log: `An error occurred in authController.setoAuthCookie: ${err}`,
+        message: {
+          err: "An error occurred in authController.setoAuthCookie. Check server logs for more details.",
+        },
+      });
+    }
+  },
   callback: async (req, res, next) => {
     try {
       const { code } = req.query;
@@ -37,14 +98,21 @@ const authController = {
         personFields: "names", // You can customize the fields you want to retrieve
       });
 
-      res.locals.token = tokens;
+      res.locals.tokens = tokens;
       res.locals.userProfile = userProfile.data;
+
+      const userExists = await OAuthUser.findOne({
+        googleId: userProfile.data.names[0].metadata.source.id,
+      });
+      if (userExists) return next();
+
       OAuthUser.create({
         username: res.locals.userProfile.names[0].displayName,
         googleId: res.locals.userProfile.names[0].metadata.source.id,
-        token: tokens,
+        tokens: tokens,
+        todo: { items: [] },
       });
-      // just have to set JWT cookie and redirect to dashboard, then when user requests their data search both oAuthUser and User for their data
+
       return next();
     } catch (err) {
       return next({

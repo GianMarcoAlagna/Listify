@@ -1,4 +1,4 @@
-export default async function fetchUserData() {
+export default async function fetchUserData(cb = (dat, err) => {}) {
     const response = await fetch('/user', {
         method: 'GET',
         headers: {
@@ -6,7 +6,14 @@ export default async function fetchUserData() {
         },
         credentials: 'include'
     });
+    
+    if (!response.ok) {
+        cb(null, response.status);
+        return null;
+    }
+
     const data = await response.json();
+    cb(data);
     return data;
 }
 

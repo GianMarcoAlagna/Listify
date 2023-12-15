@@ -2,7 +2,7 @@ const authController = require("../controllers/authController.js");
 
 const authRouter = require("express").Router();
 
-authRouter.get("/callback", authController.callback, (req, res) => {
+authRouter.get("/callback", authController.callback, authController.setoAuthCookie, (req, res) => {
   return res.redirect("http://localhost:8080/dashboard");
 });
 

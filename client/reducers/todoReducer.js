@@ -7,6 +7,7 @@ const init = {
     textEditor: '',
     currentParentName: '',
     currentSubItems: [],
+    isLoading: true
 }
 
 const todoReducer = createReducer(init, (builder) => {
@@ -44,6 +45,7 @@ const todoReducer = createReducer(init, (builder) => {
         state.username = action.payload.username;
         state.textEditor = action.payload.textEditor;
         state.entries = [...action.payload.todo.items];
+        state.isLoading = false;
     })
     .addCase(types.ADD_SUB_ENTRY, (state, action) => {
         state.entries.forEach((el, indx) => {
@@ -68,6 +70,9 @@ const todoReducer = createReducer(init, (builder) => {
                 state.currentSubItems = state.entries[indx].sublist;
             }
         });
+    })
+    .addCase(types.SET_LOADING, (state, action) => {
+        state.loading = action.payload;
     });
 });
 
